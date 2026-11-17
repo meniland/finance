@@ -100,6 +100,7 @@ export default function BankTab() {
   const [sortDir, setSortDir] = useState('desc');
   const [calSortKey, setCalSortKey] = useState('date');
   const [calSortDir, setCalSortDir] = useState('desc');
+  const [selectedCalAccount, setSelectedCalAccount] = useState(null);
 
   useEffect(() => {
     let stop = false;
@@ -173,10 +174,21 @@ export default function BankTab() {
     });
   }, [snapshot.accounts, query, sortKey, sortDir]);
 
+  const activeCalAccount = useMemo(() => {
+    if (selectedCalAccount == null) return null;
+    const present = (calSnapshot.accounts || []).some(
+      (account) => String(account.accountNumber) === String(selectedCalAccount),
+    );
+    return present ? selectedCalAccount : null;
+  }, [calSnapshot.accounts, selectedCalAccount]);
+
   const calRows = useMemo(() => {
     const accounts = calSnapshot.accounts || [];
     const needle = calQuery.trim().toLowerCase();
-    const flattened = accounts.flatMap((account) =>
+    const scoped = activeCalAccount
+      ? accounts.filter((account) => String(account.accountNumber) === String(activeCalAccount))
+      : accounts;
+    const flattened = scoped.flatMap((account) =>
       (account.txns || []).map((txn) => ({
         ...txn,
         accountNumber: account.accountNumber,
@@ -202,7 +214,7 @@ export default function BankTab() {
       const result = compareValues(left, right, calSortKey);
       return calSortDir === 'asc' ? result : -result;
     });
-  }, [calSnapshot.accounts, calQuery, calSortKey, calSortDir]);
+  }, [calSnapshot.accounts, calQuery, calSortKey, calSortDir, activeCalAccount]);
 
   const missingCredentials = snapshot.credentialsConfigured === false || snapshot.status === 'MISSING_CREDENTIALS';
   const calMissingCredentials =
@@ -576,35 +588,73 @@ export default function BankTab() {
 
           {calSnapshot.accounts?.length > 0 && (
             <section className="grid gap-4 sm:grid-cols-2">
-              {calSnapshot.accounts.map((account) => (
-                <article key={account.accountNumber} className="rounded-3xl border border-line bg-card p-5">
-                  <p className="text-xs font-semibold tracking-[0.16em] text-muted uppercase">כרטיס</p>
-                  <p className="mt-1 font-mono text-lg" dir="ltr">
-                    {account.accountNumber}
-                  </p>
-                  <p className={`mt-4 font-display text-4xl ${amountClass(account.balance)}`}>
-                    {formatMoney(account.balance)}
-                  </p>
-                  <p className="mt-2 text-sm text-muted">סה״כ לחיוב הבא</p>
-                  <p className="mt-3 text-sm text-ink">
-                    מועד חיוב הבא:{' '}
-                    <span className="font-medium tabular-nums" dir="ltr">
-                      {account.nextChargeDate ? formatDay(account.nextChargeDate) : '—'}
-                    </span>
-                  </p>
-                  <p className="mt-2 text-sm text-muted">
-                    {account.txns.length} עסקאות
-                    {account.windowCoverage?.status === 'unproven' ? ' · ייתכן שהחלון חלקי' : ''}
-                  </p>
-                </article>
-              ))}
+              {calSnapshot.accounts.map((account) => {
+                const selected = String(activeCalAccount) === String(account.accountNumber);
+                return (
+                  <button
+                    key={account.accountNumber}
+                    type="button"
+                    aria-pressed={selected}
+                    onClick={() =>
+                      setSelectedCalAccount((current) =>
+                        String(current) === String(account.accountNumber) ? null : account.accountNumber,
+                      )
+                    }
+                    className={`rounded-3xl border bg-card p-5 text-right transition ${
+                      selected
+                        ? 'border-teal ring-2 ring-teal/25 shadow-[0_12px_28px_rgb(28_25_21_/_0.08)]'
+                        : 'border-line hover:border-teal/50'
+                    }`}
+                  >
+                    <p className="text-xs font-semibold tracking-[0.16em] text-muted uppercase">כרטיס</p>
+                    <p className="mt-1 font-mono text-lg" dir="ltr">
+                      {account.accountNumber}
+                    </p>
+                    <p className={`mt-4 font-display text-4xl ${amountClass(account.balance)}`}>
+                      {formatMoney(account.balance)}
+                    </p>
+                    <p className="mt-2 text-sm text-muted">סה״כ לחיוב הבא</p>
+                    <p className="mt-3 text-sm text-ink">
+                      מועד חיוב הבא:{' '}
+                      <span className="font-medium tabular-nums" dir="ltr">
+                        {account.nextChargeDate ? formatDay(account.nextChargeDate) : '—'}
+                      </span>
+                    </p>
+                    <p className="mt-2 text-sm text-muted">
+                      {account.txns.length} עסקאות
+                      {account.windowCoverage?.status === 'unproven' ? ' · ייתכן שהחלון חלקי' : ''}
+                      {selected ? ' · מסונן' : ''}
+                    </p>
+                  </button>
+                );
+              })}
             </section>
           )}
 
           {calSnapshot.status === 'SUCCESS' && (
             <section className="rounded-3xl border border-line bg-card p-5">
               <div className="flex flex-wrap items-center justify-between gap-3">
-                <h3 className="text-lg font-semibold">עסקאות כאל</h3>
+                <div>
+                  <h3 className="text-lg font-semibold">עסקאות כאל</h3>
+                  {activeCalAccount ? (
+                    <p className="mt-1 text-sm text-muted">
+                      מציג כרטיס{' '}
+                      <span className="font-mono tabular-nums" dir="ltr">
+                        {activeCalAccount}
+                      </span>
+                      {' · '}
+                      <button
+                        type="button"
+                        onClick={() => setSelectedCalAccount(null)}
+                        className="font-medium text-teal hover:underline"
+                      >
+                        הצג הכל
+                      </button>
+                    </p>
+                  ) : (
+                    <p className="mt-1 text-sm text-muted">לחצו על כרטיס כדי לסנן את העסקאות שלו</p>
+                  )}
+                </div>
                 <label className="relative min-w-56 flex-1 sm:max-w-xs">
                   <span className="sr-only">חיפוש עסקאות</span>
                   <Search size={16} className="pointer-events-none absolute top-1/2 right-3 -translate-y-1/2 text-muted" />
@@ -678,7 +728,7 @@ export default function BankTab() {
                         <td className="py-3 pl-4" dir="rtl" lang="he">
                           <div className="font-medium">{txn.description || '—'}</div>
                           {txn.memo ? <div className="text-xs text-muted">{txn.memo}</div> : null}
-                          {(calSnapshot.accounts || []).length > 1 ? (
+                          {!activeCalAccount && (calSnapshot.accounts || []).length > 1 ? (
                             <div className="text-xs text-muted" dir="ltr">
                               {txn.accountNumber}
                             </div>

@@ -3,6 +3,7 @@ import cors from 'cors';
 import express from 'express';
 import { getInvestmentsState, startInvestmentsScrape, submitInvestmentsOtp } from './scrapers/extradePro.js';
 import { getIbkrState, startIbkrSync } from './scrapers/ibkr.js';
+import { getMeitavState, startMeitavScrape, submitMeitavOtp } from './scrapers/meitavTrade.js';
 import { getCalState, startCalScrape, submitCalOtp } from './scrapers/visaCal.js';
 import { getState, startScrape, submitOtp } from './scraper.js';
 
@@ -141,6 +142,38 @@ app.post('/api/investments/ibkr/sync', (_req, res) => {
     res.status(202).json(result);
   } catch (error) {
     sendError(res, error, 'Could not start the Interactive Brokers sync.');
+  }
+});
+
+app.get('/api/investments/meitav/status', (_req, res) => {
+  res.json(getMeitavState());
+});
+
+app.post('/api/investments/meitav/scrape', (_req, res) => {
+  try {
+    const result = startMeitavScrape();
+    res.status(202).json(result);
+  } catch (error) {
+    sendError(res, error, 'Could not start the Meitav Trade scrape.');
+  }
+});
+
+app.post('/api/investments/meitav/otp', (req, res) => {
+  const otpCode = String(req.body?.otpCode ?? '').trim();
+  if (!/^\d{4,10}$/.test(otpCode)) {
+    res.status(400).json({
+      error: 'Enter the 4 to 10 digit SMS code.',
+      message: 'Enter the 4 to 10 digit SMS code.',
+      errorCode: '20261117.401738',
+    });
+    return;
+  }
+
+  try {
+    submitMeitavOtp(otpCode);
+    res.json({ status: 'ACCEPTED' });
+  } catch (error) {
+    sendError(res, error, 'Could not submit the Meitav Trade SMS code.');
   }
 });
 
