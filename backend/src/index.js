@@ -2,6 +2,8 @@ import 'dotenv/config';
 import cors from 'cors';
 import express from 'express';
 import { getInvestmentsState, startInvestmentsScrape, submitInvestmentsOtp } from './scrapers/extradePro.js';
+import { getIbkrState, startIbkrSync } from './scrapers/ibkr.js';
+import { getCalState, startCalScrape, submitCalOtp } from './scrapers/visaCal.js';
 import { getState, startScrape, submitOtp } from './scraper.js';
 
 const app = express();
@@ -64,6 +66,39 @@ app.post('/api/otp', (req, res) => {
   }
 });
 
+app.get('/api/cal/status', (_req, res) => {
+  res.json(getCalState());
+});
+
+app.post('/api/cal/scrape', (req, res) => {
+  try {
+    const body = req.body && typeof req.body === 'object' ? req.body : {};
+    const result = startCalScrape({ daysBack: body.daysBack });
+    res.status(202).json(result);
+  } catch (error) {
+    sendError(res, error, 'Could not start the CAL scrape.');
+  }
+});
+
+app.post('/api/cal/otp', (req, res) => {
+  const otpCode = String(req.body?.otpCode ?? '').trim();
+  if (!/^\d{4,10}$/.test(otpCode)) {
+    res.status(400).json({
+      error: 'Enter the 4 to 10 digit SMS code.',
+      message: 'Enter the 4 to 10 digit SMS code.',
+      errorCode: '20261117.401626',
+    });
+    return;
+  }
+
+  try {
+    submitCalOtp(otpCode);
+    res.json({ status: 'ACCEPTED' });
+  } catch (error) {
+    sendError(res, error, 'Could not submit the CAL SMS code.');
+  }
+});
+
 app.get('/api/investments/status', (_req, res) => {
   res.json(getInvestmentsState());
 });
@@ -93,6 +128,19 @@ app.post('/api/investments/otp', (req, res) => {
     res.json({ status: 'ACCEPTED' });
   } catch (error) {
     sendError(res, error, 'Could not submit the SMS code.');
+  }
+});
+
+app.get('/api/investments/ibkr/status', (_req, res) => {
+  res.json(getIbkrState());
+});
+
+app.post('/api/investments/ibkr/sync', (_req, res) => {
+  try {
+    const result = startIbkrSync();
+    res.status(202).json(result);
+  } catch (error) {
+    sendError(res, error, 'Could not start the Interactive Brokers sync.');
   }
 });
 

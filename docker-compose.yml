@@ -8,6 +8,7 @@ services:
     environment:
       PORT: "3001"
       AUTH_STATE_PATH: /app/data/auth-state.json
+      CAL_AUTH_STATE_PATH: /app/data/cal-auth-token.txt
       RUNS_ROOT: /tmp/scraper-runs
       PUPPETEER_EXECUTABLE_PATH: /usr/bin/chromium
     shm_size: "1gb"
