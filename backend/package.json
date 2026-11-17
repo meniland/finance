@@ -1,0 +1,19 @@
+{
+  "name": "beinleumi-backend",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24.11.0"
+  },
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "dependencies": {
+    "@sergienko4/israeli-bank-scrapers": "10.0.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.6.1",
+    "express": "^4.21.2",
+    "puppeteer-core": "^24.15.0"
+  }
+}
