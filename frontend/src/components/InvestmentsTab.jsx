@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
-import { ArrowDown, ArrowUp, LineChart, Loader2, Search } from 'lucide-react';
+import { ArrowDown, ArrowUp, Calendar, LineChart, Loader2, Search } from 'lucide-react';
 import { request } from '../api.js';
 import CredentialsBanner from './CredentialsBanner.jsx';
 
@@ -214,6 +214,8 @@ export default function InvestmentsTab() {
   const ibkrAccounts = ibkrPortfolio?.accounts || [];
   const activeIbkrCase = ibkrAccounts.some((account) => account.id === ibkrCaseId) ? ibkrCaseId : 'all';
   const ibkrShown = activeIbkrCase === 'all' ? ibkrPortfolio : ibkrAccounts.find((account) => account.id === activeIbkrCase);
+  const ibkrReportDate = ibkrShown?.reportDate || ibkrPortfolio?.reportDate || null;
+  const ibkrWhenGenerated = ibkrShown?.whenGenerated || ibkrPortfolio?.whenGenerated || null;
   const ibkrHoldings = ibkrShown?.holdings || [];
   const ibkrRows = useMemo(() => {
     const needle = ibkrQuery.trim().toLowerCase();
@@ -611,6 +613,9 @@ export default function InvestmentsTab() {
                 <div>
                   <h3 className="text-lg font-semibold">סנכרון Flex</h3>
                   <p className="text-sm text-muted">שליפת דוח Flex מ-Interactive Brokers דרך ה-API הרשמי.</p>
+                  {ibkrSnapshot.status === 'SUCCESS' && ibkrReportDate ? (
+                    <IbkrReportDateBadge date={ibkrReportDate} whenGenerated={ibkrWhenGenerated} className="mt-2" />
+                  ) : null}
                 </div>
               </div>
               <button
@@ -651,7 +656,13 @@ export default function InvestmentsTab() {
               )}
               <section className="grid gap-4 sm:grid-cols-2">
                 <Kpi label="שווי תיק כולל (NAV)" value={formatMoney(ibkrShown.totalValue, ibkrShown.currency)} />
-                <Kpi label="יתרת מזומן" value={formatMoney(ibkrShown.cashBalance, ibkrShown.currency)} />
+                <CashBalancesKpi
+                  balances={ibkrShown.cashBalances}
+                  fallbackAmount={ibkrShown.cashBalance}
+                  fallbackCurrency={ibkrShown.currency}
+                  reportDate={ibkrReportDate}
+                  whenGenerated={ibkrWhenGenerated}
+                />
               </section>
               <section className="rounded-3xl border border-line bg-card p-5">
                 <div className="flex flex-wrap items-center justify-between gap-3">
@@ -995,6 +1006,62 @@ function Kpi({ label, value, tone = 'text-ink' }) {
       <p className={`mt-3 font-display text-3xl ${tone}`} dir="ltr">
         {value}
       </p>
+    </article>
+  );
+}
+
+function IbkrReportDateBadge({ date, whenGenerated = null, className = '' }) {
+  if (!date) return null;
+  return (
+    <p
+      className={`inline-flex items-center gap-1.5 rounded-full bg-teal/10 px-2.5 py-1 text-xs font-medium text-teal ${className}`.trim()}
+      title={whenGenerated ? `נוצר ב־${whenGenerated}` : undefined}
+    >
+      <Calendar size={13} aria-hidden="true" />
+      <span>
+        נכון לתאריך דוח: <span dir="ltr">{date}</span>
+      </span>
+    </p>
+  );
+}
+
+function CashBalancesKpi({ balances, fallbackAmount, fallbackCurrency, reportDate = null, whenGenerated = null }) {
+  const rows =
+    Array.isArray(balances) && balances.length > 0
+      ? balances
+      : fallbackAmount != null
+        ? [{ currency: fallbackCurrency || 'USD', amount: fallbackAmount }]
+        : [];
+  const visible = rows.filter((row) => row && row.amount != null);
+  const allZero = visible.length > 0 && visible.every((row) => Number(row.amount) === 0);
+
+  return (
+    <article className="rounded-3xl border border-line bg-card p-5">
+      <div className="flex flex-wrap items-center justify-between gap-2">
+        <p className="text-sm text-muted">יתרת מזומן</p>
+        <IbkrReportDateBadge date={reportDate} whenGenerated={whenGenerated} />
+      </div>
+      {visible.length === 0 || allZero ? (
+        <p className="mt-3 font-display text-3xl text-ink" dir="ltr">
+          0
+        </p>
+      ) : (
+        <ul className="mt-3 space-y-2">
+          {visible.map((row) => (
+            <li key={row.currency} className="flex flex-wrap items-baseline justify-between gap-2">
+              <span className="text-xs font-semibold tracking-wide text-muted" dir="ltr">
+                {row.currency}
+              </span>
+              <span
+                className={`font-display text-2xl tabular-nums ${amountClass(row.amount)}`}
+                dir="ltr"
+              >
+                {formatMoney(row.amount, row.currency)}
+              </span>
+            </li>
+          ))}
+        </ul>
+      )}
     </article>
   );
 }

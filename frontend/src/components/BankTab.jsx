@@ -10,6 +10,7 @@ import {
   ShieldCheck,
 } from 'lucide-react';
 import { request } from '../api.js';
+import BalanceSummaryPanels from './BalanceSummaryPanels.jsx';
 import CredentialsBanner from './CredentialsBanner.jsx';
 
 const ACTIVE = new Set(['SCRAPING', 'AWAITING_OTP']);
@@ -36,9 +37,30 @@ const STATUS_LABEL = {
   MISSING_CREDENTIALS: 'Missing credentials',
 };
 
+const CURRENCY_ALIASES = {
+  ILS: 'ILS',
+  NIS: 'ILS',
+  '₪': 'ILS',
+  USD: 'USD',
+  $: 'USD',
+  EUR: 'EUR',
+  '€': 'EUR',
+  GBP: 'GBP',
+  '£': 'GBP',
+};
+
+function currencyCodeOf(currency = 'ILS') {
+  const raw = String(currency || 'ILS').trim();
+  if (CURRENCY_ALIASES[raw]) return CURRENCY_ALIASES[raw];
+  const upper = raw.toUpperCase();
+  if (CURRENCY_ALIASES[upper]) return CURRENCY_ALIASES[upper];
+  if (/^[A-Z]{3}$/.test(upper)) return upper;
+  return 'ILS';
+}
+
 function formatMoney(value, currency = 'ILS') {
   if (value === null || value === undefined || Number.isNaN(Number(value))) return '—';
-  const code = typeof currency === 'string' && /^[A-Z]{3}$/.test(currency) ? currency : 'ILS';
+  const code = currencyCodeOf(currency);
   try {
     return new Intl.NumberFormat('he-IL', {
       style: 'currency',
@@ -342,6 +364,8 @@ export default function BankTab() {
         </div>
         <StatusPill status={activeSnapshot.status} />
       </header>
+
+      <BalanceSummaryPanels bankSnapshot={snapshot} calSnapshot={calSnapshot} />
 
       <nav className="flex flex-wrap gap-2" aria-label="ספקי חשבון">
         <ProviderTab selected={provider === 'beinleumi'} onClick={() => setProvider('beinleumi')}>

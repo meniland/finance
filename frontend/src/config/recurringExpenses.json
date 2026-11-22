@@ -1,0 +1,52 @@
+[
+  {
+    "id": "hk-3290525",
+    "label": "הוראת קבע 3290525",
+    "amount": 2000,
+    "matchKeywords": ["3290525"],
+    "matchExactAmount": false
+  },
+  {
+    "id": "hk-3290526",
+    "label": "הוראת קבע 3290526",
+    "amount": 1200,
+    "matchKeywords": ["3290526"],
+    "matchExactAmount": false
+  },
+  {
+    "id": "hk-3290528",
+    "label": "הוראת קבע 3290528",
+    "amount": 600,
+    "matchKeywords": ["3290528"],
+    "matchExactAmount": false
+  },
+  {
+    "id": "hk-3290529",
+    "label": "הוראת קבע 3290529",
+    "amount": 600,
+    "matchKeywords": ["3290529"],
+    "matchExactAmount": false
+  },
+  {
+    "id": "check-1000",
+    "label": "משיכת שיק (1,000 ₪)",
+    "amount": 1000,
+    "matchKeywords": ["שיק", "צ'ק"],
+    "matchExactAmount": true
+  },
+  {
+    "id": "transfer-7500",
+    "label": "העברה קבועה (7,500 ₪)",
+    "amount": 7500,
+    "matchKeywords": ["העברה"],
+    "matchExactAmount": true,
+    "dueAfterDay": 28
+  },
+  {
+    "id": "school-yesodi-h",
+    "label": "בית ספר יסודי ה",
+    "amount": 530.08,
+    "matchKeywords": ["בית ספר יסודי", "יסודי ה"],
+    "matchExactAmount": false
+  }
+]

@@ -191,6 +191,73 @@ function accountIdFrom(row, fallback = '') {
   return text || '';
 }
 
+/**
+ * Flex dates arrive as YYYYMMDD (e.g. 20261118) or occasionally ISO-like.
+ * Returns { raw, iso, display } or null.
+ */
+export function formatFlexDate(value) {
+  const text = String(value || '').trim();
+  if (!text) return null;
+
+  let year;
+  let month;
+  let day;
+  const ymd = text.match(/^(\d{4})(\d{2})(\d{2})$/);
+  const iso = text.match(/^(\d{4})-(\d{2})-(\d{2})/);
+  if (ymd) {
+    year = Number(ymd[1]);
+    month = Number(ymd[2]);
+    day = Number(ymd[3]);
+  } else if (iso) {
+    year = Number(iso[1]);
+    month = Number(iso[2]);
+    day = Number(iso[3]);
+  } else {
+    return null;
+  }
+  if (!Number.isInteger(year) || month < 1 || month > 12 || day < 1 || day > 31) return null;
+  const isoDate = `${String(year).padStart(4, '0')}-${String(month).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+  const display = `${String(day).padStart(2, '0')}/${String(month).padStart(2, '0')}/${year}`;
+  return { raw: text.slice(0, 8), iso: isoDate, display };
+}
+
+function formatFlexGenerated(value) {
+  const text = String(value || '').trim();
+  if (!text) return null;
+  // Examples: 20261119;054154 or 20261119;05:41:54
+  const match = text.match(/^(\d{8})[;T\s]?(\d{2}):?(\d{2}):?(\d{2})?/);
+  if (!match) return text;
+  const date = formatFlexDate(match[1]);
+  if (!date) return text;
+  const time = `${match[2]}:${match[3]}${match[4] ? `:${match[4]}` : ''}`;
+  return `${date.display} ${time}`;
+}
+
+function reportMetaFromStatement(statement) {
+  const toDate = formatFlexDate(pickField(statement, 'toDate', 'ToDate'));
+  const fromDate = formatFlexDate(pickField(statement, 'fromDate', 'FromDate'));
+  const whenGeneratedRaw = pickField(statement, 'whenGenerated', 'WhenGenerated');
+  return {
+    reportDate: toDate?.display || null,
+    reportDateIso: toDate?.iso || null,
+    reportFromDate: fromDate?.display || null,
+    whenGenerated: formatFlexGenerated(whenGeneratedRaw),
+  };
+}
+
+function pickLatestReportMeta(metas) {
+  const list = (metas || []).filter((meta) => meta?.reportDateIso || meta?.reportDate);
+  if (list.length === 0) return { reportDate: null, reportDateIso: null, reportFromDate: null, whenGenerated: null };
+  list.sort((left, right) => String(left.reportDateIso || '').localeCompare(String(right.reportDateIso || '')));
+  const latest = list[list.length - 1];
+  return {
+    reportDate: latest.reportDate || null,
+    reportDateIso: latest.reportDateIso || null,
+    reportFromDate: latest.reportFromDate || null,
+    whenGenerated: latest.whenGenerated || null,
+  };
+}
+
 function normalizeOpenPosition(row) {
   const symbol = String(pickField(row, 'symbol', 'Symbol', 'ticker', 'Ticker') || '').trim();
   const description = String(pickField(row, 'description', 'Description', 'name', 'Name') || '').trim();
@@ -214,24 +281,86 @@ function normalizeOpenPosition(row) {
   };
 }
 
+function isSummaryCurrency(currency) {
+  const code = String(currency || '').trim().toUpperCase();
+  return !code || code === 'BASE_SUMMARY' || code === 'BASE';
+}
+
+function endingCashOf(row) {
+  // Some Flex query templates omit endingCash and only include startingCash*.
+  return asNumber(
+    pickField(
+      row,
+      'endingCash',
+      'EndingCash',
+      'endingSettledCash',
+      'EndingSettledCash',
+      'startingCash',
+      'StartingCash',
+      'startingCashSec',
+      'StartingCashSec',
+      'cash',
+      'Cash',
+    ),
+  );
+}
+
+/**
+ * Per-currency cash as reported by IBKR CashReport (excludes BASE_SUMMARY / BASE).
+ * Zero balances are kept when they are the only rows; otherwise zeros are omitted.
+ */
+export function cashBalancesFromRows(rows) {
+  const list = asList(rows).filter(Boolean);
+  const byCurrency = new Map();
+
+  for (const row of list) {
+    const currency = String(pickField(row, 'currency', 'Currency') || '').trim().toUpperCase();
+    if (isSummaryCurrency(currency)) continue;
+    const amount = endingCashOf(row);
+    if (amount === null) continue;
+    byCurrency.set(currency, (byCurrency.get(currency) || 0) + amount);
+  }
+
+  let balances = [...byCurrency.entries()]
+    .map(([currency, amount]) => ({ currency, amount }))
+    .sort((left, right) => left.currency.localeCompare(right.currency, 'en'));
+
+  if (balances.length > 1) {
+    balances = balances.filter((row) => row.amount !== 0);
+  }
+
+  return balances;
+}
+
 function cashFromRows(rows) {
   const list = asList(rows).filter(Boolean);
+  const cashBalances = cashBalancesFromRows(list);
   let base = list.find((row) => String(pickField(row, 'currency', 'Currency') || '').toUpperCase() === 'BASE_SUMMARY');
   if (!base) base = list.find((row) => String(pickField(row, 'currency', 'Currency') || '').toUpperCase() === 'BASE');
   if (!base && list.length === 1) base = list[0];
   if (!base) {
     const nonSummary = list.filter((row) => {
       const currency = String(pickField(row, 'currency', 'Currency') || '').toUpperCase();
-      return currency && currency !== 'BASE_SUMMARY' && currency !== 'BASE';
+      return currency && !isSummaryCurrency(currency);
     });
     if (nonSummary.length === 1) base = nonSummary[0];
   }
-  if (!base) return { cashBalance: null, currency: null };
+
+  const summaryCash = base
+    ? endingCashOf(base)
+    : cashBalances.length === 1
+      ? cashBalances[0].amount
+      : null;
+  const summaryCurrency = base
+    ? String(pickField(base, 'currency', 'Currency') || '').trim() || null
+    : cashBalances.length === 1
+      ? cashBalances[0].currency
+      : null;
+
   return {
-    cashBalance: asNumber(
-      pickField(base, 'endingCash', 'EndingCash', 'endingSettledCash', 'EndingSettledCash', 'cash', 'Cash'),
-    ),
-    currency: String(pickField(base, 'currency', 'Currency') || '').trim() || null,
+    cashBalance: summaryCash,
+    currency: summaryCurrency && !isSummaryCurrency(summaryCurrency) ? summaryCurrency : null,
+    cashBalances,
   };
 }
 
@@ -245,15 +374,33 @@ function equityFromRows(rows) {
   };
 }
 
-function portfolioFromParts({ id, holdings, cashRows, equityRows }) {
+function mergeCashBalances(groups) {
+  const byCurrency = new Map();
+  for (const balances of groups) {
+    for (const row of balances || []) {
+      const currency = String(row?.currency || '').trim().toUpperCase();
+      const amount = asNumber(row?.amount);
+      if (!currency || isSummaryCurrency(currency) || amount === null) continue;
+      byCurrency.set(currency, (byCurrency.get(currency) || 0) + amount);
+    }
+  }
+  let merged = [...byCurrency.entries()]
+    .map(([currency, amount]) => ({ currency, amount }))
+    .sort((left, right) => left.currency.localeCompare(right.currency, 'en'));
+  if (merged.length > 1) merged = merged.filter((row) => row.amount !== 0);
+  return merged;
+}
+
+function portfolioFromParts({ id, holdings, cashRows, equityRows, reportMeta = null }) {
   const cash = cashFromRows(cashRows);
   const equity = equityFromRows(equityRows);
   let totalValue = equity.totalValue;
   let cashBalance = equity.cashBalance ?? cash.cashBalance;
+  const cashBalances = cash.cashBalances || [];
   const currency =
-    cash.currency && cash.currency.toUpperCase() !== 'BASE_SUMMARY' && cash.currency.toUpperCase() !== 'BASE'
+    cash.currency && !isSummaryCurrency(cash.currency)
       ? cash.currency
-      : holdings.find((row) => row.currency)?.currency || null;
+      : holdings.find((row) => row.currency)?.currency || cashBalances[0]?.currency || null;
 
   if (totalValue === null && holdings.some((row) => row.positionValue !== null)) {
     totalValue = holdings.reduce((sum, row) => sum + (row.positionValue || 0), 0);
@@ -264,8 +411,12 @@ function portfolioFromParts({ id, holdings, cashRows, equityRows }) {
     id,
     totalValue,
     cashBalance,
+    cashBalances,
     currency,
     holdings,
+    reportDate: reportMeta?.reportDate || null,
+    reportDateIso: reportMeta?.reportDateIso || null,
+    whenGenerated: reportMeta?.whenGenerated || null,
   };
 }
 
@@ -280,7 +431,7 @@ function statementsFromParsed(parsed) {
 
 function ensureBucket(map, id) {
   if (!map.has(id)) {
-    map.set(id, { id, holdings: [], cashRows: [], equityRows: [] });
+    map.set(id, { id, holdings: [], cashRows: [], equityRows: [], reportMetas: [] });
   }
   return map.get(id);
 }
@@ -288,11 +439,15 @@ function ensureBucket(map, id) {
 export function normalizeFlexStatement(parsed) {
   const byAccount = new Map();
   const statements = statementsFromParsed(parsed);
+  const statementMetas = [];
 
   if (statements.length > 0) {
     for (const statement of statements) {
       const id = accountIdFrom(statement) || 'unknown';
       const bucket = ensureBucket(byAccount, id);
+      const meta = reportMetaFromStatement(statement);
+      bucket.reportMetas.push(meta);
+      statementMetas.push(meta);
       bucket.holdings.push(
         ...asList(statement?.OpenPositions?.OpenPosition || statement?.OpenPosition)
           .map(normalizeOpenPosition)
@@ -313,7 +468,19 @@ export function normalizeFlexStatement(parsed) {
     }
     for (const row of findNodes(parsed, 'CashReportCurrency')) {
       const id = accountIdFrom(row) || 'unknown';
-      ensureBucket(byAccount, id).cashRows.push(row);
+      const bucket = ensureBucket(byAccount, id);
+      bucket.cashRows.push(row);
+      const toDate = formatFlexDate(pickField(row, 'toDate', 'ToDate'));
+      if (toDate) {
+        const meta = {
+          reportDate: toDate.display,
+          reportDateIso: toDate.iso,
+          reportFromDate: formatFlexDate(pickField(row, 'fromDate', 'FromDate'))?.display || null,
+          whenGenerated: null,
+        };
+        bucket.reportMetas.push(meta);
+        statementMetas.push(meta);
+      }
     }
     for (const row of findNodes(parsed, 'EquitySummaryByReportDateInBase')) {
       const id = accountIdFrom(row) || 'unknown';
@@ -325,9 +492,13 @@ export function normalizeFlexStatement(parsed) {
     return {
       totalValue: null,
       cashBalance: null,
+      cashBalances: [],
       currency: null,
       holdings: [],
       accounts: [],
+      reportDate: null,
+      reportDateIso: null,
+      whenGenerated: null,
     };
   }
 
@@ -339,10 +510,19 @@ export function normalizeFlexStatement(parsed) {
   }
 
   const accounts = [...byAccount.values()]
-    .map((bucket) => portfolioFromParts(bucket))
+    .map((bucket) =>
+      portfolioFromParts({
+        ...bucket,
+        reportMeta: pickLatestReportMeta(bucket.reportMetas),
+      }),
+    )
     .filter(
       (account) =>
-        account.holdings.length > 0 || account.totalValue !== null || account.cashBalance !== null || account.id !== 'unknown',
+        account.holdings.length > 0 ||
+        account.totalValue !== null ||
+        account.cashBalance !== null ||
+        (account.cashBalances || []).length > 0 ||
+        account.id !== 'unknown',
     )
     .sort((left, right) => left.id.localeCompare(right.id, 'en', { numeric: true }));
 
@@ -366,12 +546,26 @@ export function normalizeFlexStatement(parsed) {
     holdings.push(...account.holdings);
   }
 
+  const cashBalances = mergeCashBalances(accounts.map((account) => account.cashBalances));
+  const reportMeta = pickLatestReportMeta([
+    ...statementMetas,
+    ...accounts.map((account) => ({
+      reportDate: account.reportDate,
+      reportDateIso: account.reportDateIso,
+      whenGenerated: account.whenGenerated,
+    })),
+  ]);
+
   return {
     totalValue: sawValue ? totalValue : null,
     cashBalance: sawCash ? cashBalance : null,
+    cashBalances,
     currency,
     holdings,
     accounts,
+    reportDate: reportMeta.reportDate,
+    reportDateIso: reportMeta.reportDateIso,
+    whenGenerated: reportMeta.whenGenerated,
   };
 }
 

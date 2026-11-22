@@ -353,6 +353,81 @@ async function nextChargeDatesByLast4(bearer) {
   return map;
 }
 
+const CURRENCY_ALIASES = {
+  ILS: 'ILS',
+  NIS: 'ILS',
+  'שח': 'ILS',
+  'ש"ח': 'ILS',
+  '₪': 'ILS',
+  '376': 'ILS',
+  '0': 'ILS',
+  USD: 'USD',
+  US: 'USD',
+  $: 'USD',
+  '840': 'USD',
+  EUR: 'EUR',
+  '€': 'EUR',
+  '978': 'EUR',
+  GBP: 'GBP',
+  '£': 'GBP',
+  '826': 'GBP',
+};
+
+function normalizeCurrencyCode(value) {
+  const raw = String(value ?? '').trim();
+  if (!raw) return 'ILS';
+  if (CURRENCY_ALIASES[raw]) return CURRENCY_ALIASES[raw];
+  const upper = raw.toUpperCase();
+  if (CURRENCY_ALIASES[upper]) return CURRENCY_ALIASES[upper];
+  if (/^[A-Z]{3}$/.test(upper)) return upper;
+  return upper;
+}
+
+function isIlsCurrency(value) {
+  return normalizeCurrencyCode(value) === 'ILS';
+}
+
+/**
+ * israeli-bank-scrapers auto-map sometimes swaps CAL FX rows:
+ * chargedAmount gets the foreign figure while originalAmount gets the ILS billed amount.
+ * Detect that case and restore charged=ILS / original=foreign.
+ */
+export function normalizeCalTxn(txn) {
+  if (!txn || typeof txn !== 'object') return txn;
+
+  let chargedAmount = Number(txn.chargedAmount);
+  let originalAmount = Number(txn.originalAmount);
+  const chargedOk = Number.isFinite(chargedAmount);
+  const originalOk = Number.isFinite(originalAmount);
+  const originalCurrency = normalizeCurrencyCode(txn.originalCurrency);
+
+  if (
+    chargedOk &&
+    originalOk &&
+    !isIlsCurrency(originalCurrency) &&
+    Math.abs(originalAmount) > Math.abs(chargedAmount) &&
+    Math.abs(chargedAmount) > 0
+  ) {
+    const ilsAmount = originalAmount;
+    const foreignAmount = chargedAmount;
+    chargedAmount = ilsAmount;
+    originalAmount = foreignAmount;
+  }
+
+  return {
+    date: txn.date,
+    processedDate: txn.processedDate,
+    description: txn.description || '',
+    memo: txn.memo || '',
+    chargedAmount: chargedOk ? chargedAmount : txn.chargedAmount,
+    originalAmount: originalOk ? originalAmount : txn.originalAmount,
+    originalCurrency,
+    status: txn.status,
+    type: txn.type,
+    identifier: txn.identifier ?? null,
+  };
+}
+
 function toPublicAccounts(accounts, chargeDates = new Map()) {
   return (accounts || []).map((account) => {
     const last4 = String(account.accountNumber || '').slice(-4);
@@ -366,18 +441,7 @@ function toPublicAccounts(accounts, chargeDates = new Map()) {
             reason: account.windowCoverage.reason || null,
           }
         : null,
-      txns: (account.txns || []).map((txn) => ({
-        date: txn.date,
-        processedDate: txn.processedDate,
-        description: txn.description || '',
-        memo: txn.memo || '',
-        chargedAmount: txn.chargedAmount,
-        originalAmount: txn.originalAmount,
-        originalCurrency: txn.originalCurrency,
-        status: txn.status,
-        type: txn.type,
-        identifier: txn.identifier ?? null,
-      })),
+      txns: (account.txns || []).map((txn) => normalizeCalTxn(txn)),
     };
   });
 }
