@@ -10,6 +10,7 @@ services:
       AUTH_STATE_PATH: /app/data/auth-state.json
       CAL_AUTH_STATE_PATH: /app/data/cal-auth-token.txt
       HAREL_AUTH_STATE_PATH: /app/data/harel-auth-state.json
+      MEITAV_PENSION_AUTH_STATE_PATH: /app/data/meitav-pension-auth-state.json
       RUNS_ROOT: /tmp/scraper-runs
       PUPPETEER_EXECUTABLE_PATH: /usr/bin/chromium
     shm_size: "1gb"

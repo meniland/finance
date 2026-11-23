@@ -25,6 +25,33 @@ const STATUS_LABEL = {
   MISSING_CREDENTIALS: 'חסרים פרטים',
 };
 
+const PROVIDERS = {
+  meni: {
+    id: 'meni',
+    label: 'מני',
+    title: 'פנסיה וחיסכון ארוך טווח - מני (הראל)',
+    subtitle: 'שליפת יתרות פנסיה, גמל והשתלמות מאזור אישי בהראל.',
+    statusPath: '/api/pension/harel/status',
+    scrapePath: '/api/pension/harel/scrape',
+    otpPath: '/api/pension/harel/otp',
+    missingEnv: 'HAREL_ID_NUMBER (ואופציונלי HAREL_PHONE_NUMBER)',
+    emptyHint:
+      'ההתחברות להראל הצליחה, אך עדיין לא נשלפו יתרות חיסכון. נסו לסנכרן שוב, או בדקו באזור האישי של הראל שמוצרי הפנסיה/גמל/השתלמות מוצגים.',
+  },
+  efrat: {
+    id: 'efrat',
+    label: 'אפרת',
+    title: 'פנסיה וחיסכון ארוך טווח - אפרת (מיטב)',
+    subtitle: 'שליפת יתרות פנסיה, גמל והשתלמות מאזור אישי במיטב גמל ופנסיה.',
+    statusPath: '/api/pension/meitav/status',
+    scrapePath: '/api/pension/meitav/scrape',
+    otpPath: '/api/pension/meitav/otp',
+    missingEnv: 'MEITAV_PENSION_ID_NUMBER ו-MEITAV_PENSION_PHONE_NUMBER',
+    emptyHint:
+      'ההתחברות למיטב הצליחה, אך עדיין לא נשלפו יתרות חיסכון. נסו לסנכרן שוב, או בדקו באזור האישי של מיטב שמוצרי הפנסיה/גמל/השתלמות מוצגים.',
+  },
+};
+
 function formatMoney(value) {
   if (value === null || value === undefined || Number.isNaN(Number(value))) return '—';
   return money.format(Number(value));
@@ -35,7 +62,6 @@ function formatPercent(value) {
   return `${percent.format(Number(value))}%`;
 }
 
-/** Group multi-account products (השתלמות) so the UI can toggle per policy. */
 function groupPolicies(policies) {
   const groups = [];
   const studyFunds = [];
@@ -47,6 +73,21 @@ function groupPolicies(policies) {
     groups.unshift({ id: 'hishtalmut', policies: studyFunds });
   }
   return groups;
+}
+
+function CaseTab({ selected, onClick, children }) {
+  return (
+    <button
+      type="button"
+      aria-selected={selected}
+      onClick={onClick}
+      className={`rounded-full px-4 py-2 text-sm font-semibold transition ${
+        selected ? 'bg-teal text-white' : 'border border-line bg-card text-ink hover:bg-paper'
+      }`}
+    >
+      {children}
+    </button>
+  );
 }
 
 function PolicyMeta({ policy }) {
@@ -150,7 +191,7 @@ function PolicyGroupCard({ group }) {
   );
 }
 
-export default function PensionTab() {
+function ProviderPensionView({ provider }) {
   const [snapshot, setSnapshot] = useState({
     status: 'IDLE',
     error: null,
@@ -173,7 +214,7 @@ export default function PensionTab() {
 
     async function poll() {
       try {
-        const data = await request('/api/pension/harel/status');
+        const data = await request(provider.statusPath);
         if (cancelled) return;
         setSnapshot(data);
         if (ACTIVE.has(data.status)) {
@@ -191,7 +232,7 @@ export default function PensionTab() {
       cancelled = true;
       if (timer) clearTimeout(timer);
     };
-  }, [watch]);
+  }, [watch, provider.statusPath]);
 
   const missingCredentials =
     snapshot.credentialsConfigured === false || snapshot.status === 'MISSING_CREDENTIALS';
@@ -200,11 +241,11 @@ export default function PensionTab() {
   const policies = portfolio?.policies || [];
   const groups = useMemo(() => groupPolicies(policies), [policies]);
 
-  async function syncHarel() {
+  async function syncProvider() {
     setActionError('');
     setStarting(true);
     try {
-      await request('/api/pension/harel/scrape', { method: 'POST', body: '{}' });
+      await request(provider.scrapePath, { method: 'POST', body: '{}' });
       setWatch((value) => value + 1);
     } catch (error) {
       setActionError(error.message || 'הסנכרון נכשל.');
@@ -219,7 +260,7 @@ export default function PensionTab() {
     setActionError('');
     setSubmittingOtp(true);
     try {
-      await request('/api/pension/harel/otp', {
+      await request(provider.otpPath, {
         method: 'POST',
         body: JSON.stringify({ otpCode: otpCode.trim() }),
       });
@@ -233,9 +274,11 @@ export default function PensionTab() {
   }
 
   return (
-    <main className="mx-auto flex w-full max-w-6xl flex-col gap-5 px-4 py-6 sm:px-6" dir="rtl">
+    <>
       {missingCredentials ? (
-        <CredentialsBanner message="לא הוגדר מספר תעודת זהות להראל בקובץ .env – יש להזין HAREL_ID_NUMBER (ואופציונלי HAREL_PHONE_NUMBER) ולהפעיל מחדש את השרת." />
+        <CredentialsBanner
+          message={`לא הוגדרו פרטי כניסה בקובץ .env – יש להזין ${provider.missingEnv} ולהפעיל מחדש את השרת.`}
+        />
       ) : null}
 
       <section className="rounded-3xl border border-line bg-card p-5 shadow-[0_16px_40px_rgb(28_25_21_/_0.05)]">
@@ -245,22 +288,26 @@ export default function PensionTab() {
               <PiggyBank size={20} aria-hidden="true" />
             </span>
             <div>
-              <h2 className="text-lg font-semibold">פנסיה וחיסכון ארוך טווח</h2>
-              <p className="text-sm text-muted">שליפת יתרות פנסיה, גמל והשתלמות מאזור אישי בהראל.</p>
+              <h2 className="text-lg font-semibold">{provider.title}</h2>
+              <p className="text-sm text-muted">{provider.subtitle}</p>
               <p className="mt-2 text-xs text-muted">
                 סטטוס: {STATUS_LABEL[snapshot.status] || snapshot.status}
-                {snapshot.sessionSaved ? ' · סשן שמור (לרוב בלי SMS)' : ' · נדרש SMS בכניסה הראשונה'}
+                {snapshot.sessionSaved
+                  ? snapshot.status === 'SUCCESS'
+                    ? ' · סשן שמור'
+                    : ' · סשן שמור (לרוב בלי SMS)'
+                  : ' · נדרש SMS בכניסה הראשונה'}
               </p>
             </div>
           </div>
           <button
             type="button"
-            onClick={syncHarel}
+            onClick={syncProvider}
             disabled={busy || missingCredentials}
             className="inline-flex items-center gap-2 rounded-full bg-teal px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-teal-deep disabled:cursor-not-allowed disabled:opacity-60"
           >
             {busy ? <Loader2 size={16} className="animate-spin" /> : null}
-            {snapshot.sessionSaved ? 'רענון נתוני פנסיה' : 'סנכרן נתוני פנסיה (הראל)'}
+            {snapshot.sessionSaved ? 'רענון נתוני פנסיה' : 'סנכרן נתוני פנסיה'}
           </button>
         </div>
         {snapshot.status === 'SUCCESS' && snapshot.message ? (
@@ -326,19 +373,41 @@ export default function PensionTab() {
 
           {policies.length === 0 || portfolio.totalPensionBalance == null ? (
             <p className="rounded-3xl border border-amber/30 bg-amber-soft px-4 py-3 text-sm text-amber" role="status">
-              ההתחברות להראל הצליחה, אך עדיין לא נשלפו יתרות חיסכון. נסו לסנכרן שוב, או בדקו באזור האישי של הראל שמוצרי הפנסיה/גמל/השתלמות מוצגים.
+              {provider.emptyHint}
             </p>
           ) : null}
 
           <section className="grid gap-4 md:grid-cols-2">
             {groups.length === 0 ? (
-              <p className="rounded-3xl border border-line bg-card p-5 text-sm text-muted">לא נמצאו תוכניות עם יתרה להצגה.</p>
+              <p className="rounded-3xl border border-line bg-card p-5 text-sm text-muted">
+                לא נמצאו תוכניות עם יתרה להצגה.
+              </p>
             ) : (
               groups.map((group) => <PolicyGroupCard key={group.id} group={group} />)
             )}
           </section>
         </>
       )}
+    </>
+  );
+}
+
+export default function PensionTab() {
+  const [person, setPerson] = useState('meni');
+  const provider = PROVIDERS[person];
+
+  return (
+    <main className="mx-auto flex w-full max-w-6xl flex-col gap-5 px-4 py-6 sm:px-6" dir="rtl">
+      <nav className="flex flex-wrap gap-2" aria-label="בחירת אדם">
+        <CaseTab selected={person === 'meni'} onClick={() => setPerson('meni')}>
+          מני
+        </CaseTab>
+        <CaseTab selected={person === 'efrat'} onClick={() => setPerson('efrat')}>
+          אפרת
+        </CaseTab>
+      </nav>
+
+      <ProviderPensionView key={provider.id} provider={provider} />
     </main>
   );
 }

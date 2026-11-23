@@ -5,6 +5,11 @@ import { getInvestmentsState, startInvestmentsScrape, submitInvestmentsOtp } fro
 import { getIbkrState, startIbkrSync } from './scrapers/ibkr.js';
 import { getMeitavState, startMeitavScrape, submitMeitavOtp } from './scrapers/meitavTrade.js';
 import { getHarelState, startHarelScrape, submitHarelOtp } from './scrapers/harel.js';
+import {
+  getMeitavPensionState,
+  startMeitavPensionScrape,
+  submitMeitavPensionOtp,
+} from './scrapers/meitavPension.js';
 import { getCalState, startCalScrape, submitCalOtp } from './scrapers/visaCal.js';
 import { getState, startScrape, submitOtp } from './scraper.js';
 
@@ -207,6 +212,38 @@ app.post('/api/pension/harel/otp', (req, res) => {
     res.json({ status: 'ACCEPTED' });
   } catch (error) {
     sendError(res, error, 'Could not submit the Harel SMS code.');
+  }
+});
+
+app.get('/api/pension/meitav/status', (_req, res) => {
+  res.json(getMeitavPensionState());
+});
+
+app.post('/api/pension/meitav/scrape', (_req, res) => {
+  try {
+    const result = startMeitavPensionScrape();
+    res.status(202).json(result);
+  } catch (error) {
+    sendError(res, error, 'Could not start the Meitav pension scrape.');
+  }
+});
+
+app.post('/api/pension/meitav/otp', (req, res) => {
+  const otpCode = String(req.body?.otpCode ?? '').trim();
+  if (!/^\d{4,10}$/.test(otpCode)) {
+    res.status(400).json({
+      error: 'Enter the 4 to 10 digit SMS code.',
+      message: 'Enter the 4 to 10 digit SMS code.',
+      errorCode: '20261123.401221',
+    });
+    return;
+  }
+
+  try {
+    submitMeitavPensionOtp(otpCode);
+    res.json({ status: 'ACCEPTED' });
+  } catch (error) {
+    sendError(res, error, 'Could not submit the Meitav pension SMS code.');
   }
 });
 

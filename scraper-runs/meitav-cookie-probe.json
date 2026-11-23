@@ -1,0 +1,95 @@
+{
+  "savedAt": "2026-11-23T10:42:45.831Z",
+  "results": {
+    "https://customers.meitav.co.il/v2/api/AmitLobby/getHeaderData": {
+      "status": 200,
+      "location": null,
+      "contentType": "text/plain; charset=utf-8",
+      "data": {
+        "AmitName": "לנדמן אפרת",
+        "AmitID": 204552335,
+        "Role": "Amit",
+        "AmitMessageCounter": false,
+        "IsDualManager": false,
+        "IsDualTrade": true,
+        "CampaignSigment": 3,
+        "CampaignPassedDays": 258,
+        "FirstName": "אפרת",
+        "BenefitSigment": [
+          9,
+          43,
+          9989,
+          9997
+        ],
+        "AgentName": "גלית בן עטר",
+        "AgentPhone": "054-8090656",
+        "AgentEmail": "galitmo@shekelgroup.co.il",
+        "FromManagement": false
+      },
+      "textPreview": null
+    },
+    "https://customers.meitav.co.il/v2/api/AmitLobby/GetUserName": {
+      "status": 200,
+      "location": null,
+      "contentType": "text/plain; charset=utf-8",
+      "data": null,
+      "textPreview": "לנדמן אפרת"
+    },
+    "https://customers.meitav.co.il/v2/api/AmitLobby/GetAllAccounts": {
+      "status": 200,
+      "location": null,
+      "contentType": "text/html; charset=utf-8",
+      "data": null,
+      "textPreview": "<!DOCTYPE html>\r\n<html lang=\"he\">\r\n<head>\r\n    <meta charset=\"utf-8\" />\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">\r\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\r\n    <meta name=\"google\" content=\"notranslate\" />\r\n    <link rel=\"SHORTCUT ICON\" href=\"/v2/images/favicon.ico\" />\r\n    <link rel=\"manifest\" href=\"/v2/manifest.json\" />\r\n\r\n\r\n    <title>\r\n          כניסה\r\n        לחשבון שלי\r\n    </title>\r\n    \r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"/v2/lib/site/angular-block-ui/angular-block-ui.min.css\" />\r\n\r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"/v2/lib/npm/css/bootstrap/bootstrap.min.css\" />\r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"/v2/lib/npm/css/bootstrap-rtl/bootstrap-rtl.min.css\" />\r\n\r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"/v2/lib/npm/angular-material/angular-material.min.css\" />\r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"/v2/lib/npm/css/bootstrap-rtl/bootstrap-rtl.min.css\" />\r\n\r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"/v2/lib/site/ui-select/select.min.css\" />\r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"/v2/lib/site/ui-select/selectize.default.css\" />\r\n\r\n    <lin"
+    },
+    "https://customers.meitav.co.il/v2/api/AmitLobby/GetProducts": {
+      "status": 200,
+      "location": null,
+      "contentType": "text/html; charset=utf-8",
+      "data": null,
+      "textPreview": "<!DOCTYPE html>\r\n<html lang=\"he\">\r\n<head>\r\n    <meta charset=\"utf-8\" />\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">\r\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\r\n    <meta name=\"google\" content=\"notranslate\" />\r\n    <link rel=\"SHORTCUT ICON\" href=\"/v2/images/favicon.ico\" />\r\n    <link rel=\"manifest\" href=\"/v2/manifest.json\" />\r\n\r\n\r\n    <title>\r\n          כניסה\r\n        לחשבון שלי\r\n    </title>\r\n    \r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"/v2/lib/site/angular-block-ui/angular-block-ui.min.css\" />\r\n\r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"/v2/lib/npm/css/bootstrap/bootstrap.min.css\" />\r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"/v2/lib/npm/css/bootstrap-rtl/bootstrap-rtl.min.css\" />\r\n\r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"/v2/lib/npm/angular-material/angular-material.min.css\" />\r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"/v2/lib/npm/css/bootstrap-rtl/bootstrap-rtl.min.css\" />\r\n\r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"/v2/lib/site/ui-select/select.min.css\" />\r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"/v2/lib/site/ui-select/selectize.default.css\" />\r\n\r\n    <lin"
+    },
+    "https://customers.meitav.co.il/v2/api/Accounts/GetAllAccounts": {
+      "status": 200,
+      "location": null,
+      "contentType": "text/html; charset=utf-8",
+      "data": null,
+      "textPreview": "<!DOCTYPE html>\r\n<html lang=\"he\">\r\n<head>\r\n    <meta charset=\"utf-8\" />\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">\r\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\r\n    <meta name=\"google\" content=\"notranslate\" />\r\n    <link rel=\"SHORTCUT ICON\" href=\"/v2/images/favicon.ico\" />\r\n    <link rel=\"manifest\" href=\"/v2/manifest.json\" />\r\n\r\n\r\n    <title>\r\n          כניסה\r\n        לחשבון שלי\r\n    </title>\r\n    \r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"/v2/lib/site/angular-block-ui/angular-block-ui.min.css\" />\r\n\r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"/v2/lib/npm/css/bootstrap/bootstrap.min.css\" />\r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"/v2/lib/npm/css/bootstrap-rtl/bootstrap-rtl.min.css\" />\r\n\r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"/v2/lib/npm/angular-material/angular-material.min.css\" />\r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"/v2/lib/npm/css/bootstrap-rtl/bootstrap-rtl.min.css\" />\r\n\r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"/v2/lib/site/ui-select/select.min.css\" />\r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"/v2/lib/site/ui-select/selectize.default.css\" />\r\n\r\n    <lin"
+    },
+    "https://customers.meitav.co.il/v2/api/AmitLobby/GetAccountsSummary": {
+      "status": 200,
+      "location": null,
+      "contentType": "text/html; charset=utf-8",
+      "data": null,
+      "textPreview": "<!DOCTYPE html>\r\n<html lang=\"he\">\r\n<head>\r\n    <meta charset=\"utf-8\" />\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">\r\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\r\n    <meta name=\"google\" content=\"notranslate\" />\r\n    <link rel=\"SHORTCUT ICON\" href=\"/v2/images/favicon.ico\" />\r\n    <link rel=\"manifest\" href=\"/v2/manifest.json\" />\r\n\r\n\r\n    <title>\r\n          כניסה\r\n        לחשבון שלי\r\n    </title>\r\n    \r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"/v2/lib/site/angular-block-ui/angular-block-ui.min.css\" />\r\n\r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"/v2/lib/npm/css/bootstrap/bootstrap.min.css\" />\r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"/v2/lib/npm/css/bootstrap-rtl/bootstrap-rtl.min.css\" />\r\n\r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"/v2/lib/npm/angular-material/angular-material.min.css\" />\r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"/v2/lib/npm/css/bootstrap-rtl/bootstrap-rtl.min.css\" />\r\n\r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"/v2/lib/site/ui-select/select.min.css\" />\r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"/v2/lib/site/ui-select/selectize.default.css\" />\r\n\r\n    <lin"
+    },
+    "https://customers.meitav.co.il/v2/api/AmitLobby/GetCustomerProducts": {
+      "status": 200,
+      "location": null,
+      "contentType": "text/html; charset=utf-8",
+      "data": null,
+      "textPreview": "<!DOCTYPE html>\r\n<html lang=\"he\">\r\n<head>\r\n    <meta charset=\"utf-8\" />\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">\r\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\r\n    <meta name=\"google\" content=\"notranslate\" />\r\n    <link rel=\"SHORTCUT ICON\" href=\"/v2/images/favicon.ico\" />\r\n    <link rel=\"manifest\" href=\"/v2/manifest.json\" />\r\n\r\n\r\n    <title>\r\n          כניסה\r\n        לחשבון שלי\r\n    </title>\r\n    \r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"/v2/lib/site/angular-block-ui/angular-block-ui.min.css\" />\r\n\r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"/v2/lib/npm/css/bootstrap/bootstrap.min.css\" />\r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"/v2/lib/npm/css/bootstrap-rtl/bootstrap-rtl.min.css\" />\r\n\r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"/v2/lib/npm/angular-material/angular-material.min.css\" />\r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"/v2/lib/npm/css/bootstrap-rtl/bootstrap-rtl.min.css\" />\r\n\r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"/v2/lib/site/ui-select/select.min.css\" />\r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"/v2/lib/site/ui-select/selectize.default.css\" />\r\n\r\n    <lin"
+    },
+    "https://customers.meitav.co.il/home/myaccount/allaccounts": {
+      "status": 200,
+      "location": null,
+      "contentType": "text/html",
+      "data": null,
+      "textPreview": "<!DOCTYPE html>\r\n<html lang=\"en\">\r\n\r\n<head>\r\n  <meta charset=\"utf-8\" />\r\n  <link rel=\"icon\" href=\"/staticgemel/assets/favicon-B61sUQpo.ico\" />\r\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />\r\n  <meta name=\"theme-color\" content=\"#000000\" />\r\n  <meta name=\"google\" content=\"notranslate\" />\r\n  <meta name=\"description\" content=\"Web site created using create-react-app\" />\r\n  <link rel=\"apple-touch-icon\" href=\"/staticgemel/assets/logo192-Cw5HMvxU.png\" />\r\n  <!--\r\n      manifest.json provides metadata used when your web app is installed on a\r\n      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/\r\n    -->\r\n  <link rel=\"manifest\" href=\"/staticgemel/assets/manifest-BDxwKPDX.json\" />\r\n  <!--\r\n      Notice the use of %PUBLIC_URL% in the tags above.\r\n      It will be replaced with the URL of the `public` folder during the build.\r\n      Only files inside the `public` folder can be referenced from the HTML.\r\n\r\n      Unlike \"/favicon.ico\" or \"favicon.ico\", \"%PUBLIC_URL%/favicon.ico\" will\r\n      work correctly both with client-side routing and a non-root public URL.\r\n      Learn how to configure a non-root public URL by "
+    },
+    "https://customers.meitav.co.il/": {
+      "status": 301,
+      "location": "https://customers.meitav.co.il/v2/login/loginAmit",
+      "contentType": null,
+      "data": null,
+      "textPreview": ""
+    },
+    "https://my-consent.openhub.meitav.co.il/": {
+      "status": 200,
+      "location": null,
+      "contentType": "text/html",
+      "data": null,
+      "textPreview": "<!doctype html><html lang=\"en\"><head><meta charset=\"utf-8\"/><link rel=\"icon\" href=\"/favicon.ico\"/><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"/><meta name=\"theme-color\" content=\"#000000\"/><meta name=\"description\" content=\"אזור אישי - מיטב גמל ופנסיה\"/><link rel=\"apple-touch-icon\" href=\"/logo192.png\"/><title>אזור אישי - מיטב גמל ופנסיה</title><script defer=\"defer\" src=\"/static/js/main.9aada074.js\"></script><link href=\"/static/css/main.3b74522c.css\" rel=\"stylesheet\"></head><body><noscript>You need to enable JavaScript to run this app.</noscript><div id=\"root\"></div></body></html>"
+    }
+  }
+}
