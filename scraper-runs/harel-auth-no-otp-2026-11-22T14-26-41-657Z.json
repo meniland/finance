@@ -1,0 +1,118 @@
+[
+  {
+    "url": "https://www.harel-group.co.il/_vti_bin/webapi/CustomersAuthentication/PostAuthenticate/GetCurrentDetails",
+    "status": 200,
+    "data": {
+      "Status": 0,
+      "Details": {
+        "current": null,
+        "CurrentProcess": -1
+      }
+    }
+  },
+  {
+    "url": "https://www.harel-group.co.il/_vti_bin/webapi/CustomersAuthentication/PostAuthenticate/ContextConfig",
+    "status": 200,
+    "data": {
+      "Status": 0,
+      "Details": {
+        "CurrentProcess": 1
+      }
+    }
+  },
+  {
+    "url": "https://www.harel-group.co.il/_vti_bin/webapi/CustomersAuthentication/PostAuthenticate/ElasticLogger",
+    "status": 200,
+    "data": {
+      "Status": 0,
+      "Details": {
+        "CurrentProcess": 1
+      }
+    }
+  },
+  {
+    "url": "https://www.harel-group.co.il/_vti_bin/webapi/CustomersAuthentication/PostAuthenticate/ElasticLogger",
+    "status": 200,
+    "data": {
+      "Status": 0,
+      "Details": {
+        "CurrentProcess": 1
+      }
+    }
+  },
+  {
+    "url": "https://www.harel-group.co.il/_vti_bin/webapi/CustomersAuthentication/PostAuthenticate/PortalLogger",
+    "status": 200,
+    "data": {
+      "Status": 0,
+      "Details": {
+        "CurrentProcess": 1
+      }
+    }
+  },
+  {
+    "url": "https://www.harel-group.co.il/_vti_bin/webapi/CustomersAuthentication/PostAuthenticate/StartProcess",
+    "status": 200,
+    "data": {
+      "Status": 1,
+      "Details": {
+        "ErrorCode": 8,
+        "ProcessError": "UserIsBlocked",
+        "hasOpenCalls": false,
+        "IsShowHasatProductMsg": false,
+        "JoiningProducts": "null",
+        "CurrentProcess": 1
+      }
+    }
+  },
+  {
+    "url": "https://www.harel-group.co.il/_vti_bin/webapi/CustomersAuthentication/PostAuthenticate/ElasticLogger",
+    "status": 200,
+    "data": {
+      "Status": 0,
+      "Details": {
+        "CurrentProcess": 1
+      }
+    }
+  },
+  {
+    "url": "https://www.harel-group.co.il/_vti_bin/webapi/CustomersAuthentication/PostAuthenticate/PortalLogger",
+    "status": 200,
+    "data": {
+      "Status": 0,
+      "Details": {
+        "CurrentProcess": 1
+      }
+    }
+  },
+  {
+    "url": "https://www.harel-group.co.il/_vti_bin/webapi/CustomersAuthentication/PostAuthenticate/ElasticLogger",
+    "status": 200,
+    "data": {
+      "Status": 0,
+      "Details": {
+        "CurrentProcess": 1
+      }
+    }
+  },
+  {
+    "url": "https://www.harel-group.co.il/_vti_bin/webapi/CustomersAuthentication/PostAuthenticate/ElasticLogger",
+    "status": 200,
+    "data": {
+      "Status": 0,
+      "Details": {
+        "CurrentProcess": 1
+      }
+    }
+  },
+  {
+    "url": "https://www.harel-group.co.il/_vti_bin/webapi/CustomersAuthentication/PostAuthenticate/PortalLogger",
+    "status": 200,
+    "data": {
+      "Status": 0,
+      "Details": {
+        "CurrentProcess": 1
+      }
+    }
+  }
+]

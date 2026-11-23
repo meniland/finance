@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import BankTab from './components/BankTab.jsx';
 import InvestmentsTab from './components/InvestmentsTab.jsx';
+import PensionTab from './components/PensionTab.jsx';
 
 const TABS = [
   { id: 'bank', label: 'מצב חשבון' },
   { id: 'investments', label: 'השקעות' },
+  { id: 'pension', label: 'פנסיה' },
 ];
 
 export default function App() {
@@ -40,8 +42,10 @@ export default function App() {
         <div dir="ltr">
           <BankTab />
         </div>
-      ) : (
+      ) : tab === 'investments' ? (
         <InvestmentsTab />
+      ) : (
+        <PensionTab />
       )}
     </div>
   );
