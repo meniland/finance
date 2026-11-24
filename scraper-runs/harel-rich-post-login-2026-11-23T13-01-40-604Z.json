@@ -1,0 +1,161 @@
+[
+  {
+    "url": "https://digital.harel-group.co.il/apps.client-view/client-view/customer-products?ctime=1795438840376&ticket=e8ebaf10ddce12840ef62db53b6553ac9772eb21",
+    "status": 200,
+    "data": {
+      "topicsList": {
+        "2": [
+          {
+            "topicId": 60,
+            "topicName": "גמל",
+            "xTopicName": "השתלמות",
+            "sectionId": 2,
+            "sectionName": "חסכון פנסיוני",
+            "sectionOrder": 5,
+            "url": "/personal-info/study-funds/Pages/lobby-study-funds.aspx",
+            "lobby": true,
+            "policiesCount": 2,
+            "policySubjectId": null,
+            "xtopicId": 62
+          },
+          {
+            "topicId": 70,
+            "topicName": "פנסיה",
+            "xTopicName": "קרנות פנסיה",
+            "sectionId": 2,
+            "sectionName": "חסכון פנסיוני",
+            "sectionOrder": 2,
+            "url": "/personal-info/pension/Pages/reports/pension-fund.aspx?FilterParams=policySubjectId|2",
+            "lobby": false,
+            "policiesCount": 1,
+            "policySubjectId": "214",
+            "xtopicId": 70
+          }
+        ],
+        "3": [
+          {
+            "topicId": 10,
+            "topicName": "חיים",
+            "xTopicName": "מקרה מוות",
+            "sectionId": 3,
+            "sectionName": "כיסויים ביטוחיים",
+            "sectionOrder": 1,
+            "url": "/personal-info/life/Pages/reports/life-policy-details.aspx?FilterParams=policySubjectId|109701572",
+            "lobby": false,
+            "policiesCount": 1,
+            "policySubjectId": "109701572",
+            "xtopicId": 10
+          },
+          {
+            "topicId": 99,
+            "topicName": "כללי",
+            "xTopicName": "מחלות ונכויות",
+            "sectionId": 3,
+            "sectionName": "כיסויים ביטוחיים",
+            "sectionOrder": 4,
+            "url": "/personal-info/disabilities/Pages/lobby-disabilities.aspx",
+            "lobby": true,
+            "policiesCount": 2,
+            "policySubjectId": null,
+            "xtopicId": 80
+          }
+        ],
+        "5": [
+          {
+            "topicId": 99,
+            "topicName": "כללי",
+            "xTopicName": "פוליסות שהסתיימו",
+            "sectionId": 5,
+            "sectionName": "לא להצגה",
+            "sectionOrder": 1,
+            "url": "/personal-info/my-harel/Pages/personal-info/cancelled-policies.aspx",
+            "lobby": false,
+            "policiesCount": 1,
+            "policySubjectId": "0",
+            "xtopicId": 300
+          }
+        ]
+      },
+      "generalDetails": {
+        "userId": "204108633",
+        "fullName": "צדוק מנחם לנדמן",
+        "sex": "זכר",
+        "email": "me455299ni@gmail.com",
+        "mobilephone": "053-2455299",
+        "homephone": "-",
+        "cityName": "בני ברק             ",
+        "streetName": "וינברג שמואל        ",
+        "streetNumber": "14",
+        "zipCode": "5148401",
+        "familyStatus": "נשוי",
+        "lastPortalEntry": "23/11/2026",
+        "birthDate": "14/02/1992"
+      },
+      "responseStatus": {
+        "returnMsg": "תקין",
+        "returnCode": "0"
+      },
+      "actions": [
+        {
+          "topicId": 32,
+          "topicName": "סיעודי מושלם",
+          "xTopicId": 300,
+          "xTopicName": "פוליסות שהסתיימו",
+          "url": "cancelledPolices",
+          "title": "פוליסות שאינן בתוקף"
+        },
+        {
+          "topicId": 0,
+          "topicName": null,
+          "xTopicId": 0,
+          "xTopicName": null,
+          "url": "abroadPolicy",
+          "title": "רכישת ביטוח נסיעות לחו\"ל"
+        },
+        {
+          "topicId": 0,
+          "topicName": null,
+          "xTopicId": 0,
+          "xTopicName": null,
+          "url": "mountainIndication",
+          "title": "סירוב להעברת נתונים למשרד האוצר"
+        },
+        {
+          "topicId": 0,
+          "topicName": null,
+          "xTopicId": 0,
+          "xTopicName": null,
+          "url": "appeal",
+          "title": "טופס ערעור דיגיטלי"
+        },
+        {
+          "topicId": 0,
+          "topicName": null,
+          "xTopicId": 0,
+          "xTopicName": null,
+          "url": "openBank",
+          "title": "ניהול הסכמות - בנקאות פתוחה"
+        },
+        {
+          "topicId": 0,
+          "topicName": null,
+          "xTopicId": 0,
+          "xTopicName": null,
+          "url": "receiptsView",
+          "title": "הקבלות שלי"
+        }
+      ],
+      "mursheList": null,
+      "lastEntryDate": null,
+      "policiesList": {}
+    }
+  },
+  {
+    "url": "https://digital.harel-group.co.il/apps.client-view/client-view/online-data?ctime=1795438842045&ticket=e8ebaf10ddce12840ef62db53b6553ac9772eb21",
+    "status": 200,
+    "data": {
+      "62": "58,864",
+      "70": "150,648"
+    }
+  }
+]

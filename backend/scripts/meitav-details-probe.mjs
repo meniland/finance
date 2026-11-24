@@ -1,6 +1,6 @@
 import { readFile, writeFile, mkdir } from 'fs/promises';
 
-const AUTH = process.env.MEITAV_PENSION_AUTH_STATE_PATH || '/app/data/meitav-pension-auth-state.json';
+const AUTH = process.env.MEITAV_PENSION_AUTH_STATE_PATH || '/app/sessions/meitav-pension/auth-state.json';
 const OUT = '/tmp/scraper-runs/meitav-details-probe.json';
 const auth = JSON.parse(await readFile(AUTH, 'utf8'));
 const cookie = (auth.cookies || []).map((c) => `${c.name}=${c.value}`).join('; ');

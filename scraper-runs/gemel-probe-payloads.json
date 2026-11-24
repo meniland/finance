@@ -1,0 +1,772 @@
+[
+  {
+    "url": "https://www.harel-group.co.il/personal-info/gemel-funding/Pages/lobby-gemel-funding.aspx",
+    "status": 200,
+    "body": "\r\n\r\n\r\n\r\n\r\n\r\n<!DOCTYPE HTML>\r\n<html lang=\"he\" dir=\"rtl\">\r\n    \r\n    <head><meta http-equiv=\"X-Frame-Options\" content=\"allow\" /><meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\" /><meta charset=\"utf-8\" /><meta name=\"GENERATOR\" content=\"Microsoft SharePoint\" /><meta http-equiv=\"Content-type\" content=\"text/html; charset=utf-8\" /><meta http-equiv=\"Expires\" content=\"0\" /><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0 maximum-scale=1, user-scalable=no\" /><meta name=\"format-detection\" content=\"telephone=no\" /><meta name=\"google-site-verification\" content=\"jPsbtiiwqJVlZ6xg98v_AH3yY3BOdOSsYwUE0r23Zsk\" /><link rel=\"preconnect\" href=\"www.googletagmanager.com\"/>\n<link rel=\"preconnect\" href=\"https://www.google-analytics.com\"/>\n<link rel=\"preconnect\" href=\"https://connect.faceboo"
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/_portal/intellisys.css",
+    "status": 200,
+    "body": "\r\n.intellisys{position:relative; /*min-height:0;*/} \r\n.intellisys .loading-mask{\r\n    display:none;\r\n\tposition:absolute;\r\n\tz-index:10;\r\n\ttop:0px; bottom:0px; left:0px; right:0px;\r\n\tbackground: url(\"/_layouts/15/HarelWebSite/1037/img/Loading_30x30.gif\") no-repeat center center white;\r\n}\r\n.intellisys .frame{\r\n    width:10px;\r\n    min-width:100%;\r\n\t*width:100%;\r\n\tborder-width:0px;\r\n}"
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/_portal/portal.css",
+    "status": 200,
+    "body": "body,html{\r\n\tdirection:rtl\r\n}\r\nbody{\r\n\t/*font-family: Arial;\r\n\tcolor:#444;\r\n\tbackground-color: #fff;\r\n\tmargin: 0px;\r\n\tborder: none;\r\n\tbackground-color:#69727b;*/\r\n}\r\n.portal-body{\r\n\tmax-width:980px;\r\n\tmargin:0 auto;\r\n\t/*background-color:#fff;*/\r\n\r\n}\r\n.portal-body h1{\r\n\ttext-align:center;\r\n\tbackground-color:#f1f1f1;\r\n\tborder-bottom:1px solid #ccc;\r\n\tborder-top:1px solid #ccc;\r\n\tmargin:0px;\r\n\ttext-align:right;\r\n\tfont-size:20px;\r\n\tpadding:8px 6px;\r\n}\r\n\r\n.portal-body h1 button{\r\n\tfloat:left;\r\n\tborder:1px solid #ccc;\r\n\tborder-radius: 4px;\r\n\tbackground-repeat: no-repeat;\r\n\tbackground-position: center center;\r\n\theight:22px;\r\n\twidth:22px;\r\n\tmargin-right:5px;\r\n}\r\n.portal-body h1 button:hover{\r\n\tbackground-color:#ffffff;\r\n\tborder-color:#333;\r\n}\r\n.portal-body h1 button.refresh{\r\n\tbackground-image:url"
+  },
+  {
+    "url": "https://digital.harel-group.co.il/portal-config-backend/api/v1/micro-frontends/get-config/cus",
+    "status": 200,
+    "body": "{\"success\":true,\"data\":{\"importMap\":{\"imports\":{\"@harel/agents-nav\":\"https://d1oqsep8o8n0bq.cloudfront.net/apps-michlol-menus-frontend/agents-menus.js?v=2.0.13\",\"react\":\"https://d1oqsep8o8n0bq.cloudfront.net/apps-root-config-frontend/npmcdn/react/system/react.production.min.js\",\"common-ui\":\"https://d1oqsep8o8n0bq.cloudfront.net/apps-root-config-frontend/npmcdn/harel/common-ui.2.1.22.js\",\"@harel/root-config\":\"https://d1oqsep8o8n0bq.cloudfront.net/apps-root-config-frontend/root-config.js\",\"react-dom\":\"https://d1oqsep8o8n0bq.cloudfront.net/apps-root-config-frontend/npmcdn/react-dom/system/react-dom.production.min.js\",\"@harel/agents-footer\":\"https://d1oqsep8o8n0bq.cloudfront.net/apps-agents-footer-frontend/agents-footer.js\",\"@harel/apartment-360\":\"https://d1oqsep8o8n0bq.cloudfront.net/apps-apa"
+  },
+  {
+    "url": "https://www.harel-group.co.il/personal-info/gemel-funding/_api/SP.Web.GetContextWebThemeData?lcid=1037",
+    "status": 200,
+    "body": "{\"d\":{\"GetContextWebThemeData\":\"{\\\"Version\\\":\\\"1\\\",\\\"ThemeCacheToken\\\":\\\"/personal-info/gemel-funding::1:\\\",\\\"IsInverted\\\":false,\\\"IsDefault\\\":true,\\\"NoImageRecoloring\\\":true,\\\"BackgroundImageUri\\\":null,\\\"Palette\\\":{\\\"Colors\\\":{\\\"BodyText\\\":{\\\"DefaultColor\\\":{\\\"A\\\":255,\\\"R\\\":68,\\\"G\\\":68,\\\"B\\\":68}},\\\"SubtleBodyText\\\":{\\\"DefaultColor\\\":{\\\"A\\\":255,\\\"R\\\":118,\\\"G\\\":118,\\\"B\\\":118}},\\\"StrongBodyText\\\":{\\\"DefaultColor\\\":{\\\"A\\\":255,\\\"R\\\":38,\\\"G\\\":38,\\\"B\\\":38}},\\\"DisabledText\\\":{\\\"DefaultColor\\\":{\\\"A\\\":255,\\\"R\\\":177,\\\"G\\\":177,\\\"B\\\":177}},\\\"SiteTitle\\\":{\\\"DefaultColor\\\":{\\\"A\\\":255,\\\"R\\\":38,\\\"G\\\":38,\\\"B\\\":38}},\\\"WebPartHeading\\\":{\\\"DefaultColor\\\":{\\\"A\\\":255,\\\"R\\\":68,\\\"G\\\":68,\\\"B\\\":68}},\\\"ErrorText\\\":{\\\"DefaultColor\\\":{\\\"A\\\":255,\\\"R\\\":191,\\\"G\\\":0,\\\"B\\\":0}},\\\"AccentText\\\":{\\\"DefaultColor\\\":{\\\"A\\\":255,\\\""
+  },
+  {
+    "url": "https://www.harel-group.co.il/_vti_bin/webapi/CustomersAuthentication/PostAuthenticate/GetCurrentDetails",
+    "status": 200,
+    "body": "{\"Status\":0,\"Details\":{\"current\":{\"FirstName\":\"אפרת\",\"LastName\":\"לנדמן\",\"NumberOfMessages\":106,\"PersonalMenu\":[{\"Title\":\"עדכון פרטים\",\"UserMenuKey\":\"updateDetails\",\"UserMenuIcon\":null,\"UserMenuLink\":{\"IconUrl\":null,\"NavigateUrl\":\"/personal-info/my-harel/Pages/personal-info/personal-details-update.aspx\",\"Target\":null,\"Text\":\"personal-details-update.aspx\",\"ToolTip\":\"עדכון פרטים אישיים\"},\"DisplayForEmployerType\":0,\"SvgIconId\":\"icon-edit\",\"PersonalLinkType\":\"קישורים עליוניים\"},{\"Title\":\"תיבת דואר\",\"UserMenuKey\":\"mailbox\",\"UserMenuIcon\":null,\"UserMenuLink\":{\"IconUrl\":null,\"NavigateUrl\":\"/personal-info/my-harel/Pages/personal-info/my-inbox.aspx\",\"Target\":null,\"Text\":\"my-inbox.aspx\",\"ToolTip\":\"תיבת דואר אישית\"},\"DisplayForEmployerType\":0,\"SvgIconId\":\"icon-edit_Copy\",\"PersonalLinkType\":\"קישורים על"
+  },
+  {
+    "url": "https://www.harel-group.co.il/_vti_bin/webapi/Scanovate/GetContentIdentification/",
+    "status": 200,
+    "body": "{\"&nbsp;MaxTriedCreateOTP\":\"ניתן לנסות שנית במועד מאוחר יותר, או לפנות למוקד השירות בטלפון 03-7547060\",\"ActivationRegistrationOtp\":\"חלונית אקטיבציה והמשך רישום\",\"ADFail\":\"ניתן לנסות שנית במועד מאוחר יותר, או לפנות למוקד השירות בטלפון 03-7547060\",\"ADFailTitle\":\"כרגע לא ניתן להתחבר לאתר הראל\",\"AuthenticationChoose\":\"חלונית בחירת הזדהות\",\"AuthenticationFailedSubTitle\":\"ניתן לנסות שנית במועד מאוחר יותר, או לפנות למוקד התמיכה בטלפון 03-7547060\",\"AuthenticationFailedTitle\":\"לא ניתן להשלים את התהליך באמצעות הפרטים שהתקבלו\",\"CameFromAuthenticationMethode\":\"הגעת מחלונית בחירת אופן זיהוי אחרי otp\",\"CameFromAuthonticateChoose\":\"הגעת מחלונית בחירת אופן הזדהות\",\"CameFromPremissionScanovate\":\"הגעת מחלונית אישור אימות מול סקנובייט\",\"ChangePassword\":\"שינוי סיסמה\",\"ChangePasswordAlert\":\"תוקף סיסמתך פג ועלי"
+  },
+  {
+    "url": "https://www.harel-group.co.il/_vti_bin/webapi/GeneralAccessor?id=MegaWorlds&cacheKey=MegaWorlds",
+    "status": 200,
+    "body": "[{\"ID\":13,\"Title\":\"פעולות נפוצות\",\"Harel_LinkContent\":{\"IconUrl\":\"/_layouts/15/IMAGES/icgen.gif\",\"UseDefaultIcon\":false,\"NavigateUrl\":\"/common-actions/\",\"Target\":\"\",\"Text\":\"לכל הפעולות הנפוצות\",\"ToolTip\":\"\"},\"SVGIcon\":null,\"Harel_NewSite\":true},{\"ID\":9,\"Title\":\"ביטוח\",\"Harel_LinkContent\":{\"IconUrl\":\"/_layouts/15/IMAGES/icgen.gif\",\"UseDefaultIcon\":false,\"NavigateUrl\":\"/insurance/\",\"Target\":\"\",\"Text\":\"לכל מוצרי הביטוח שלנו\",\"ToolTip\":\"\"},\"SVGIcon\":null,\"Harel_NewSite\":true},{\"ID\":10,\"Title\":\"חיסכון ופנסיה\",\"Harel_LinkContent\":{\"IconUrl\":\"/_layouts/15/IMAGES/icgen.gif\",\"UseDefaultIcon\":false,\"NavigateUrl\":\"/long-term-savings/\",\"Target\":\"\",\"Text\":\"לכל מוצרי החיסכון שלנו\",\"ToolTip\":\"\"},\"SVGIcon\":null,\"Harel_NewSite\":true},{\"ID\":11,\"Title\":\"הראל פיננסים\",\"Harel_LinkContent\":{\"IconUrl\":\"\",\"UseDef"
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/OAOAnalysis/Dashboard/_sp_dashboard.htm?IsNewPortal=1&RID=FDFA08DF-1B5B-4777-96AE-B7EE20274DA4",
+    "status": 200,
+    "body": "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\r\n<html>\r\n<head>\r\n<meta name=\"viewport\" content=\"user-scalable=0, initial-scale=1\">\r\n<meta http-equiv=\"X-UA-Compatible\" content=\"IE=8,IE=9,IE=10\"/>\r\n\t\r\n<title>Intellisys</title>\r\n\r\n<script type=\"text/javascript\">\r\n    var date = new Date();\r\n    var t = date.getFullYear().toString() + date.getMonth().toString() + date.getDate().toString();\r\n    //css\r\n    document.write('<link href=\"../../GUIGenerator_V2/Extensions/jquery.ui.theme.css?t=' + t + '\" rel=\"stylesheet\" type=\"text/css\" />');\r\n    document.write('<link href=\"../../GG_Implementation/Messaging/msgBoxLight.css?t=' + t + '\" rel=\"stylesheet\" type=\"text/css\" />');\r\n    document.write('<link href=\"../../GUIGenerator_V"
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/GG_Implementation/ContextMenu/ContextMenu.css?t=20261024",
+    "status": 200,
+    "body": ".ggcontextmenu {\r\n\tmargin: 0;\r\n\tpadding: 0;\r\n\tlist-style: none;\r\n\tmin-width: 100px;\r\n\tmax-width: 300px;\r\n\tposition: absolute;\r\n\tz-index:90;\r\n\t\r\n\tborder-radius:4px;\r\n\tborder:1px dotted #111;\r\n\tbackground: #fff; \r\n\tbackground: linear-gradient(top, #efefef 0%, #bbbbbb 100%);  \r\n\tbackground: -moz-linear-gradient(top, #efefef 0%, #bbbbbb 100%); \r\n\tbackground: -webkit-linear-gradient(top, #efefef 0%,#bbbbbb 100%); \r\n\tbox-shadow: 0px 0px 9px rgba(0,0,0,0.15);\r\n\t\r\n\tcursor:default;\r\n}\r\n\r\n.ggcontextmenu li {\r\n\tposition: relative;\r\n\t}\r\n\t\r\n.ggcontextmenu li ul {\r\n\tposition: absolute;\r\n\tleft: 149px; /* Set 1px less than menu width */\r\n\ttop: 0;\r\n\tdisplay: none;\r\n\t}\r\n\r\n\r\n.ggcontextmenu li.CSeparator\r\n{\r\n\tborder-top: 1px dotted #cccccc;\r\n\tborder-bottom: 1px dotted #f1f1f1;\r\n\theight: 0px;\r\n\toverflow: hidde"
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/GUIGenerator_V2/Extensions/jquery.ui.theme.css?t=20261024",
+    "status": 200,
+    "body": "/* Selectable\r\n----------------------------------*/\r\n.ui-selectable-helper { position: absolute; z-index: 100; border:1px dotted black; }\r\n\r\n/* Resizable\r\n----------------------------------*/\r\n.ui-resizable { position: relative;}\r\n.ui-resizable-handle { position: absolute;font-size: 0.1px; display: block; }\r\n.ui-resizable-disabled .ui-resizable-handle, .ui-resizable-autohide .ui-resizable-handle { display: none; }\r\n.ui-resizable-n { cursor: n-resize; height: 7px; width: 100%; top: -5px; left: 0; }\r\n.ui-resizable-s { cursor: s-resize; height: 7px; width: 100%; bottom: -5px; left: 0; }\r\n.ui-resizable-e { cursor: e-resize; width: 7px; right: -5px; top: 0; height: 100%; }\r\n.ui-resizable-w { cursor: w-resize; width: 7px; left: -5px; top: 0; height: 100%; }\r\n.ui-resizable-se { cursor: se-resize;"
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/GUIGenerator_V2/assets/themes/jscal2.css?t=20261024",
+    "status": 200,
+    "body": "/* CSS */\r\n\r\n.DynarchCalendar {\r\n  border: 2px solid #a2becd;\r\n  -moz-user-select: none;\r\n  -webkit-user-select: none;\r\n  user-select: none;\r\n  background: #f4f6f6;\r\n  font: 11px \"lucida grande\",tahoma,verdana,sans-serif;\r\n  line-height: 14px;\r\n  position: relative;\r\n  cursor: default;\r\n}\r\n\r\n.DynarchCalendar table {\r\n  border-collapse: collapse;\r\n  font: 11px \"lucida grande\",tahoma,verdana,sans-serif;\r\n  line-height: 14px;\r\n}\r\n\r\n.DynarchCalendar-topBar {\r\n  border-bottom: 1px solid #a2becd;\r\n  background: #f4f6f6;\r\n  padding: 5px 0 0 0;\r\n}\r\n\r\ntable.DynarchCalendar-titleCont {\r\n  font-size: 130%; font-weight: bold;\r\n  color: #444;\r\n  text-align: center;\r\n  z-index: 9;\r\n  position: relative;\r\n  margin-top: -6px;\r\n}\r\n\r\n.DynarchCalendar-title div {\r\n  padding: 5px 17px;\r\n  text-shadow: 1px 1px"
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/Configuration/configuration.css?t=20261024",
+    "status": 200,
+    "body": ".dashdicaption{\r\n\tbackground:#5c7ca7;\t\r\n\tborder-radius:5px 5px 0px 0px;\r\n}\r\n.dashdicaption .diheadercaption{color:#ffffff}"
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/GUIGenerator_V2/assets/themes/Blue_rtl.css?t=20261024",
+    "status": 200,
+    "body": "\r\n\r\n.containerLeft, .containerleft{border-width:0px 1px 0px 0px;}\r\n.containerRight{border-width:0px 0px 0px 1px;}\r\n.treecontainerlast{padding:0px 16px 0px 0px;}\r\n.defaultalign,.alignnear{text-align:right;}\r\n.alignfar{text-align:left;}\r\n\r\n.floatleft{float:right;}\r\n.floatright{float:left;}\r\n.clearleft{clear:right;}\r\n.clearright{clear:left;}\r\n.floatcontrol{float:right; line-height:20px;padding-left:3px;padding-right:0px;}\r\n.floatcontainer{float:right; line-height:20px;padding-left:15px;padding-right:0px;}\r\n\r\n.inputfind\r\n{\r\n\tbackground-position:left;\r\n}\r\n.gg_ctrlcontainer .ctrlinput\r\n{\r\n\tfloat:right;\r\n}\r\n.gg_ctrlcontainer .ctrlText\r\n{\r\n\tfloat:right;\r\n}\r\n\r\n.gg_ctrlcontainer .ctrlbutton\r\n{\r\n\tfloat:left;\r\n\tborder-left-width:0px;\r\n\tborder-right:1px solid #bebebe;\r\n}\r\n\r\nhtml, body {direction:rtl}\r\n"
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/OAOAnalysis/Dashboard/Assets/DashboardViewer.css?t=20261024",
+    "status": 200,
+    "body": "\r\n\r\n/***\r\nPage sidebar\r\n***/\r\n\r\n/* ie8 fixes */\r\n.ie8 .page-sidebar {\r\n  position: absolute;\r\n  width: 225px;\r\n}\r\n\r\n#dv-dash-sidebar{\r\n\twidth:250px;\r\n\toverflow:hidden;\r\n\tposition:fixed;\r\n\ttop:31px;\r\n\tbackground-color:#eee;\r\n\tborder-right:1px solid #ccc;\r\n\tborder-top:1px solid #ccc;\r\n\tz-index:10;\r\n\toverflow:hidden;\r\n\toverflow-y:auto;\r\n\tcursor:default;\r\n}\r\n#dv-dash-sidebar.side-collapsed{\r\n\tleft:-251px;\r\n}\r\n\r\n#dv-dash-sidebar .optionssection{\r\n\tbackground:transparent;\r\n}\r\n#dv-dash-sidebar .section-header{\r\n\tbackground:#ddd;\r\n\tline-height:28px;\r\n\tfont-size:14px;\r\n\tcursor:pointer;\r\n\tborder-bottom:1px solid #ccc;\r\n}\r\n\r\n\t#dv-dash-sidebar .section-header.action:hover{\r\n\t\ttext-decoration:underline;\r\n\t\tcolor:#e57c00;\r\n\t}\r\n\r\n#dv-dash-content{\r\n\tmargin-left:250px;\r\n\toverflow:hidden;\r\n}\r\n\t#dv-dash-con"
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/Custom/Portal/agent_dash.js?ver=6",
+    "status": 200,
+    "body": "const i_portal_version = '08.01';\r\nconsole.log('IVERSION', i_portal_version);\r\ndocument.write('<link href=\"../../Custom/Portal/assets/bootstrap-modal.css\" rel=\"stylesheet\" type=\"text/css\" />');\r\ndocument.write('<script language=javascript src=\"../../Custom/Portal/assets/bootstrap-modal.js\"></script>');\r\ndocument.write('<script language=javascript src=\"../../Custom/Portal/assets/bootstrap-modalmanager.js\"></script>');\r\ndocument.write('<script language=javascript src=\"../../Custom/Portal/agent_dash_charts.js\"></script>');\r\ndocument.write('<script language=javascript src=\"../../Custom/Portal/agent_dash_olap.js\"></script>');\r\ndocument.write('<script language=javascript src=\"../../Custom/Portal/assets/bootstrap-datepicker.js\"></script>');\r\ndocument.write('<script language=javascript src=\"../../"
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/GUIGenerator_V2/core/utilities.js?t=20261024",
+    "status": 200,
+    "body": "var STATUSATTRIB = \"Status\";\r\nvar STATUSEDIT = 2;\r\nvar STATUSNEW = 6;\r\nvar STATUSDELETE = 8;\r\n\r\nvar GG_TrackAttributes = false;\r\nvar _UIDisableNodeStatus = false;\r\nvar bWasChanged = false;\r\nvar CMENU;\r\nvar _HideHTTPErrors = false;\r\nvar CheckForSave = true;\r\n\r\nfunction generateDom(xmlStr){\r\n\tif (window.IsActiveXObject) {\r\n\t\tif (typeof(xmlStr) == \"object\")xmlStr = xmlStr.xml;\r\n\t\tvar xmlDoc = new window.ActiveXObject(\"Microsoft.XMLDOM\");\r\n\t\txmlDoc.async = \"false\";\r\n\t\txmlDoc.loadXML(xmlStr);\r\n\t\treturn xmlDoc;\r\n\t}else if (typeof window.DOMParser != \"undefined\") {\r\n\t\tif (typeof xmlStr == \"object\"){\r\n\t\t\tvar serializer = new XMLSerializer();\r\n\t\t\txmlStr = serializer.serializeToString(xmlStr);\r\n\t\t}\r\n\t\tif (xmlStr == null || xmlStr == \"\")return document.implementation.createDocument(\"\",\"\",null);\r\n\t\tre"
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/GG_Implementation/Messaging/jquery.msgBox.js?t=20261024",
+    "status": 200,
+    "body": "\r\njQuery.msgBox = GGmsg;\r\nfunction GGmsg (options) { \r\n    var isShown = false; \r\n    var typeOfValue = typeof options; \r\n    var defaults = { \r\n        content: (typeOfValue == \"string\" ? options : \"\"), \r\n        htmlContent : \"HTML Content\", \r\n        type: \"info\", \r\n        autoClose: false, \r\n        timeOut: 0, \r\n        showButtons: true, \r\n        buttons: [{ value: \"Ok\"}], \r\n        lockModal:false,\r\n        inputs: [{ type: \"text\", name:\"value\", header: \"Value\" }], \r\n        success: function(result) {\r\n        },\r\n        beforeShow: function() {\r\n        },\r\n        afterShow: function() {\r\n        },\r\n        beforeClose: function() {\r\n        },\r\n        afterClose: function() {\r\n        },\r\n        opacity: 0.1 \r\n    }; \r\n    options = typeOfValue == \"string\" ? defaults : opt"
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/GUIGenerator_V2/assets/jscal2.js?t=20261024",
+    "status": 200,
+    "body": "Calendar = (function () {\r\n\tfunction y(at) { at = at || {}; this.args = at = al(at, { animation: !c, cont: null, bottomBar: true, date: true, fdow: aq(\"fdow\"), min: null, max: null, reverseWheel: false, selection: [], selectionType: y.SEL_SINGLE, weekNumbers: false, align: \"Bl/ / /T/r\", inputField: null, trigger: null, dateFormat: \"%Y-%m-%d\", opacity: j ? 1 : 3, titleFormat: \"%b %Y\", showTime: false, timePos: \"right\", time: true, minuteStep: 5, disabled: ad, dateInfo: ad, onChange: ad, onSelect: ad, onTimeChange: ad, onFocus: ad, onBlur: ad }); this.handlers = {}; var P = this, D = new Date(); at.min = Y(at.min); at.max = Y(at.max); if (at.date === true) { at.date = D } if (at.time === true) { at.time = D.getHours() * 100 + Math.floor(D.getMinutes() / at.minuteStep) * at.minuteStep } this."
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/GG_Implementation/Messaging/msgBoxLight.css?t=20261024",
+    "status": 200,
+    "body": "div.msgBox\r\n{\r\n    padding: 4px 10px 4px 10px;\r\n    position: absolute;/*fixed*/\r\n    z-index: 10000;  \r\n    width: 430px;\r\n    min-height:160px;\r\n    -moz-border-radius: 6px;\r\n    -webkit-border-radius: 6px;\r\n    border-radius: 6px;\r\n    -moz-box-shadow: 0px 0px 11px #000000;\r\n    -webkit-box-shadow: 0px 0px 11px #000000;\r\n    box-shadow: 0px 0px 11px #000000;\r\n    background-image: url('Images/msgBoxBackGround.png');\r\n    border : 2px solid #002c5f;\r\n}\r\ndiv.msgBoxBackGround\r\n{\r\n    top:0;\r\n    left:0;\r\n    position:absolute;\r\n    padding:0;\r\n    margin:0;\r\n    width:100%;\r\n    height:100%;\r\n    background-color:#000000;\r\n    opacity:0.9;\r\n    z-index:999;\r\n}\r\ndiv.msgBoxTitle\r\n{\r\n    padding:5px 0 5px 0;\r\n    font-variant:small-caps;\r\n    font-size:16pt;\r\n    font-weight:lighter;\r\n    col"
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/OAOAnalysis/Dashboard/Assets/bootstrap.css?t=20261024",
+    "status": 200,
+    "body": "/*!\r\n * Bootstrap v2.3.2\r\n *\r\n * Copyright 2012 Twitter, Inc\r\n * Licensed under the Apache License v2.0\r\n * http://www.apache.org/licenses/LICENSE-2.0\r\n *\r\n * Designed and built with all the love in the world @twitter by @mdo and @fat.\r\n */\r\n.clearfix {\r\n  *zoom: 1;\r\n}\r\n.clearfix:before,\r\n.clearfix:after {\r\n  display: table;\r\n  content: \"\";\r\n  line-height: 0;\r\n}\r\n.clearfix:after {\r\n  clear: both;\r\n}\r\n.hide-text {\r\n  font: 0/0 a;\r\n  color: transparent;\r\n  text-shadow: none;\r\n  background-color: transparent;\r\n  border: 0;\r\n}\r\n.input-block-level {\r\n  display: block;\r\n  width: 100%;\r\n  min-height: 30px;\r\n  -webkit-box-sizing: border-box;\r\n  -moz-box-sizing: border-box;\r\n  box-sizing: border-box;\r\n}\r\n\r\n\r\nhtml {\r\n  font-size: 100%;\r\n  -webkit-text-size-adjust: 100%;\r\n  -ms-text-size-adjust: 100%"
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/GG_Implementation/ContextMenu/ContextMenu.js?t=20261024",
+    "status": 200,
+    "body": "\r\nfunction ContextMenu(){}\r\n\r\nfunction GGPop_Options(args){\r\n\tContextMenu.isRTL = $('body').css('direction') == \"rtl\";\r\n\tthis.items = [];\r\n\tthis.finditems = [];\r\n\tthis.icons = false;\r\n\tthis.args = args || {};\r\n}\r\nGGPop_Options.prototype.add = function (obj) {\r\n\tthis.items.push(obj);\r\n\tif (obj.icon)this.icons = true;\r\n\tif(obj.constructor==ContextItem && !obj.disabled && obj.text != \"\"){\r\n\t\tthis.finditems.push(obj);\r\n\t\tobj.findIndex = this.finditems.length - 1;\r\n\t}\r\n\treturn obj;\r\n}\r\nGGPop_Options.prototype.iterate =  function (mode){\r\n\tvar n = this.finditems.length;\r\n\tif (this.selectedIndex == null)var start = mode > 0 ? 0 : n-1;\r\n\telse var start = this.selectedIndex + mode;\r\n\tif (start < 0)start = n-1;\r\n\tif (start == n)start = 0;\r\n\tvar o = this.finditems[start];\r\n\tif (o && start == 0 && o.u"
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/GUIGenerator_V2/Extensions/jquery-ui.js?t=20261024",
+    "status": 200,
+    "body": "/*! jQuery UI - v1.9.2 - 2012-12-18\r\n* http://jqueryui.com\r\n* Includes: jquery.ui.core.js, jquery.ui.widget.js, jquery.ui.mouse.js, jquery.ui.position.js, jquery.ui.draggable.js, jquery.ui.droppable.js, jquery.ui.resizable.js, jquery.ui.selectable.js, jquery.ui.sortable.js\r\n* Copyright (c) 2012 jQuery Foundation and other contributors Licensed MIT */\r\n\r\n(function(e,t){function i(t,n){var r,i,o,u=t.nodeName.toLowerCase();return\"area\"===u?(r=t.parentNode,i=r.name,!t.href||!i||r.nodeName.toLowerCase()!==\"map\"?!1:(o=e(\"img[usemap=#\"+i+\"]\")[0],!!o&&s(o))):(/input|select|textarea|button|object/.test(u)?!t.disabled:\"a\"===u?t.href||n:n)&&s(t)}function s(t){return e.expr.filters.visible(t)&&!e(t).parents().andSelf().filter(function(){return e.css(this,\"visibility\")===\"hidden\"}).length}var n=0,r=/^u"
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/OAOAnalysis/Assets/AnalisysServerFunctions.js?t=20261024",
+    "status": 200,
+    "body": "var OlapHTTPURL = \"/_layouts/15/HarelWebSite/HarelReports/ApplicationPages/HTTP_Proxy_Script.aspx\";\r\nfunction checkErrors(xmlResult) {\r\n\tif (!xmlResult) return true;\r\n\tvar xmlError = xmlResult.documentElement;\r\n\tif (xmlResult.documentElement.tagName != \"Error\") return false;\r\n\tvar errorNumber = Number(xmlError.getAttribute(\"Number\"));\r\n\t\r\n\tif (errorNumber == ERR_SESSION_NOT_EXISTS){\r\n\t\talert(xmlError.getAttribute(\"Description\"));\r\n\t\t//HandleSessionEnd();\r\n\t\twindow.top.location.replace(\"../../Default.aspx?r=1\");\r\n\t\treturn true;\r\n\t}else{\r\n\t\tif (_HideHTTPErrors){\r\n\t\t\tif (xmlResult.documentElement)xmlResult = xmlResult.documentElement;\r\n\t\t\txmlResult.setAttribute(\"Time\",new Date().toLocaleTimeString());\r\n\t\t\t_HideHTTPErrors.push(xmlResult);\r\n\t\t\tvar h = document.getElementById(\"HErrorDisplay\");\r\n"
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/GUIGenerator_V2/Extensions/jquery.js?t=20261024",
+    "status": 200,
+    "body": "(function(a,b){function cy(a){return f.isWindow(a)?a:a.nodeType===9?a.defaultView||a.parentWindow:!1}function cv(a){if(!ck[a]){var b=c.body,d=f(\"<\"+a+\">\").appendTo(b),e=d.css(\"display\");d.remove();if(e===\"none\"||e===\"\"){cl||(cl=c.createElement(\"iframe\"),cl.frameBorder=cl.width=cl.height=0),b.appendChild(cl);if(!cm||!cl.createElement)cm=(cl.contentWindow||cl.contentDocument).document,cm.write((c.compatMode===\"CSS1Compat\"?\"<!doctype html>\":\"\")+\"<html><body>\"),cm.close();d=cm.createElement(a),cm.body.appendChild(d),e=f.css(d,\"display\"),b.removeChild(cl)}ck[a]=e}return ck[a]}function cu(a,b){var c={};f.each(cq.concat.apply([],cq.slice(0,b)),function(){c[this]=a});return c}function ct(){cr=b}function cs(){setTimeout(ct,0);return cr=f.now()}function cj(){try{return new a.ActiveXObject(\"Microsoft"
+  },
+  {
+    "url": "https://www.harel-group.co.il/_vti_bin/webapi/Footer/GetListItems",
+    "status": 200,
+    "body": "[{\"Id\":5,\"ShouldDisplay\":true,\"ColumnTitle\":\"הראל לשירותך\",\"LinksInFooterColumnsDefault\":[{\"Id\":1,\"ShouldDisplay\":true,\"Link\":{\"IconUrl\":null,\"NavigateUrl\":\"/contact/Pages/customer-service.aspx\",\"Target\":null,\"Text\":\"שירות לקוחות ופניות הציבור\",\"ToolTip\":\"שירות לקוחות ופניות הציבור\"},\"Column\":{\"LookupId\":1,\"LookupValue\":\"הראל לשירותך\"},\"Icon\":null},{\"Id\":43,\"ShouldDisplay\":true,\"Link\":{\"IconUrl\":null,\"NavigateUrl\":\"/about/Pages/available.aspx\",\"Target\":null,\"Text\":\"הצהרת נגישות\",\"ToolTip\":\"הצהרת נגישות\"},\"Column\":{\"LookupId\":1,\"LookupValue\":\"הראל לשירותך\"},\"Icon\":{\"AlternateText\":\"הצהרת נגישות\",\"Hyperlink\":null,\"ImageUrl\":\"/PublishingImages/Lists/LinksInColumnLowerTitle/AllItems/neg.png\",\"OpenHyperlinkInNewWindow\":false}},{\"Id\":3,\"ShouldDisplay\":true,\"Link\":{\"IconUrl\":null,\"NavigateUrl\":\"/"
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/GG_Implementation/ScreenEntity/module.js?t=20261024",
+    "status": 200,
+    "body": "var UIApplicationRoot;\r\nvar UIDir = \"ltr\";\r\nvar UITheme = \"Blue\";\r\nvar GG_Window,UIApplicationRoot;\r\n\r\nwindow.IsActiveXObject = (window.ActiveXObject || !!navigator.userAgent.match(/Trident\\/7\\./));\r\n\r\nfunction getApplicationRoot(){\r\n\ttry{\r\n\tvar d = window.parent;\r\n\tvar t;\r\n\twhile (d){\r\n\t\tif (d.UIIsApplicationRoot)return d;\r\n\t\telse{\r\n\t\t\tt=d.window.parent;\r\n\t\t\tif (t==d)break;\r\n\t\t\telse d=t;\r\n\t\t}\t\t\t\r\n\t}\r\n    var args = window.dialogArguments;\r\n    if (args && typeof(args) == \"object\")return args.approot;\r\n\t}catch(e){}\r\n}\r\nfunction GG_initWindow(){\r\n\tUIApplicationRoot = getApplicationRoot();\r\n\tif (!UIApplicationRoot)return;\r\n\r\n\tthis.openModalDialog = function(sURL , vArguments, sFeatures, closeHandler){\r\n\t\tUIApplicationRoot.WindowsHandler.openModalDialog(sURL , vArguments, sFeatures, closeHand"
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/GUIGenerator_V2/assets/resizer.js?t=20261024",
+    "status": 200,
+    "body": "var theResizeObject = null;\r\nfunction doResizerDown(e,hElm){\r\n\te = e || window.event;\r\n\t$(hElm).attr('unselectable', 'on').css('user-select', 'none').on('selectstart', false);\r\n\ttheResizeObject = new Object();\r\n\ttheResizeObject.resizeFor = document.getElementById(hElm.getAttribute(\"resizeFor\"));\r\n\tif (theResizeObject.resizeFor == null)return;\r\n\tif (theResizeObject.resizeFor.style.display == \"none\")return\r\n\t\r\n\tvar pt = fGetXY(hElm);\r\n\tif (!document.getElementById(\"dvUIResizer\")){\r\n        document.body.insertAdjacentHTML(\"AfterBegin\",'<div id=\"dvUIResizer\" style=\"display:none\" ent=\"ghost\" ></div>');\r\n\r\n        $(\"#dvUIResizer\").attr('unselectable', 'on').css('user-select', 'none').on('selectstart', false);\r\n\r\n\t}\r\n\tdvUIResizer.style.display = \"\";\r\n\tvar hbind = window;\r\n\tif (dvUIResizer.setCa"
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/Configuration/dashboardOverride.js?t=20261024",
+    "status": 200,
+    "body": "var GG_HAREL = {\r\n\t/*\r\n\t\r\n\tPurpose:\tcopy parameters to a single xml parameters, should be used at the Action before of the receiving data source\r\n\txmlParam:\tUniqueId of the xml parameter\r\n\tarrParams:\tarray of parameter Unique Ids, when null all parameters values will be copied to the xml parameter\r\n\txDS:\t\tthe datasource the action is applied on, used for integration with grid box filters\r\n\tSample:\t\tGG_HAREL.generateXMLParam(\"xml\",[\"StartDate\",\"EndDate\"],xDS)\r\n\t*/\r\n\tgenerateXMLParam: function (xmlParam, arrParams, xDS) {\r\n\t\ttry {\r\n\t\t\tvar xParam = locateFilterParamByUniqueName(xmlParam);\r\n\t\t\tif (!xParam) throw (\"xml parameter not found\");\r\n\r\n\t\t\tvar xTarget = xParam.ownerDocument.createElement(\"Filters\");\r\n\t\t\tif (arrParams && arrParams.length > 0) {\r\n\t\t\t\tfor (var i = 0; i < arrParams.length; "
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/OAOAnalysis/Dashboard/Assets/DashboardViewer.js?t=20261024",
+    "status": 200,
+    "body": "\r\n// =============================================================>\r\nvar DataSource = 0;\r\nvar ReportType = 5;\r\nvar EnableUndo = true;\r\nvar Legend,LGNode,dataNode,DataRoot,Layout,TMP,UseParentDIDashboardFilters;\r\nvar ArgHolder = new Object();\r\nvar IsExternalyLoaded = false;\r\nvar EnableAsyncDataLoad,EnableAsyncFilterLoad;\r\nvar _DefBlankFrame = \"about:blank\";\r\n// =============================================================>\r\n// Functions\r\n// =============================================================>\r\n// =============================================================>\r\n\r\n// ----------------------------------------------------->\r\n// G A R B A G E\r\n// ----------------------------------------------------->\r\n\r\nwindow.onbeforeunload = function(){unloadDashboardItems();}\r\nfunction unloadDashboard"
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/Main/Nav/appWrapper.js?t=20261024",
+    "status": 200,
+    "body": "if (!window.UIApplicationRoot){\r\ndocument.write('<script src=\"../../Main/Nav/appWrapper_Util.js\" type=\"text/javascript\"></script>');\r\nUIIsApplicationRoot = true;\r\n}"
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/GG_Implementation/core/core_override.js?t=20261024",
+    "status": 200,
+    "body": "document.write('<script language=javascript src=\"../../GUIGenerator_V2/Extensions/jquery.maskedinput.js\"></script>');\r\ndocument.write('<script src=\"../../GUIGenerator_V2/assets/xslt-polyfill.min.js\" type=\"text/javascript\"></script>');\r\n// ---------------------------------------------------------------------------------->\r\nvar ERR_SESSION_NOT_EXISTS = \"-999\";\r\n// Localization --------------------------------------------------------------------->\r\nvar UIDateFormat = 1;\r\nvar UIDateOperator = \"/\";\r\nvar UIFirstDayOfWeek = 0;\r\nvar UIApplicationTitle = \"Intellisys\";\r\nvar UIuseAmPm = true;\r\ntry{\r\nCalendar.LANG(\"en\", \"English\", {\r\nfdow: 0,// first day of week for this locale; 0 = Sunday, 1 = Monday, etc.\r\ngoToday: \"עבור להיום\",\r\ntoday: \"היום\",\r\nwk: \"wk\",\r\nAM: \"am\",\r\nPM: \"pm\",\r\nweekend: \"0,6\",// 0 ="
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/GlobalVars.js?t=20261024",
+    "status": 200,
+    "body": "//var OlapHTTPURL =  \"proxy url\";\r\nvar _UIDisableMaximize;\r\nvar _UIUseSecuredLinks = false;\r\nvar EnforceStrongPasswords = false;\r\nvar FusionChartsRenderer = null;//\"flash\"; "
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/OAOAnalysis/Assets/Olap_Criteria.js?t=20261024",
+    "status": 200,
+    "body": "//-------------------------------------------------->\r\n// UTILITIES\r\n//-------------------------------------------------->\r\nfunction getMemberParams(UID,sAxis,xCellSet,criteria){\r\ntry{\r\n\tvar params = new Object();\r\n\tparams.memberId = UID;\r\n\tparams.xMember = locateCellsetMember(xCellSet,UID);\r\n\tparams.dimensionId = getDimensionUIDFromMember(UID,criteria);\r\n\tparams.sAxis = sAxis;\r\n\treturn params;\r\n}catch(e){return params;}\r\n}\r\nfunction getDimensionParams(UID,dephthHolder,criteria){\r\ntry{\t\r\n\tvar params = new Object();\r\n\tparams.dimensionId = UID;\r\n\tif (UID == null)return Params;\r\n\tif (dephthHolder)params.depthDimension = LocateDimension(dephthHolder,UID);\r\n\tvar xCDimension = locateCriteriaDimension(criteria,UID);\r\n\tparams.criteriaDimension = xCDimension;\r\n\tvar sAxis = xCDimension.parentNode.no"
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/GUIGenerator_V2/assets/chartsNew/FusionCharts.js?t=20261024",
+    "status": 200,
+    "body": "/*\r\n FusionCharts JavaScript Library\r\n Copyright FusionCharts Technologies LLP\r\n License Information at <http://www.fusioncharts.com/license>\r\n FusionCharts JavaScript Library\r\n Copyright FusionCharts Technologies LLP\r\n License Information at <http://www.fusioncharts.com/license>\r\n\r\n @version 3.9.0\r\n\r\n @attributions (infers respective third-party copyrights)\r\n Raphael 2.1.0 (modified as 'Red Raphael') <http://raphaeljs.com/license.html>\r\n JSON v2 <http://www.JSON.org/js.html>\r\n Firebug Lite 1.3.0 <http://getfirebug.com/firebuglite>\r\n*/\r\n(function(){if(!window.FusionCharts||!window.FusionCharts.version){var f=window,t=f.document,C=f.navigator,q={window:f},d=q.modules={},a=q.interpreters={},m=Object.prototype.toString,F=/msie/i.test(C.userAgent)&&!f.opera,c=/loaded|complete/,l=!1,b=function("
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/GUIGenerator_V2/assets/themes/Blue.css?t=20261024",
+    "status": 200,
+    "body": "body,html{height:100%}\r\nbody{font: arial;color:#444;background-color: #fff;scroll: no;margin: 0px;border: none;overflow: hidden;}\r\ntd{\r\nfont-family:Arial;\r\nfont-size:11px;\r\n}\r\ndiv{\r\nfont-family:Arial;\r\nfont-size:11px;\r\n}\r\n\r\n\r\n.boxcontainerheader\r\n{\r\n\tpadding: 3px; overflow:hidden;\r\n}\r\n\r\n.boxroundheader\r\n{\r\n\tbackground-color:#dfdfdf;\r\n\tborder:1px solid #cccccc;\r\n\theight:21px;\r\n\tbackground-image:url(images/vistaBGlight.gif);\r\n\tborder-radius:5px; \r\n\tpadding-top:4px;\r\n\tfont:12px;\r\n}\r\n\r\n.boxcontainertext\r\n{\r\n\tfont-size:13px;\r\n\tline-height:20px;\r\n\tfont-weight:bold;\r\n\tcolor:#1d68ad;\t\r\n}\r\n.boxcontainer1{border: 1px solid #bbcdcc;background:#fff;}\r\n.boxcontainer2{border: 1px solid #a2becd;background:#fff;}\r\n.boxcontainer3{border: 1px solid #bbcdcc;background:#f4f6f6;}\r\n.boxcontainer4{border: 1px so"
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/Main/Nav/appWrapper_Util.js",
+    "status": 200,
+    "body": "document.write('<script src=\"../../GG_Implementation/Window/jquery.window.js\" type=\"text/javascript\"></script>');\r\ndocument.write('<link href=\"../../GG_Implementation/Window/jquery.window.css\" rel=\"stylesheet\" type=\"text/css\" />');\r\nvar WindowsHandler = {\r\n\topenModalDialog : function(sURL , dArguments, sFeatures, closeHandler,parentWindow){\r\n\t\tsURL = getUniqueSid(sURL);\r\n\t\tsURL += \"&UITH=\" + UITheme;\r\n\t\tif (dArguments == null) dArguments = {};\r\n\t\tvar params = {\r\n\t\t\turl: sURL,\r\n\t\t\tdialogArguments : dArguments,\r\n\t\t\tcloseHandler : closeHandler,\r\n\t\t\tparentWindow : parentWindow,\r\n\t\t\tshowModal : true,\r\n\t\t\tenablepager : dArguments.modalPager != null\r\n\t\t}\r\n\r\n\t\tif (sFeatures != null){\r\n\t\t\tif (typeof sFeatures == 'string'){\r\n\t\t\t\tvar arr = sFeatures.split(\";\");\r\n\t\t\t\tsFeatures = {};\r\n\t\t\t\tvar t,n;\r\n\t\t\t"
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/GG_Implementation/Window/jquery.window.js",
+    "status": 200,
+    "body": "/**\r\n * jQuery Window Plugin\r\n * http://fstoke.me/jquery/window/\r\n * Copyright(c) 2011 David Hung\r\n */\r\n\t\r\n// Get window instance via jQuery call\r\n// create window on html body\r\n$.window = function(options) {\r\n\treturn $.Window.getInstance(null, options);\r\n};\r\n\r\n// create window on caller element\r\n$.fn.window = function(options) {\r\n\treturn $.Window.getInstance($(this), options);\r\n}\r\n\r\n// Creating Window Dialog Module\r\n$.Window = (function()  {\r\n\t// static private methods\r\n\t// static constants\r\n\tvar VERSION = \"5.03\";           // the version of current plugin\r\n\tvar ICON_WH = 16;               // window icon button width/height, in pixels. check \"window_icon_button\" style in css\r\n\tvar ICON_MARGIN = 4;            // window icon button margin, in pixels. check \"window_icon_button\" style in css\r"
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/GG_Implementation/Window/jquery.window.css",
+    "status": 200,
+    "body": "\r\n.window_panel {\r\n\tposition: absolute;\r\n\tleft: 0;\r\n\ttop: 0;\r\n\tmargin: 0;\r\n\tpadding: 0;\r\n\tz-index: 2000;\r\n\tbackground: #eee;\r\n\tcolor: #222;\r\n\tfont-family: Arial;\r\n\tfont-size: 16px;\r\n\ttext-decoration: none;\r\n\tclear: both;\r\n\ttext-align: left;\r\n\tvertical-align: top;\r\n\tborder: 1px solid #aaa;\r\n\toverflow: hidden;\r\n    -moz-box-shadow: 0px 0px 11px #000000;\r\n    -webkit-box-shadow: 0px 0px 11px #000000;\r\n    box-shadow: 0px 0px 11px #000000;\r\n}\r\n\r\n.window_panel .window_header {\r\n\tmargin: 0;\r\n\tpadding: 0;\r\n\tborder: 0;\r\n\tborder-bottom: 1px solid #aaa;\r\n\toverflow: hidden;\r\n\twhite-space: nowrap;\r\n}\r\n\r\n.window_panel .window_header_normal {\r\n\t/*background: url('img/header_bg.gif') repeat-x;*/  /* change to use jquery-ui theme instead */\r\n\theight: 20px;\r\n\tline-height: 20px;\r\n\tpadding: 2px 5px;\r\n\ttext-a"
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/GUIGenerator_V2/Extensions/jquery.maskedinput.js",
+    "status": 200,
+    "body": "/*\r\n\tMasked Input plugin for jQuery\r\n\tCopyright (c) 2007-2011 Josh Bush (digitalbush.com)\r\n\tLicensed under the MIT license (http://digitalbush.com/projects/masked-input-plugin/#license) \r\n\tVersion: 1.3\r\n*/\r\n(function($) {\r\n\tvar pasteEventName = ($.browser.msie ? 'paste' : 'input') + \".mask\";\r\n\tvar iPhone = (window.orientation != undefined);\r\n\r\n\t$.mask = {\r\n\t\t//Predefined character definitions\r\n\t\tdefinitions: {\r\n\t\t\t'9': \"[0-9]\",\r\n\t\t\t'a': \"[A-Za-z]\",\r\n\t\t\t'*': \"[A-Za-z0-9]\"\r\n\t\t},\r\n\t\tdataName:\"rawMaskFn\"\r\n\t};\r\n\r\n\t$.fn.extend({\r\n\t\t//Helper Function for Caret positioning\r\n\t\tcaret: function(begin, end) {\r\n\t\t\tif (this.length == 0) return;\r\n\t\t\tif (typeof begin == 'number') {\r\n\t\t\t\tend = (typeof end == 'number') ? end : begin;\r\n\t\t\t\treturn this.each(function() {\r\n\t\t\t\t\tif (this.setSelectionRange) {\r\n\t\t"
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/GUIGenerator_V2/assets/xslt-polyfill.min.js",
+    "status": 200,
+    "body": "// Copyright (c) 2025, Mason Freed\n// All rights reserved.\n//\n// This source code is licensed under the BSD-style license found in the\n// LICENSE file in the root directory of this source tree.\n//window.xsltUsePolyfillOnlyIfNeeded = true;\nconsole.log(\"xslt-polyfill fixed v01.00\");\nvar createXSLTTransformModule=(()=>{var A=globalThis.document?.currentScript?.src;return async function(v={}){var r=v,E=!!globalThis.window,F=!!globalThis.WorkerGlobalScope,t=globalThis.process?.versions?.node&&\"renderer\"!=globalThis.process?.type,b=\"./this.program\",f=(A,v)=>{throw v};\"undefined\"!=typeof __filename?A=__filename:F&&(A=self.location.href);var n,e;if(t){var j=require(\"fs\");__dirname+\"/\",e=A=>(A=q(A)?new URL(A):A,j.readFileSync(A)),n=async(A,v=!0)=>(A=q(A)?new URL(A):A,j.readFileSync(A,v?void 0:\"utf8"
+  },
+  {
+    "url": "https://www.harel-group.co.il/_vti_bin/webapi/GeneralAccessor?id=SubAreas&cacheKey=SubAreas",
+    "status": 200,
+    "body": "[{\"ID\":77,\"Title\":\"ביטוח רכב\",\"Harel_MainArea\":\"9;#ביטוח\",\"Harel_Link\":{\"IconUrl\":\"\",\"UseDefaultIcon\":false,\"NavigateUrl\":\"/insurance/car\",\"Target\":\"\",\"Text\":\"ביטוח רכב\",\"ToolTip\":\"ביטוח רכב\"}},{\"ID\":78,\"Title\":\"קרנות פנסיה\",\"Harel_MainArea\":\"10;#חיסכון ופנסיה\",\"Harel_Link\":{\"IconUrl\":\"\",\"UseDefaultIcon\":false,\"NavigateUrl\":\"/long-term-savings/pension\",\"Target\":\"\",\"Text\":\"קרנות פנסיה\",\"ToolTip\":\"קרנות פנסיה\"}},{\"ID\":85,\"Title\":\"ניהול תיקים\",\"Harel_MainArea\":\"11;#הראל פיננסים\",\"Harel_Link\":{\"IconUrl\":\"\",\"UseDefaultIcon\":false,\"NavigateUrl\":\"/finance/portfolio-management/Pages/default.aspx\",\"Target\":\"\",\"Text\":\"ניהול תיקים\",\"ToolTip\":\"ניהול תיקים\"}},{\"ID\":69,\"Title\":\"ביטוח דירה ורכוש\",\"Harel_MainArea\":\"9;#ביטוח\",\"Harel_Link\":{\"IconUrl\":\"\",\"UseDefaultIcon\":false,\"NavigateUrl\":\"/insurance/apart"
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/Custom/Portal/assets/bootstrap-modal.js",
+    "status": 200,
+    "body": "/* ===========================================================\r\n * bootstrap-modal.js v2.1\r\n * ===========================================================\r\n * Copyright 2012 Jordan Schroter\r\n *\r\n * Licensed under the Apache License, Version 2.0 (the \"License\");\r\n * you may not use this file except in compliance with the License.\r\n * You may obtain a copy of the License at\r\n *\r\n * http://www.apache.org/licenses/LICENSE-2.0\r\n *\r\n * Unless required by applicable law or agreed to in writing, software\r\n * distributed under the License is distributed on an \"AS IS\" BASIS,\r\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\r\n * See the License for the specific language governing permissions and\r\n * limitations under the License.\r\n * ========================================"
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/Custom/Portal/agent_dash_olap.js",
+    "status": 200,
+    "body": "\r\n//----------------------------------------------------------------------->\r\n// H_InlineMatrix\r\n// ---------------------------------------------------------------------->\r\n\r\nfunction H_InlineMatrix(did) {\r\n\tthis.did = did;\r\n\tthis.type = \"H_InlineMatrix\";\r\n\tthis.xsl = agent_dash.transformers[\"H_InlineMatrix\"];\r\n\tif (this.xsl == null) {\r\n\t\tthis.xsl = agent_dash.transformers[\"H_InlineMatrix\"] = GenerateDomURL(\"../../Custom/Portal/H_InlineMatrix.xsl\");\r\n\t}\r\n}\r\nH_InlineMatrix.prototype.extend = function () {\r\n\tthis.xdi = locateDashboardItem(this.did);\r\n\tthis.dataKey = this.xdi.getAttribute(\"DataSourceId\");\r\n\tvar ret = locateDataSourceData(this.dataKey);\r\n\tthis.XCellSet = ret.selectSingleNode(\"*[yAxis//Member/Cell]\");\r\n\tthis.XDashDataSource = locateDashDataSource(this.dataKey);\r\n\tthis.CubeName "
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/Custom/Portal/assets/bootstrap-datepicker.css",
+    "status": 200,
+    "body": "/*!\r\n * Datepicker for Bootstrap\r\n *\r\n * Copyright 2012 Stefan Petre\r\n * Improvements by Andrew Rowls\r\n * Licensed under the Apache License v2.0\r\n * http://www.apache.org/licenses/LICENSE-2.0\r\n *\r\n */\r\n.datepicker {\r\n  padding: 4px;\r\n  -webkit-border-radius: 4px;\r\n  -moz-border-radius: 4px;\r\n  border-radius: 4px;\r\n  direction: ltr;\r\n  /*.dow {\r\n\t\tborder-top: 1px solid #ddd !important;\r\n\t}*/\r\n\r\n}\r\n.datepicker-inline {\r\n  width: 220px;\r\n}\r\n.datepicker.datepicker-rtl {\r\n  direction: rtl;\r\n}\r\n.datepicker.datepicker-rtl table tr td span {\r\n  float: right;\r\n}\r\n.datepicker-dropdown {\r\n  top: 0;\r\n  left: 0;\r\n}\r\n/*\r\n.datepicker-dropdown:before {\r\n  content: '';\r\n  display: inline-block;\r\n  border-left: 7px solid transparent;\r\n  border-right: 7px solid transparent;\r\n  border-bottom: 7px solid #ccc;\r"
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/Custom/Portal/assets/bootstrap-datepicker.js",
+    "status": 200,
+    "body": "/* =========================================================\r\n * bootstrap-datepicker.js\r\n * http://www.eyecon.ro/bootstrap-datepicker\r\n * =========================================================\r\n * Copyright 2012 Stefan Petre\r\n * Improvements by Andrew Rowls\r\n *\r\n * Licensed under the Apache License, Version 2.0 (the \"License\");\r\n * you may not use this file except in compliance with the License.\r\n * You may obtain a copy of the License at\r\n *\r\n * http://www.apache.org/licenses/LICENSE-2.0\r\n *\r\n * Unless required by applicable law or agreed to in writing, software\r\n * distributed under the License is distributed on an \"AS IS\" BASIS,\r\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\r\n * See the License for the specific language governing permissions and\r\n * lim"
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/Custom/Portal/agent_dash.css",
+    "status": 200,
+    "body": "@charset \"UTF-8\";\n@font-face {\n  font-family: \"mfw_protocolharelmedium\";\n  src: url(\"fonts/MFW_ProtocolHarel-Medium.eot\");\n  src: url(\"fonts/MFW_ProtocolHarel-Medium.eot?#iefix\") format(\"embedded-opentype\"), url(\"fonts/MFW_ProtocolHarel-Medium.woff\") format(\"woff\"), url(\"fonts/MFW_ProtocolHarel-Medium.ttf\") format(\"truetype\"), url(\"fonts/MFW_ProtocolHarel-Medium.svg#mfw_protocolharelmedium\") format(\"svg\");\n}\n@font-face {\n  font-family: \"mfw_protocolharelmedium\";\n  src: url(\"fonts/MFW_ProtocolHarel-Bold.eot\");\n  src: url(\"fonts/MFW_ProtocolHarel-Bold.eot?#iefix\") format(\"embedded-opentype\"), url(\"fonts/MFW_ProtocolHarel-Bold.woff\") format(\"woff\"), url(\"fonts/MFW_ProtocolHarel-Bold.ttf\") format(\"truetype\"), url(\"fonts/MFW_ProtocolHarel-Bold.svg#mfw_protocolharelbold\") format(\"svg\");\n  font-w"
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/Custom/Portal/agent_dash_v2.js",
+    "status": 200,
+    "body": "\r\n\r\n//----------------------------------------------------------------------->\r\n// H_InlineFilters_V2\r\n// ---------------------------------------------------------------------->\r\n\r\nfunction H_InlineFilters_V2(did) {\r\n\tthis.did = did;\r\n\tthis.type = \"H_InlineFilters_V2\";\r\n\tthis.xsl = agent_dash.transformers[\"H_InlineFilters_V2\"];\r\n\tif (this.xsl == null) {\r\n\t\tthis.xsl = agent_dash.transformers[\"H_InlineFilters_V2\"] = GenerateDomURL(\"../../Custom/Portal/H_InlineFilters_V2.xsl\");\r\n\t}\r\n}\r\nH_InlineFilters_V2.prototype.RefreshData = function () {\r\n\tthis.redraw();\r\n\t_UIOnafterTransformDashboards();\r\n}\r\nH_InlineFilters_V2.prototype.redraw = function () {\r\n\tthis.extend();\r\n\tvar hTarget = document.getElementById(\"frame_\" + this.did);\r\n\tvar pointer = this.xsl.selectSingleNode(\"//xsl:param[@name='DID']\""
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/Custom/Portal/agent_dash_charts.js",
+    "status": 200,
+    "body": "\r\nvar SetChart = {\r\n\thandleChartAction : function(did,rowId){\r\n\t\tvar obj = agent_dash.protlets[did];\r\n\t\tif (obj) obj.onRowAction(null, rowId);\r\n\t},\r\n\tgenerate: function (odi, xrows) {\r\n\t\tthis.xdi = odi.xdi;\r\n\t\tthis.uid = this.xdi.getAttribute(\"Id\");\r\n\t\tthis.xcols = odi.xcols;\r\n\t\tthis.xrows = xrows;\r\n\t\tif (!this.xrows)return;\r\n\t\tthis.chartCols = this.xdi.selectNodes(\"Columns/*[@Chart = '1']\");\r\n\t\tif (this.chartCols.length == 0)return;\r\n\t\tthis.chartColsCaptions = this.xdi.selectNodes(\"Columns/*[@ChartCaption = \\\"1\\\"]\");\r\n\t\tthis.chartColsInfos = this.xdi.selectNodes(\"Columns/*[@ChartInfo = '1']\");\r\n\r\n\t\tthis.chartRows = this.xrows.selectNodes(\"*[not(@UI_Hidden)]\");\t\t\r\n\t\tthis.XChartTemplate = this.locateChartTemplate(this.xdi.getAttribute(\"ChartTemplate\"));\r\n\t\tvar newVT = this.getChartTemplateA"
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/Custom/Portal/assets/splide-core.min.css",
+    "status": 200,
+    "body": "@keyframes splide-loading{0%{transform:rotate(0)}to{transform:rotate(1turn)}}.splide__track--draggable{-webkit-touch-callout:none;-webkit-user-select:none;-ms-user-select:none;user-select:none}.splide__track--fade>.splide__list>.splide__slide{margin:0!important;opacity:0;z-index:0}.splide__track--fade>.splide__list>.splide__slide.is-active{opacity:1;z-index:1}.splide--rtl{direction:rtl}.splide__track--ttb>.splide__list{display:block}.splide__container{box-sizing:border-box;position:relative}.splide__list{backface-visibility:hidden;display:-ms-flexbox;display:flex;height:100%;margin:0!important;padding:0!important}.splide.is-initialized:not(.is-active) .splide__list{display:block}.splide__pagination{-ms-flex-align:center;align-items:center;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap"
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/Custom/Portal/assets/bootstrap-modalmanager.js",
+    "status": 200,
+    "body": "/* ===========================================================\r\n * bootstrap-modalmanager.js v2.1\r\n * ===========================================================\r\n * Copyright 2012 Jordan Schroter.\r\n *\r\n * Licensed under the Apache License, Version 2.0 (the \"License\");\r\n * you may not use this file except in compliance with the License.\r\n * You may obtain a copy of the License at\r\n *\r\n * http://www.apache.org/licenses/LICENSE-2.0\r\n *\r\n * Unless required by applicable law or agreed to in writing, software\r\n * distributed under the License is distributed on an \"AS IS\" BASIS,\r\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\r\n * See the License for the specific language governing permissions and\r\n * limitations under the License.\r\n * ================================"
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/Custom/Portal/assets/bootstrap-modal.css",
+    "status": 200,
+    "body": ".modal-backdrop {\r\n  position: fixed;\r\n  top: 0;\r\n  right: 0;\r\n  bottom: 0;\r\n  left: 0;\r\n  z-index: 1040;\r\n  background-color: #000000;\r\n}\r\n\r\n.modal-backdrop.fade {\r\n  opacity: 0;\r\n}\r\n\r\n.modal-backdrop,\r\n.modal-backdrop.fade.in {\r\n  opacity: 0.8;\r\n  filter: alpha(opacity=80);\r\n}\r\n\r\n.modal {\r\n  position: fixed;\r\n  top: 10%;\r\n  left: 50%;\r\n  z-index: 1050;\r\n  width: 560px;\r\n  margin-left: -280px;\r\n  background-color: #ffffff;\r\n  border: 1px solid #999;\r\n  border: 1px solid rgba(0, 0, 0, 0.3);\r\n  *border: 1px solid #999;\r\n  -webkit-border-radius: 6px;\r\n     -moz-border-radius: 6px;\r\n          border-radius: 6px;\r\n  outline: none;\r\n  -webkit-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);\r\n     -moz-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);\r\n          box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);\r\n  -we"
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/Custom/Portal/assets/splide.min.css",
+    "status": 200,
+    "body": ".splide__container{box-sizing:border-box;position:relative}.splide__list{backface-visibility:hidden;display:-ms-flexbox;display:flex;height:100%;margin:0!important;padding:0!important}.splide.is-initialized:not(.is-active) .splide__list{display:block}.splide__pagination{-ms-flex-align:center;align-items:center;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-ms-flex-pack:center;justify-content:center;margin:0;pointer-events:none}.splide__pagination li{display:inline-block;line-height:1;list-style-type:none;margin:0;pointer-events:auto}.splide:not(.is-overflow) .splide__pagination{display:none}.splide__progress__bar{width:0}.splide{position:relative;visibility:hidden}.splide.is-initialized,.splide.is-rendered{visibility:visible}.splide__slide{backface-visibility:hidden;bo"
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/Custom/Portal/assets/splide.min.js",
+    "status": 200,
+    "body": "function r(n,t){for(var i=0;i<t.length;i++){var r=t[i];r.enumerable=r.enumerable||!1,r.configurable=!0,\"value\"in r&&(r.writable=!0),Object.defineProperty(n,r.key,r)}}function Jt(n,t,i){t&&r(n.prototype,t),i&&r(n,i),Object.defineProperty(n,\"prototype\",{writable:!1})}\n/*!\n * Splide.js\n * Version  : 4.1.2\n * License  : MIT\n * Copyright: 2022 Naotoshi Fujita\n */\nvar n,t;n=this,t=function(){\"use strict\";var v=\"(prefers-reduced-motion: reduce)\",G=4,rn=5,r={CREATED:1,MOUNTED:2,IDLE:3,MOVING:G,SCROLLING:rn,DRAGGING:6,DESTROYED:7};function D(n){n.length=0}function o(n,t,i){return Array.prototype.slice.call(n,t,i)}function R(n){return n.bind.apply(n,[null].concat(o(arguments,1)))}function on(){}var p=setTimeout;function h(n){return requestAnimationFrame(n)}function u(n,t){return typeof t===n}functio"
+  },
+  {
+    "url": "https://www.harel-group.co.il/_vti_bin/webapi/Footer/GetHorizontalFooterMenuLinks",
+    "status": 200,
+    "body": "[{\"ShouldDisplay\":true,\"Link\":{\"IconUrl\":null,\"NavigateUrl\":\"/about/harel-group/\",\"Target\":null,\"Text\":\"אודות הראל\",\"ToolTip\":\"אודות הראל\"},\"Id\":9},{\"ShouldDisplay\":true,\"Link\":{\"IconUrl\":null,\"NavigateUrl\":\"/contact\",\"Target\":null,\"Text\":\"שירות לקוחות ופניות הציבור\",\"ToolTip\":\"שירות לקוחות ופניות הציבור\"},\"Id\":10},{\"ShouldDisplay\":true,\"Link\":{\"IconUrl\":null,\"NavigateUrl\":\"/about/csr/\",\"Target\":null,\"Text\":\"אחריות תאגידית\",\"ToolTip\":\"אחריות תאגידית\"},\"Id\":11},{\"ShouldDisplay\":true,\"Link\":{\"IconUrl\":null,\"NavigateUrl\":\"https://agents-int.harel-group.co.il/Pages/default.aspx\",\"Target\":null,\"Text\":\"כניסה לסוכנים\",\"ToolTip\":\"כניסה לסוכנים\"},\"Id\":12},{\"ShouldDisplay\":true,\"Link\":{\"IconUrl\":\"/_layouts/15/IMAGES/ichtm.gif\",\"NavigateUrl\":\"https://biz.harel-group.co.il/Pages/home.aspx\",\"Target\":nu"
+  },
+  {
+    "url": "https://gbx.harel-group.co.il/glassbox/reporting/cls_report?_cls_s=376534f8-e10d-4260-b78a-aae22ec96339%3A0&_cls_v=5fc801fb-d07d-47e7-9971-6160be8fd329&pv=2&f_cls_s=true",
+    "status": 200,
+    "body": "{\"pv\":2,\"clss\":\"376534f8-e10d-4260-b78a-aae22ec96339:0\",\"clsv\":\"5fc801fb-d07d-47e7-9971-6160be8fd329\",\"clse\":null,\"conf\":{\"appId\":15,\"configuration\":{\"attributeRules\":[{\"name\":\"ClaimsStatusType1\",\"pageUrl\":\"https://apps.harel-group.co.il/GeneralClaimStatus/jsp/claimsDisplay.jsp*\",\"pageHash\":\"\",\"selector\":\"BODY>DIV:eq(0)>DIV>DIV>DIV:eq(1)>DIV:eq(1)>UL:eq(1)>LI:eq(1)>SPAN:eq(1)\",\"accessor\":\"innerText\",\"accessorMethod\":\"property\",\"maxLength\":150,\"sessionTerminator\":false},{\"name\":\"ApartmentGeneralError_1\",\"pageUrl\":\"https://digital.harel-group.co.il/apps-apartment-360/error-page\",\"pageHash\":\"\",\"selector\":\"#root>DIV>DIV>DIV:eq(1)>DIV>DIV:eq(0)\",\"accessor\":\"innerText\",\"accessorMethod\":\"property\",\"maxLength\":30,\"sessionTerminator\":false},{\"name\":\"NoSavedOffersDiv\",\"pageUrl\":\"*business-in-click*\""
+  },
+  {
+    "url": "https://gbx.harel-group.co.il/glassbox/reporting/cls_report?_cls_s=376534f8-e10d-4260-b78a-aae22ec96339%3A0&_cls_v=5fc801fb-d07d-47e7-9971-6160be8fd329&pv=2&f_cls_s=true",
+    "status": 200,
+    "body": "{\"pv\":2,\"clss\":\"376534f8-e10d-4260-b78a-aae22ec96339:0\",\"clsv\":\"5fc801fb-d07d-47e7-9971-6160be8fd329\",\"clse\":null,\"conf\":{\"appId\":15,\"configuration\":{\"attributeRules\":[{\"name\":\"ClaimsStatusType1\",\"pageUrl\":\"https://apps.harel-group.co.il/GeneralClaimStatus/jsp/claimsDisplay.jsp*\",\"pageHash\":\"\",\"selector\":\"BODY>DIV:eq(0)>DIV>DIV>DIV:eq(1)>DIV:eq(1)>UL:eq(1)>LI:eq(1)>SPAN:eq(1)\",\"accessor\":\"innerText\",\"accessorMethod\":\"property\",\"maxLength\":150,\"sessionTerminator\":false},{\"name\":\"ApartmentGeneralError_1\",\"pageUrl\":\"https://digital.harel-group.co.il/apps-apartment-360/error-page\",\"pageHash\":\"\",\"selector\":\"#root>DIV>DIV>DIV:eq(1)>DIV>DIV:eq(0)\",\"accessor\":\"innerText\",\"accessorMethod\":\"property\",\"maxLength\":30,\"sessionTerminator\":false},{\"name\":\"NoSavedOffersDiv\",\"pageUrl\":\"*business-in-click*\""
+  },
+  {
+    "url": "https://gbx.harel-group.co.il/glassbox/reporting/cls_report?clsjsv=7.3.264421&_cls_s=376534f8-e10d-4260-b78a-aae22ec96339:0&_cls_v=5fc801fb-d07d-47e7-9971-6160be8fd329&pid=102f197d-f719-44f6-9489-ce7d1749a584&sn=1&cfg&pv=2&aid=",
+    "status": 200,
+    "body": "{\"pv\":2,\"clss\":\"376534f8-e10d-4260-b78a-aae22ec96339:0\",\"clsv\":\"5fc801fb-d07d-47e7-9971-6160be8fd329\",\"clse\":null,\"conf\":{\"appId\":15,\"configuration\":{\"attributeRules\":[{\"name\":\"ClaimsStatusType1\",\"pageUrl\":\"https://apps.harel-group.co.il/GeneralClaimStatus/jsp/claimsDisplay.jsp*\",\"pageHash\":\"\",\"selector\":\"BODY>DIV:eq(0)>DIV>DIV>DIV:eq(1)>DIV:eq(1)>UL:eq(1)>LI:eq(1)>SPAN:eq(1)\",\"accessor\":\"innerText\",\"accessorMethod\":\"property\",\"maxLength\":150,\"sessionTerminator\":false},{\"name\":\"ApartmentGeneralError_1\",\"pageUrl\":\"https://digital.harel-group.co.il/apps-apartment-360/error-page\",\"pageHash\":\"\",\"selector\":\"#root>DIV>DIV>DIV:eq(1)>DIV>DIV:eq(0)\",\"accessor\":\"innerText\",\"accessorMethod\":\"property\",\"maxLength\":30,\"sessionTerminator\":false},{\"name\":\"NoSavedOffersDiv\",\"pageUrl\":\"*business-in-click*\""
+  },
+  {
+    "url": "https://gbx.harel-group.co.il/glassbox/reporting/cls_report?clsjsv=7.3.264421&_cls_s=376534f8-e10d-4260-b78a-aae22ec96339:0&_cls_v=5fc801fb-d07d-47e7-9971-6160be8fd329&pid=e1478521-c040-4a5e-844f-3bb9b921a06e&sn=1&cfg&pv=2&aid=",
+    "status": 200,
+    "body": "{\"pv\":2,\"clss\":\"376534f8-e10d-4260-b78a-aae22ec96339:0\",\"clsv\":\"5fc801fb-d07d-47e7-9971-6160be8fd329\",\"clse\":null,\"conf\":{\"appId\":15,\"configuration\":{\"attributeRules\":[{\"name\":\"ClaimsStatusType1\",\"pageUrl\":\"https://apps.harel-group.co.il/GeneralClaimStatus/jsp/claimsDisplay.jsp*\",\"pageHash\":\"\",\"selector\":\"BODY>DIV:eq(0)>DIV>DIV>DIV:eq(1)>DIV:eq(1)>UL:eq(1)>LI:eq(1)>SPAN:eq(1)\",\"accessor\":\"innerText\",\"accessorMethod\":\"property\",\"maxLength\":150,\"sessionTerminator\":false},{\"name\":\"ApartmentGeneralError_1\",\"pageUrl\":\"https://digital.harel-group.co.il/apps-apartment-360/error-page\",\"pageHash\":\"\",\"selector\":\"#root>DIV>DIV>DIV:eq(1)>DIV>DIV:eq(0)\",\"accessor\":\"innerText\",\"accessorMethod\":\"property\",\"maxLength\":30,\"sessionTerminator\":false},{\"name\":\"NoSavedOffersDiv\",\"pageUrl\":\"*business-in-click*\""
+  },
+  {
+    "url": "https://gbx.harel-group.co.il/glassbox/reporting/cls_report?clsjsv=7.3.264421&_cls_s=376534f8-e10d-4260-b78a-aae22ec96339:0&_cls_v=5fc801fb-d07d-47e7-9971-6160be8fd329&pid=e1478521-c040-4a5e-844f-3bb9b921a06e&sn=2&cfg=e3cf981c&pv=2&aid=",
+    "status": 200,
+    "body": "{\"pv\":2,\"clss\":\"376534f8-e10d-4260-b78a-aae22ec96339:0\",\"clsv\":\"5fc801fb-d07d-47e7-9971-6160be8fd329\",\"clse\":null,\"conf\":null,\"usage\":{\"sessionQuotaBreach\":false, \"apiCallQuotaBreach\":false, \"dataLimit\": 4194304}}"
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/ApplicationPages/HTTP_Proxy_Script.aspx?Action=GetDashboardMetaData&UID=FDFA08DF-1B5B-4777-96AE-B7EE20274DA4&Sid=1795514438048&QSID=1795514437920",
+    "status": 200,
+    "body": "<App Title=\"מידע אישי - לובי גמל להשקעה\" IA=\"0\" RID=\"FDFA08DF-1B5B-4777-96AE-B7EE20274DA4\" RMD=\"public\" DM=\"normal\" UIDir=\"rtl\" UIT=\"blue_rtl\" UT=\"2\"><Legend><Layouts><Layout Id=\"Rows\" Name=\"Rows\" Glyf=\"../../Assets/UI/Images/row.gif\" /><Layout Id=\"Cols\" Name=\"Cols\" Glyf=\"../../Assets/UI/Images/column.gif\" /><Layout Id=\"Single\" Name=\"Single\" Glyf=\"../../Assets/UI/Images/Window.gif\" /></Layouts><Modules><Folder Name=\"Data Set\"><Module Name=\"Data Set Viewer\" Id=\"Set\" Mode=\"frame\" Glyf=\"../../Assets/UI/Images/text_view.png\" P=\"1\" /><Module Name=\"Groupby Grid\" Id=\"GroupbySet\" Mode=\"frame\" Glyf=\"../../Assets/UI/Images/text_tree.png\" P=\"1\" /><Module Name=\"Spark Chart\" Id=\"SparkChart\" Mode=\"frame\" Glyf=\"../../Assets/UI/Images/line-chart.png\" /><Module Name=\"XY Plot\" Id=\"SetXYPlot\" Mode=\"frame\" Gl"
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/Custom/Portal/agent_dash_utils.xml",
+    "status": 200,
+    "body": "<Config>\r\n  <Captions MaxFDisaply=\"מציג % תוצאות ראשונות\" GErrorHead=\"ארעה תקלה\" GErrorBody=\"אנא נסה במועד מאוחר יותר או פנה למוקד שרות לקוחות הראל *2735\"/>\r\n\t<Operands>\r\n\t\t<Member Type=\"number\" Value=\"=\" Name=\"שווה\" ShortName=\"=\"/>\r\n\t\t<Member Type=\"number\" Value=\"&gt;\" Name=\"גדול (&gt;)\" ShortName=\"&gt;\"/>\r\n\t\t<Member Type=\"number\" Value=\"&gt;=\" Name=\"גדול שווה (&gt;=)\" ShortName=\"&gt;=\"/>\r\n\t\t<Member Type=\"number\" Value=\"&lt;\" Name=\"קטן (&lt;)\" ShortName=\"&lt;\"/>\r\n\t\t<Member Type=\"number\" Value=\"&lt;=\" Name=\"קטן שווה (&lt;=)\" ShortName=\"&lt;=\"/>\r\n\t</Operands>\r\n</Config>\r\n"
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/Custom/Portal/agent_dash.xsl",
+    "status": 200,
+    "body": "<xsl:stylesheet version=\"1.0\"  xmlns:xsl=\"http://www.w3.org/1999/XSL/Transform\"  xmlns:msxsl=\"urn:schemas-microsoft-com:xslt\" xmlns:OAO=\"http://www.OAO.co.il\" xmlns:cr=\"http://www.intellisys.co.il\">\r\n<xsl:output method=\"html\" version=\"1.0\" encoding=\"utf-8\" omit-xml-declaration=\"yes\" indent=\"no\" media-type=\"text/html\"/>\r\n<xsl:decimal-format NaN=\"--\"/>\r\n<xsl:param name=\"UIDateFormat\" select=\"/*/@UIDateFormat\"/>\r\n<xsl:param name=\"UIDateOperator\" select=\"/*/@UIDateOperator\"/>\r\n\r\n<xsl:param name=\"IsAdmin\" select=\"/*/@IsAdmin = '1'\"/>\r\n<xsl:param name=\"HasAppRoot\" select=\"/*/@HasAppRoot = '1'\"/>\r\n<xsl:param name=\"isModal\"/>\r\n<xsl:param name=\"isInContainer\"/>\r\n<xsl:param name=\"TransformMode\" select=\"/*/@TransformMode\"/>\r\n<xsl:param name=\"DataPreloaded\" select=\"/*/@DataPreloaded = '1'\"/>\r\n<xsl:par"
+  },
+  {
+    "url": "https://gbx.harel-group.co.il/glassbox/reporting/cls_report?clsjsv=7.3.264421&_cls_s=376534f8-e10d-4260-b78a-aae22ec96339:0&_cls_v=5fc801fb-d07d-47e7-9971-6160be8fd329&pid=102f197d-f719-44f6-9489-ce7d1749a584&sn=2&cfg=e3cf981c&pv=2&aid=",
+    "status": 200,
+    "body": "{\"pv\":2,\"clss\":\"376534f8-e10d-4260-b78a-aae22ec96339:0\",\"clsv\":\"5fc801fb-d07d-47e7-9971-6160be8fd329\",\"clse\":null,\"conf\":null,\"usage\":{\"sessionQuotaBreach\":false, \"apiCallQuotaBreach\":false, \"dataLimit\": 4194304}}"
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/ApplicationPages/HTTP_Proxy_Script.aspx?Action=ExecSQL&Sid=1795514439422&QSID=1795514437920",
+    "status": 200,
+    "body": "<Table><Columns><Column Id=\"a\" Name=\"a\" DataType=\"varchar\" /><Column Id=\"b\" Name=\"b\" DataType=\"varchar\" /><Column Id=\"c\" Name=\"c\" DataType=\"varchar\" /></Columns><Rows /></Table>"
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/ApplicationPages/HTTP_Proxy_Script.aspx?Action=ExecSQL&Sid=1795514439409&QSID=1795514437920",
+    "status": 200,
+    "body": "<Table><Columns><Column Id=\"Mispar_Zehut\" Name=\"Mispar_Zehut\" DataType=\"int\" /><Column Id=\"Mispar_heshbon\" Name=\"Mispar_heshbon\" DataType=\"bigint\" /><Column Id=\"Kod_Kupa_Otzar\" Name=\"Kod_Kupa_Otzar\" DataType=\"int\" /><Column Id=\"SHEM_KEREN\" Name=\"SHEM_KEREN\" DataType=\"varchar\" /><Column Id=\"SUG_KEREN\" Name=\"SUG_KEREN\" DataType=\"int\" /><Column Id=\"SHEM_SOHEN\" Name=\"SHEM_SOHEN\" DataType=\"varchar\" /><Column Id=\"AHUZ_HANAHA_DMEI_NIHUL_HAFK\" Name=\"AHUZ_HANAHA_DMEI_NIHUL_HAFK\" DataType=\"float\" /><Column Id=\"AHUZ_HANAHA_DMEI_NIHUL_ITRA\" Name=\"AHUZ_HANAHA_DMEI_NIHUL_ITRA\" DataType=\"float\" /><Column Id=\"AHUZ_DMEI_NIHUL_HAFKADOT\" Name=\"AHUZ_DMEI_NIHUL_HAFKADOT\" DataType=\"float\" /><Column Id=\"AHUZ_DMEI_NIHUL_ITRA\" Name=\"AHUZ_DMEI_NIHUL_ITRA\" DataType=\"float\" /><Column Id=\"Taarich_pticha\" Name=\"Taarich"
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/Custom/Portal/H_InlineCard_Lobyeyes.xsl",
+    "status": 200,
+    "body": "<xsl:stylesheet version=\"1.0\" xmlns:xsl=\"http://www.w3.org/1999/XSL/Transform\" xmlns:msxsl=\"urn:schemas-microsoft-com:xslt\" xmlns:OAO=\"http://www.OAO.co.il\">\r\n<xsl:output method=\"html\" version=\"1.0\" encoding=\"utf-8\" omit-xml-declaration=\"yes\" indent=\"no\" media-type=\"text/html\"/>\r\n<xsl:decimal-format NaN=\"--\" zero-digit=\"0\"  decimal-separator=\".\" grouping-separator=\",\" name=\"dec\"/>\r\n<xsl:param name=\"UIDateFormat\">1</xsl:param>\r\n<xsl:param name=\"UIDateOperator\">/</xsl:param>\r\n<xsl:param name=\"TransformMode\"/>\r\n<xsl:param name=\"DataKey\"/>\r\n<xsl:param name=\"DID\"/>\r\n<xsl:param name=\"IsRTL\"/>\r\n\r\n<xsl:variable name=\"LGNode\" select=\"*/Fixed/Language\"/>\r\n<xsl:variable name=\"Report\" select=\"*/Data/*/DashboardItems/*[@Id = $DID]\"/>\r\n<xsl:variable name=\"Params\" select=\"$Report/Params\"/>\r\n<xsl:variable"
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/Custom/Portal/H_InlineCards.xsl",
+    "status": 200,
+    "body": "<xsl:stylesheet version=\"1.0\" xmlns:xsl=\"http://www.w3.org/1999/XSL/Transform\" xmlns:msxsl=\"urn:schemas-microsoft-com:xslt\" xmlns:OAO=\"http://www.OAO.co.il\">\r\n<xsl:output method=\"html\" version=\"1.0\" encoding=\"utf-8\" omit-xml-declaration=\"yes\" indent=\"no\" media-type=\"text/html\"/>\r\n<xsl:decimal-format NaN=\"--\" zero-digit=\"0\"  decimal-separator=\".\" grouping-separator=\",\" name=\"dec\"/>\r\n<xsl:param name=\"UIDateFormat\">1</xsl:param>\r\n<xsl:param name=\"UIDateOperator\">/</xsl:param>\r\n<xsl:param name=\"TransformMode\"/>\r\n<xsl:param name=\"DataKey\"/>\r\n<xsl:param name=\"DID\"/>\r\n<xsl:param name=\"IsRTL\"/>\r\n\r\n<xsl:variable name=\"LGNode\" select=\"*/Fixed/Language\"/>\r\n<xsl:variable name=\"Report\" select=\"*/Data/*/DashboardItems/*[@Id = $DID]\"/>\r\n<xsl:variable name=\"Params\" select=\"$Report/Params\"/>\r\n<xsl:variable"
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/Custom/Portal/H_InlineSet_RCard.xsl",
+    "status": 200,
+    "body": "<xsl:stylesheet version=\"1.0\" xmlns:xsl=\"http://www.w3.org/1999/XSL/Transform\" xmlns:msxsl=\"urn:schemas-microsoft-com:xslt\" xmlns:OAO=\"http://www.OAO.co.il\">\r\n<xsl:output method=\"html\" version=\"1.0\" encoding=\"utf-8\" omit-xml-declaration=\"yes\" indent=\"no\" media-type=\"text/html\"/>\r\n<xsl:decimal-format NaN=\"--\" zero-digit=\"0\"  decimal-separator=\".\" grouping-separator=\",\" name=\"dec\"/>\r\n<xsl:param name=\"UIDateFormat\">1</xsl:param>\r\n<xsl:param name=\"UIDateOperator\">/</xsl:param>\r\n<xsl:param name=\"TransformMode\"/>\r\n<xsl:param name=\"DataKey\"/>\r\n<xsl:param name=\"DID\"/>\r\n<xsl:param name=\"IsRTL\"/>\r\n\r\n<xsl:variable name=\"LGNode\" select=\"*/Fixed/Language\"/>\r\n<xsl:variable name=\"Report\" select=\"*/Data/*/DashboardItems/*[@Id = $DID]\"/>\r\n<xsl:variable name=\"Params\" select=\"$Report/Params\"/>\r\n<xsl:variable"
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/Custom/Portal/H_InlineHeader.xsl",
+    "status": 200,
+    "body": "<xsl:stylesheet version=\"1.0\"  xmlns:xsl=\"http://www.w3.org/1999/XSL/Transform\"  xmlns:msxsl=\"urn:schemas-microsoft-com:xslt\" xmlns:OAO=\"http://www.OAO.co.il\" xmlns:cr=\"http://www.intellisys.co.il\">\r\n<xsl:output method=\"html\" version=\"1.0\" encoding=\"utf-8\" omit-xml-declaration=\"yes\" indent=\"no\" media-type=\"text/html\"/>\r\n<xsl:decimal-format NaN=\"--\"/>\r\n<xsl:param name=\"UIDateFormat\">1</xsl:param>\r\n<xsl:param name=\"UIDateOperator\">/</xsl:param>\r\n<xsl:param name=\"TransformMode\"/>\r\n<xsl:param name=\"Dir\">ltr</xsl:param>\r\n<xsl:param name=\"DID\"/>\r\n<xsl:variable name=\"Data\" select=\"*/Data/*\"/>\r\n<xsl:variable name=\"Report\" select=\"$Data/DashboardItems/*[@Id = $DID]\"/>\r\n<xsl:variable name=\"LGNode\" select=\"*/Fixed/Language\"/>\r\n<xsl:variable name=\"Params\" select=\"$Report/Params\"/>\r\n\r\n<xsl:template mat"
+  },
+  {
+    "url": "https://gbx.harel-group.co.il/glassbox/reporting/cls_report?clsjsv=7.3.264421&_cls_s=376534f8-e10d-4260-b78a-aae22ec96339:0&_cls_v=5fc801fb-d07d-47e7-9971-6160be8fd329&pid=102f197d-f719-44f6-9489-ce7d1749a584&sn=3&cfg=e3cf981c&pv=2&aid=",
+    "status": 200,
+    "body": "{\"pv\":2,\"clss\":\"376534f8-e10d-4260-b78a-aae22ec96339:0\",\"clsv\":\"5fc801fb-d07d-47e7-9971-6160be8fd329\",\"clse\":null,\"conf\":null,\"usage\":{\"sessionQuotaBreach\":false, \"apiCallQuotaBreach\":false, \"dataLimit\": 4194304}}"
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/_portal/portal.css",
+    "status": 200,
+    "body": "body,html{\r\n\tdirection:rtl\r\n}\r\nbody{\r\n\t/*font-family: Arial;\r\n\tcolor:#444;\r\n\tbackground-color: #fff;\r\n\tmargin: 0px;\r\n\tborder: none;\r\n\tbackground-color:#69727b;*/\r\n}\r\n.portal-body{\r\n\tmax-width:980px;\r\n\tmargin:0 auto;\r\n\t/*background-color:#fff;*/\r\n\r\n}\r\n.portal-body h1{\r\n\ttext-align:center;\r\n\tbackground-color:#f1f1f1;\r\n\tborder-bottom:1px solid #ccc;\r\n\tborder-top:1px solid #ccc;\r\n\tmargin:0px;\r\n\ttext-align:right;\r\n\tfont-size:20px;\r\n\tpadding:8px 6px;\r\n}\r\n\r\n.portal-body h1 button{\r\n\tfloat:left;\r\n\tborder:1px solid #ccc;\r\n\tborder-radius: 4px;\r\n\tbackground-repeat: no-repeat;\r\n\tbackground-position: center center;\r\n\theight:22px;\r\n\twidth:22px;\r\n\tmargin-right:5px;\r\n}\r\n.portal-body h1 button:hover{\r\n\tbackground-color:#ffffff;\r\n\tborder-color:#333;\r\n}\r\n.portal-body h1 button.refresh{\r\n\tbackground-image:url"
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/_portal/intellisys.css",
+    "status": 200,
+    "body": "\r\n.intellisys{position:relative; /*min-height:0;*/} \r\n.intellisys .loading-mask{\r\n    display:none;\r\n\tposition:absolute;\r\n\tz-index:10;\r\n\ttop:0px; bottom:0px; left:0px; right:0px;\r\n\tbackground: url(\"/_layouts/15/HarelWebSite/1037/img/Loading_30x30.gif\") no-repeat center center white;\r\n}\r\n.intellisys .frame{\r\n    width:10px;\r\n    min-width:100%;\r\n\t*width:100%;\r\n\tborder-width:0px;\r\n}"
+  },
+  {
+    "url": "https://www.harel-group.co.il/personal-info/gemel-funding/Pages/reports/gemel-funding-policy-details.aspx?FilterParams=policySubjectId|159168707",
+    "status": 200,
+    "body": "\r\n\r\n\r\n\r\n\r\n\r\n<!DOCTYPE HTML>\r\n<html lang=\"he\" dir=\"rtl\">\r\n    \r\n    <head><meta http-equiv=\"X-Frame-Options\" content=\"allow\" /><meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\" /><meta charset=\"utf-8\" /><meta name=\"GENERATOR\" content=\"Microsoft SharePoint\" /><meta http-equiv=\"Content-type\" content=\"text/html; charset=utf-8\" /><meta http-equiv=\"Expires\" content=\"0\" /><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0 maximum-scale=1, user-scalable=no\" /><meta name=\"format-detection\" content=\"telephone=no\" /><meta name=\"google-site-verification\" content=\"jPsbtiiwqJVlZ6xg98v_AH3yY3BOdOSsYwUE0r23Zsk\" /><link rel=\"preconnect\" href=\"www.googletagmanager.com\"/>\n<link rel=\"preconnect\" href=\"https://www.google-analytics.com\"/>\n<link rel=\"preconnect\" href=\"https://connect.faceboo"
+  },
+  {
+    "url": "https://digital.harel-group.co.il/portal-config-backend/api/v1/micro-frontends/get-config/cus",
+    "status": 200,
+    "body": "{\"success\":true,\"data\":{\"importMap\":{\"imports\":{\"@harel/agents-nav\":\"https://d1oqsep8o8n0bq.cloudfront.net/apps-michlol-menus-frontend/agents-menus.js?v=2.0.13\",\"react\":\"https://d1oqsep8o8n0bq.cloudfront.net/apps-root-config-frontend/npmcdn/react/system/react.production.min.js\",\"common-ui\":\"https://d1oqsep8o8n0bq.cloudfront.net/apps-root-config-frontend/npmcdn/harel/common-ui.2.1.22.js\",\"@harel/root-config\":\"https://d1oqsep8o8n0bq.cloudfront.net/apps-root-config-frontend/root-config.js\",\"react-dom\":\"https://d1oqsep8o8n0bq.cloudfront.net/apps-root-config-frontend/npmcdn/react-dom/system/react-dom.production.min.js\",\"@harel/agents-footer\":\"https://d1oqsep8o8n0bq.cloudfront.net/apps-agents-footer-frontend/agents-footer.js\",\"@harel/apartment-360\":\"https://d1oqsep8o8n0bq.cloudfront.net/apps-apa"
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/Custom/Portal/agent_dash.js?ver=6",
+    "status": 200,
+    "body": "const i_portal_version = '08.01';\r\nconsole.log('IVERSION', i_portal_version);\r\ndocument.write('<link href=\"../../Custom/Portal/assets/bootstrap-modal.css\" rel=\"stylesheet\" type=\"text/css\" />');\r\ndocument.write('<script language=javascript src=\"../../Custom/Portal/assets/bootstrap-modal.js\"></script>');\r\ndocument.write('<script language=javascript src=\"../../Custom/Portal/assets/bootstrap-modalmanager.js\"></script>');\r\ndocument.write('<script language=javascript src=\"../../Custom/Portal/agent_dash_charts.js\"></script>');\r\ndocument.write('<script language=javascript src=\"../../Custom/Portal/agent_dash_olap.js\"></script>');\r\ndocument.write('<script language=javascript src=\"../../Custom/Portal/assets/bootstrap-datepicker.js\"></script>');\r\ndocument.write('<script language=javascript src=\"../../"
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/GUIGenerator_V2/Extensions/jquery.ui.theme.css?t=20261024",
+    "status": 200,
+    "body": "/* Selectable\r\n----------------------------------*/\r\n.ui-selectable-helper { position: absolute; z-index: 100; border:1px dotted black; }\r\n\r\n/* Resizable\r\n----------------------------------*/\r\n.ui-resizable { position: relative;}\r\n.ui-resizable-handle { position: absolute;font-size: 0.1px; display: block; }\r\n.ui-resizable-disabled .ui-resizable-handle, .ui-resizable-autohide .ui-resizable-handle { display: none; }\r\n.ui-resizable-n { cursor: n-resize; height: 7px; width: 100%; top: -5px; left: 0; }\r\n.ui-resizable-s { cursor: s-resize; height: 7px; width: 100%; bottom: -5px; left: 0; }\r\n.ui-resizable-e { cursor: e-resize; width: 7px; right: -5px; top: 0; height: 100%; }\r\n.ui-resizable-w { cursor: w-resize; width: 7px; left: -5px; top: 0; height: 100%; }\r\n.ui-resizable-se { cursor: se-resize;"
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/GG_Implementation/Messaging/msgBoxLight.css?t=20261024",
+    "status": 200,
+    "body": "div.msgBox\r\n{\r\n    padding: 4px 10px 4px 10px;\r\n    position: absolute;/*fixed*/\r\n    z-index: 10000;  \r\n    width: 430px;\r\n    min-height:160px;\r\n    -moz-border-radius: 6px;\r\n    -webkit-border-radius: 6px;\r\n    border-radius: 6px;\r\n    -moz-box-shadow: 0px 0px 11px #000000;\r\n    -webkit-box-shadow: 0px 0px 11px #000000;\r\n    box-shadow: 0px 0px 11px #000000;\r\n    background-image: url('Images/msgBoxBackGround.png');\r\n    border : 2px solid #002c5f;\r\n}\r\ndiv.msgBoxBackGround\r\n{\r\n    top:0;\r\n    left:0;\r\n    position:absolute;\r\n    padding:0;\r\n    margin:0;\r\n    width:100%;\r\n    height:100%;\r\n    background-color:#000000;\r\n    opacity:0.9;\r\n    z-index:999;\r\n}\r\ndiv.msgBoxTitle\r\n{\r\n    padding:5px 0 5px 0;\r\n    font-variant:small-caps;\r\n    font-size:16pt;\r\n    font-weight:lighter;\r\n    col"
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/GUIGenerator_V2/assets/themes/jscal2.css?t=20261024",
+    "status": 200,
+    "body": "/* CSS */\r\n\r\n.DynarchCalendar {\r\n  border: 2px solid #a2becd;\r\n  -moz-user-select: none;\r\n  -webkit-user-select: none;\r\n  user-select: none;\r\n  background: #f4f6f6;\r\n  font: 11px \"lucida grande\",tahoma,verdana,sans-serif;\r\n  line-height: 14px;\r\n  position: relative;\r\n  cursor: default;\r\n}\r\n\r\n.DynarchCalendar table {\r\n  border-collapse: collapse;\r\n  font: 11px \"lucida grande\",tahoma,verdana,sans-serif;\r\n  line-height: 14px;\r\n}\r\n\r\n.DynarchCalendar-topBar {\r\n  border-bottom: 1px solid #a2becd;\r\n  background: #f4f6f6;\r\n  padding: 5px 0 0 0;\r\n}\r\n\r\ntable.DynarchCalendar-titleCont {\r\n  font-size: 130%; font-weight: bold;\r\n  color: #444;\r\n  text-align: center;\r\n  z-index: 9;\r\n  position: relative;\r\n  margin-top: -6px;\r\n}\r\n\r\n.DynarchCalendar-title div {\r\n  padding: 5px 17px;\r\n  text-shadow: 1px 1px"
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/GG_Implementation/ContextMenu/ContextMenu.css?t=20261024",
+    "status": 200,
+    "body": ".ggcontextmenu {\r\n\tmargin: 0;\r\n\tpadding: 0;\r\n\tlist-style: none;\r\n\tmin-width: 100px;\r\n\tmax-width: 300px;\r\n\tposition: absolute;\r\n\tz-index:90;\r\n\t\r\n\tborder-radius:4px;\r\n\tborder:1px dotted #111;\r\n\tbackground: #fff; \r\n\tbackground: linear-gradient(top, #efefef 0%, #bbbbbb 100%);  \r\n\tbackground: -moz-linear-gradient(top, #efefef 0%, #bbbbbb 100%); \r\n\tbackground: -webkit-linear-gradient(top, #efefef 0%,#bbbbbb 100%); \r\n\tbox-shadow: 0px 0px 9px rgba(0,0,0,0.15);\r\n\t\r\n\tcursor:default;\r\n}\r\n\r\n.ggcontextmenu li {\r\n\tposition: relative;\r\n\t}\r\n\t\r\n.ggcontextmenu li ul {\r\n\tposition: absolute;\r\n\tleft: 149px; /* Set 1px less than menu width */\r\n\ttop: 0;\r\n\tdisplay: none;\r\n\t}\r\n\r\n\r\n.ggcontextmenu li.CSeparator\r\n{\r\n\tborder-top: 1px dotted #cccccc;\r\n\tborder-bottom: 1px dotted #f1f1f1;\r\n\theight: 0px;\r\n\toverflow: hidde"
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/OAOAnalysis/Dashboard/Assets/bootstrap.css?t=20261024",
+    "status": 200,
+    "body": "/*!\r\n * Bootstrap v2.3.2\r\n *\r\n * Copyright 2012 Twitter, Inc\r\n * Licensed under the Apache License v2.0\r\n * http://www.apache.org/licenses/LICENSE-2.0\r\n *\r\n * Designed and built with all the love in the world @twitter by @mdo and @fat.\r\n */\r\n.clearfix {\r\n  *zoom: 1;\r\n}\r\n.clearfix:before,\r\n.clearfix:after {\r\n  display: table;\r\n  content: \"\";\r\n  line-height: 0;\r\n}\r\n.clearfix:after {\r\n  clear: both;\r\n}\r\n.hide-text {\r\n  font: 0/0 a;\r\n  color: transparent;\r\n  text-shadow: none;\r\n  background-color: transparent;\r\n  border: 0;\r\n}\r\n.input-block-level {\r\n  display: block;\r\n  width: 100%;\r\n  min-height: 30px;\r\n  -webkit-box-sizing: border-box;\r\n  -moz-box-sizing: border-box;\r\n  box-sizing: border-box;\r\n}\r\n\r\n\r\nhtml {\r\n  font-size: 100%;\r\n  -webkit-text-size-adjust: 100%;\r\n  -ms-text-size-adjust: 100%"
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/GUIGenerator_V2/assets/themes/Blue.css?t=20261024",
+    "status": 200,
+    "body": "body,html{height:100%}\r\nbody{font: arial;color:#444;background-color: #fff;scroll: no;margin: 0px;border: none;overflow: hidden;}\r\ntd{\r\nfont-family:Arial;\r\nfont-size:11px;\r\n}\r\ndiv{\r\nfont-family:Arial;\r\nfont-size:11px;\r\n}\r\n\r\n\r\n.boxcontainerheader\r\n{\r\n\tpadding: 3px; overflow:hidden;\r\n}\r\n\r\n.boxroundheader\r\n{\r\n\tbackground-color:#dfdfdf;\r\n\tborder:1px solid #cccccc;\r\n\theight:21px;\r\n\tbackground-image:url(images/vistaBGlight.gif);\r\n\tborder-radius:5px; \r\n\tpadding-top:4px;\r\n\tfont:12px;\r\n}\r\n\r\n.boxcontainertext\r\n{\r\n\tfont-size:13px;\r\n\tline-height:20px;\r\n\tfont-weight:bold;\r\n\tcolor:#1d68ad;\t\r\n}\r\n.boxcontainer1{border: 1px solid #bbcdcc;background:#fff;}\r\n.boxcontainer2{border: 1px solid #a2becd;background:#fff;}\r\n.boxcontainer3{border: 1px solid #bbcdcc;background:#f4f6f6;}\r\n.boxcontainer4{border: 1px so"
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/OAOAnalysis/Dashboard/Assets/DashboardViewer.css?t=20261024",
+    "status": 200,
+    "body": "\r\n\r\n/***\r\nPage sidebar\r\n***/\r\n\r\n/* ie8 fixes */\r\n.ie8 .page-sidebar {\r\n  position: absolute;\r\n  width: 225px;\r\n}\r\n\r\n#dv-dash-sidebar{\r\n\twidth:250px;\r\n\toverflow:hidden;\r\n\tposition:fixed;\r\n\ttop:31px;\r\n\tbackground-color:#eee;\r\n\tborder-right:1px solid #ccc;\r\n\tborder-top:1px solid #ccc;\r\n\tz-index:10;\r\n\toverflow:hidden;\r\n\toverflow-y:auto;\r\n\tcursor:default;\r\n}\r\n#dv-dash-sidebar.side-collapsed{\r\n\tleft:-251px;\r\n}\r\n\r\n#dv-dash-sidebar .optionssection{\r\n\tbackground:transparent;\r\n}\r\n#dv-dash-sidebar .section-header{\r\n\tbackground:#ddd;\r\n\tline-height:28px;\r\n\tfont-size:14px;\r\n\tcursor:pointer;\r\n\tborder-bottom:1px solid #ccc;\r\n}\r\n\r\n\t#dv-dash-sidebar .section-header.action:hover{\r\n\t\ttext-decoration:underline;\r\n\t\tcolor:#e57c00;\r\n\t}\r\n\r\n#dv-dash-content{\r\n\tmargin-left:250px;\r\n\toverflow:hidden;\r\n}\r\n\t#dv-dash-con"
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/Configuration/configuration.css?t=20261024",
+    "status": 200,
+    "body": ".dashdicaption{\r\n\tbackground:#5c7ca7;\t\r\n\tborder-radius:5px 5px 0px 0px;\r\n}\r\n.dashdicaption .diheadercaption{color:#ffffff}"
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/GUIGenerator_V2/assets/themes/Blue_rtl.css?t=20261024",
+    "status": 200,
+    "body": "\r\n\r\n.containerLeft, .containerleft{border-width:0px 1px 0px 0px;}\r\n.containerRight{border-width:0px 0px 0px 1px;}\r\n.treecontainerlast{padding:0px 16px 0px 0px;}\r\n.defaultalign,.alignnear{text-align:right;}\r\n.alignfar{text-align:left;}\r\n\r\n.floatleft{float:right;}\r\n.floatright{float:left;}\r\n.clearleft{clear:right;}\r\n.clearright{clear:left;}\r\n.floatcontrol{float:right; line-height:20px;padding-left:3px;padding-right:0px;}\r\n.floatcontainer{float:right; line-height:20px;padding-left:15px;padding-right:0px;}\r\n\r\n.inputfind\r\n{\r\n\tbackground-position:left;\r\n}\r\n.gg_ctrlcontainer .ctrlinput\r\n{\r\n\tfloat:right;\r\n}\r\n.gg_ctrlcontainer .ctrlText\r\n{\r\n\tfloat:right;\r\n}\r\n\r\n.gg_ctrlcontainer .ctrlbutton\r\n{\r\n\tfloat:left;\r\n\tborder-left-width:0px;\r\n\tborder-right:1px solid #bebebe;\r\n}\r\n\r\nhtml, body {direction:rtl}\r\n"
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/GG_Implementation/ScreenEntity/module.js?t=20261024",
+    "status": 200,
+    "body": "var UIApplicationRoot;\r\nvar UIDir = \"ltr\";\r\nvar UITheme = \"Blue\";\r\nvar GG_Window,UIApplicationRoot;\r\n\r\nwindow.IsActiveXObject = (window.ActiveXObject || !!navigator.userAgent.match(/Trident\\/7\\./));\r\n\r\nfunction getApplicationRoot(){\r\n\ttry{\r\n\tvar d = window.parent;\r\n\tvar t;\r\n\twhile (d){\r\n\t\tif (d.UIIsApplicationRoot)return d;\r\n\t\telse{\r\n\t\t\tt=d.window.parent;\r\n\t\t\tif (t==d)break;\r\n\t\t\telse d=t;\r\n\t\t}\t\t\t\r\n\t}\r\n    var args = window.dialogArguments;\r\n    if (args && typeof(args) == \"object\")return args.approot;\r\n\t}catch(e){}\r\n}\r\nfunction GG_initWindow(){\r\n\tUIApplicationRoot = getApplicationRoot();\r\n\tif (!UIApplicationRoot)return;\r\n\r\n\tthis.openModalDialog = function(sURL , vArguments, sFeatures, closeHandler){\r\n\t\tUIApplicationRoot.WindowsHandler.openModalDialog(sURL , vArguments, sFeatures, closeHand"
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/GUIGenerator_V2/Extensions/jquery.js?t=20261024",
+    "status": 200,
+    "body": "(function(a,b){function cy(a){return f.isWindow(a)?a:a.nodeType===9?a.defaultView||a.parentWindow:!1}function cv(a){if(!ck[a]){var b=c.body,d=f(\"<\"+a+\">\").appendTo(b),e=d.css(\"display\");d.remove();if(e===\"none\"||e===\"\"){cl||(cl=c.createElement(\"iframe\"),cl.frameBorder=cl.width=cl.height=0),b.appendChild(cl);if(!cm||!cl.createElement)cm=(cl.contentWindow||cl.contentDocument).document,cm.write((c.compatMode===\"CSS1Compat\"?\"<!doctype html>\":\"\")+\"<html><body>\"),cm.close();d=cm.createElement(a),cm.body.appendChild(d),e=f.css(d,\"display\"),b.removeChild(cl)}ck[a]=e}return ck[a]}function cu(a,b){var c={};f.each(cq.concat.apply([],cq.slice(0,b)),function(){c[this]=a});return c}function ct(){cr=b}function cs(){setTimeout(ct,0);return cr=f.now()}function cj(){try{return new a.ActiveXObject(\"Microsoft"
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/GUIGenerator_V2/Extensions/jquery-ui.js?t=20261024",
+    "status": 200,
+    "body": "/*! jQuery UI - v1.9.2 - 2012-12-18\r\n* http://jqueryui.com\r\n* Includes: jquery.ui.core.js, jquery.ui.widget.js, jquery.ui.mouse.js, jquery.ui.position.js, jquery.ui.draggable.js, jquery.ui.droppable.js, jquery.ui.resizable.js, jquery.ui.selectable.js, jquery.ui.sortable.js\r\n* Copyright (c) 2012 jQuery Foundation and other contributors Licensed MIT */\r\n\r\n(function(e,t){function i(t,n){var r,i,o,u=t.nodeName.toLowerCase();return\"area\"===u?(r=t.parentNode,i=r.name,!t.href||!i||r.nodeName.toLowerCase()!==\"map\"?!1:(o=e(\"img[usemap=#\"+i+\"]\")[0],!!o&&s(o))):(/input|select|textarea|button|object/.test(u)?!t.disabled:\"a\"===u?t.href||n:n)&&s(t)}function s(t){return e.expr.filters.visible(t)&&!e(t).parents().andSelf().filter(function(){return e.css(this,\"visibility\")===\"hidden\"}).length}var n=0,r=/^u"
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/Main/Nav/appWrapper.js?t=20261024",
+    "status": 200,
+    "body": "if (!window.UIApplicationRoot){\r\ndocument.write('<script src=\"../../Main/Nav/appWrapper_Util.js\" type=\"text/javascript\"></script>');\r\nUIIsApplicationRoot = true;\r\n}"
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/GG_Implementation/Messaging/jquery.msgBox.js?t=20261024",
+    "status": 200,
+    "body": "\r\njQuery.msgBox = GGmsg;\r\nfunction GGmsg (options) { \r\n    var isShown = false; \r\n    var typeOfValue = typeof options; \r\n    var defaults = { \r\n        content: (typeOfValue == \"string\" ? options : \"\"), \r\n        htmlContent : \"HTML Content\", \r\n        type: \"info\", \r\n        autoClose: false, \r\n        timeOut: 0, \r\n        showButtons: true, \r\n        buttons: [{ value: \"Ok\"}], \r\n        lockModal:false,\r\n        inputs: [{ type: \"text\", name:\"value\", header: \"Value\" }], \r\n        success: function(result) {\r\n        },\r\n        beforeShow: function() {\r\n        },\r\n        afterShow: function() {\r\n        },\r\n        beforeClose: function() {\r\n        },\r\n        afterClose: function() {\r\n        },\r\n        opacity: 0.1 \r\n    }; \r\n    options = typeOfValue == \"string\" ? defaults : opt"
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/GUIGenerator_V2/core/utilities.js?t=20261024",
+    "status": 200,
+    "body": "var STATUSATTRIB = \"Status\";\r\nvar STATUSEDIT = 2;\r\nvar STATUSNEW = 6;\r\nvar STATUSDELETE = 8;\r\n\r\nvar GG_TrackAttributes = false;\r\nvar _UIDisableNodeStatus = false;\r\nvar bWasChanged = false;\r\nvar CMENU;\r\nvar _HideHTTPErrors = false;\r\nvar CheckForSave = true;\r\n\r\nfunction generateDom(xmlStr){\r\n\tif (window.IsActiveXObject) {\r\n\t\tif (typeof(xmlStr) == \"object\")xmlStr = xmlStr.xml;\r\n\t\tvar xmlDoc = new window.ActiveXObject(\"Microsoft.XMLDOM\");\r\n\t\txmlDoc.async = \"false\";\r\n\t\txmlDoc.loadXML(xmlStr);\r\n\t\treturn xmlDoc;\r\n\t}else if (typeof window.DOMParser != \"undefined\") {\r\n\t\tif (typeof xmlStr == \"object\"){\r\n\t\t\tvar serializer = new XMLSerializer();\r\n\t\t\txmlStr = serializer.serializeToString(xmlStr);\r\n\t\t}\r\n\t\tif (xmlStr == null || xmlStr == \"\")return document.implementation.createDocument(\"\",\"\",null);\r\n\t\tre"
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/GUIGenerator_V2/assets/resizer.js?t=20261024",
+    "status": 200,
+    "body": "var theResizeObject = null;\r\nfunction doResizerDown(e,hElm){\r\n\te = e || window.event;\r\n\t$(hElm).attr('unselectable', 'on').css('user-select', 'none').on('selectstart', false);\r\n\ttheResizeObject = new Object();\r\n\ttheResizeObject.resizeFor = document.getElementById(hElm.getAttribute(\"resizeFor\"));\r\n\tif (theResizeObject.resizeFor == null)return;\r\n\tif (theResizeObject.resizeFor.style.display == \"none\")return\r\n\t\r\n\tvar pt = fGetXY(hElm);\r\n\tif (!document.getElementById(\"dvUIResizer\")){\r\n        document.body.insertAdjacentHTML(\"AfterBegin\",'<div id=\"dvUIResizer\" style=\"display:none\" ent=\"ghost\" ></div>');\r\n\r\n        $(\"#dvUIResizer\").attr('unselectable', 'on').css('user-select', 'none').on('selectstart', false);\r\n\r\n\t}\r\n\tdvUIResizer.style.display = \"\";\r\n\tvar hbind = window;\r\n\tif (dvUIResizer.setCa"
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/GUIGenerator_V2/assets/jscal2.js?t=20261024",
+    "status": 200,
+    "body": "Calendar = (function () {\r\n\tfunction y(at) { at = at || {}; this.args = at = al(at, { animation: !c, cont: null, bottomBar: true, date: true, fdow: aq(\"fdow\"), min: null, max: null, reverseWheel: false, selection: [], selectionType: y.SEL_SINGLE, weekNumbers: false, align: \"Bl/ / /T/r\", inputField: null, trigger: null, dateFormat: \"%Y-%m-%d\", opacity: j ? 1 : 3, titleFormat: \"%b %Y\", showTime: false, timePos: \"right\", time: true, minuteStep: 5, disabled: ad, dateInfo: ad, onChange: ad, onSelect: ad, onTimeChange: ad, onFocus: ad, onBlur: ad }); this.handlers = {}; var P = this, D = new Date(); at.min = Y(at.min); at.max = Y(at.max); if (at.date === true) { at.date = D } if (at.time === true) { at.time = D.getHours() * 100 + Math.floor(D.getMinutes() / at.minuteStep) * at.minuteStep } this."
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/GG_Implementation/core/core_override.js?t=20261024",
+    "status": 200,
+    "body": "document.write('<script language=javascript src=\"../../GUIGenerator_V2/Extensions/jquery.maskedinput.js\"></script>');\r\ndocument.write('<script src=\"../../GUIGenerator_V2/assets/xslt-polyfill.min.js\" type=\"text/javascript\"></script>');\r\n// ---------------------------------------------------------------------------------->\r\nvar ERR_SESSION_NOT_EXISTS = \"-999\";\r\n// Localization --------------------------------------------------------------------->\r\nvar UIDateFormat = 1;\r\nvar UIDateOperator = \"/\";\r\nvar UIFirstDayOfWeek = 0;\r\nvar UIApplicationTitle = \"Intellisys\";\r\nvar UIuseAmPm = true;\r\ntry{\r\nCalendar.LANG(\"en\", \"English\", {\r\nfdow: 0,// first day of week for this locale; 0 = Sunday, 1 = Monday, etc.\r\ngoToday: \"עבור להיום\",\r\ntoday: \"היום\",\r\nwk: \"wk\",\r\nAM: \"am\",\r\nPM: \"pm\",\r\nweekend: \"0,6\",// 0 ="
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/GG_Implementation/ContextMenu/ContextMenu.js?t=20261024",
+    "status": 200,
+    "body": "\r\nfunction ContextMenu(){}\r\n\r\nfunction GGPop_Options(args){\r\n\tContextMenu.isRTL = $('body').css('direction') == \"rtl\";\r\n\tthis.items = [];\r\n\tthis.finditems = [];\r\n\tthis.icons = false;\r\n\tthis.args = args || {};\r\n}\r\nGGPop_Options.prototype.add = function (obj) {\r\n\tthis.items.push(obj);\r\n\tif (obj.icon)this.icons = true;\r\n\tif(obj.constructor==ContextItem && !obj.disabled && obj.text != \"\"){\r\n\t\tthis.finditems.push(obj);\r\n\t\tobj.findIndex = this.finditems.length - 1;\r\n\t}\r\n\treturn obj;\r\n}\r\nGGPop_Options.prototype.iterate =  function (mode){\r\n\tvar n = this.finditems.length;\r\n\tif (this.selectedIndex == null)var start = mode > 0 ? 0 : n-1;\r\n\telse var start = this.selectedIndex + mode;\r\n\tif (start < 0)start = n-1;\r\n\tif (start == n)start = 0;\r\n\tvar o = this.finditems[start];\r\n\tif (o && start == 0 && o.u"
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/OAOAnalysis/Assets/AnalisysServerFunctions.js?t=20261024",
+    "status": 200,
+    "body": "var OlapHTTPURL = \"/_layouts/15/HarelWebSite/HarelReports/ApplicationPages/HTTP_Proxy_Script.aspx\";\r\nfunction checkErrors(xmlResult) {\r\n\tif (!xmlResult) return true;\r\n\tvar xmlError = xmlResult.documentElement;\r\n\tif (xmlResult.documentElement.tagName != \"Error\") return false;\r\n\tvar errorNumber = Number(xmlError.getAttribute(\"Number\"));\r\n\t\r\n\tif (errorNumber == ERR_SESSION_NOT_EXISTS){\r\n\t\talert(xmlError.getAttribute(\"Description\"));\r\n\t\t//HandleSessionEnd();\r\n\t\twindow.top.location.replace(\"../../Default.aspx?r=1\");\r\n\t\treturn true;\r\n\t}else{\r\n\t\tif (_HideHTTPErrors){\r\n\t\t\tif (xmlResult.documentElement)xmlResult = xmlResult.documentElement;\r\n\t\t\txmlResult.setAttribute(\"Time\",new Date().toLocaleTimeString());\r\n\t\t\t_HideHTTPErrors.push(xmlResult);\r\n\t\t\tvar h = document.getElementById(\"HErrorDisplay\");\r\n"
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/OAOAnalysis/Assets/Olap_Criteria.js?t=20261024",
+    "status": 200,
+    "body": "//-------------------------------------------------->\r\n// UTILITIES\r\n//-------------------------------------------------->\r\nfunction getMemberParams(UID,sAxis,xCellSet,criteria){\r\ntry{\r\n\tvar params = new Object();\r\n\tparams.memberId = UID;\r\n\tparams.xMember = locateCellsetMember(xCellSet,UID);\r\n\tparams.dimensionId = getDimensionUIDFromMember(UID,criteria);\r\n\tparams.sAxis = sAxis;\r\n\treturn params;\r\n}catch(e){return params;}\r\n}\r\nfunction getDimensionParams(UID,dephthHolder,criteria){\r\ntry{\t\r\n\tvar params = new Object();\r\n\tparams.dimensionId = UID;\r\n\tif (UID == null)return Params;\r\n\tif (dephthHolder)params.depthDimension = LocateDimension(dephthHolder,UID);\r\n\tvar xCDimension = locateCriteriaDimension(criteria,UID);\r\n\tparams.criteriaDimension = xCDimension;\r\n\tvar sAxis = xCDimension.parentNode.no"
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/GUIGenerator_V2/assets/chartsNew/FusionCharts.js?t=20261024",
+    "status": 200,
+    "body": "/*\r\n FusionCharts JavaScript Library\r\n Copyright FusionCharts Technologies LLP\r\n License Information at <http://www.fusioncharts.com/license>\r\n FusionCharts JavaScript Library\r\n Copyright FusionCharts Technologies LLP\r\n License Information at <http://www.fusioncharts.com/license>\r\n\r\n @version 3.9.0\r\n\r\n @attributions (infers respective third-party copyrights)\r\n Raphael 2.1.0 (modified as 'Red Raphael') <http://raphaeljs.com/license.html>\r\n JSON v2 <http://www.JSON.org/js.html>\r\n Firebug Lite 1.3.0 <http://getfirebug.com/firebuglite>\r\n*/\r\n(function(){if(!window.FusionCharts||!window.FusionCharts.version){var f=window,t=f.document,C=f.navigator,q={window:f},d=q.modules={},a=q.interpreters={},m=Object.prototype.toString,F=/msie/i.test(C.userAgent)&&!f.opera,c=/loaded|complete/,l=!1,b=function("
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/OAOAnalysis/Dashboard/Assets/DashboardViewer.js?t=20261024",
+    "status": 200,
+    "body": "\r\n// =============================================================>\r\nvar DataSource = 0;\r\nvar ReportType = 5;\r\nvar EnableUndo = true;\r\nvar Legend,LGNode,dataNode,DataRoot,Layout,TMP,UseParentDIDashboardFilters;\r\nvar ArgHolder = new Object();\r\nvar IsExternalyLoaded = false;\r\nvar EnableAsyncDataLoad,EnableAsyncFilterLoad;\r\nvar _DefBlankFrame = \"about:blank\";\r\n// =============================================================>\r\n// Functions\r\n// =============================================================>\r\n// =============================================================>\r\n\r\n// ----------------------------------------------------->\r\n// G A R B A G E\r\n// ----------------------------------------------------->\r\n\r\nwindow.onbeforeunload = function(){unloadDashboardItems();}\r\nfunction unloadDashboard"
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/GlobalVars.js?t=20261024",
+    "status": 200,
+    "body": "//var OlapHTTPURL =  \"proxy url\";\r\nvar _UIDisableMaximize;\r\nvar _UIUseSecuredLinks = false;\r\nvar EnforceStrongPasswords = false;\r\nvar FusionChartsRenderer = null;//\"flash\"; "
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/Configuration/dashboardOverride.js?t=20261024",
+    "status": 200,
+    "body": "var GG_HAREL = {\r\n\t/*\r\n\t\r\n\tPurpose:\tcopy parameters to a single xml parameters, should be used at the Action before of the receiving data source\r\n\txmlParam:\tUniqueId of the xml parameter\r\n\tarrParams:\tarray of parameter Unique Ids, when null all parameters values will be copied to the xml parameter\r\n\txDS:\t\tthe datasource the action is applied on, used for integration with grid box filters\r\n\tSample:\t\tGG_HAREL.generateXMLParam(\"xml\",[\"StartDate\",\"EndDate\"],xDS)\r\n\t*/\r\n\tgenerateXMLParam: function (xmlParam, arrParams, xDS) {\r\n\t\ttry {\r\n\t\t\tvar xParam = locateFilterParamByUniqueName(xmlParam);\r\n\t\t\tif (!xParam) throw (\"xml parameter not found\");\r\n\r\n\t\t\tvar xTarget = xParam.ownerDocument.createElement(\"Filters\");\r\n\t\t\tif (arrParams && arrParams.length > 0) {\r\n\t\t\t\tfor (var i = 0; i < arrParams.length; "
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/Main/Nav/appWrapper_Util.js",
+    "status": 200,
+    "body": "document.write('<script src=\"../../GG_Implementation/Window/jquery.window.js\" type=\"text/javascript\"></script>');\r\ndocument.write('<link href=\"../../GG_Implementation/Window/jquery.window.css\" rel=\"stylesheet\" type=\"text/css\" />');\r\nvar WindowsHandler = {\r\n\topenModalDialog : function(sURL , dArguments, sFeatures, closeHandler,parentWindow){\r\n\t\tsURL = getUniqueSid(sURL);\r\n\t\tsURL += \"&UITH=\" + UITheme;\r\n\t\tif (dArguments == null) dArguments = {};\r\n\t\tvar params = {\r\n\t\t\turl: sURL,\r\n\t\t\tdialogArguments : dArguments,\r\n\t\t\tcloseHandler : closeHandler,\r\n\t\t\tparentWindow : parentWindow,\r\n\t\t\tshowModal : true,\r\n\t\t\tenablepager : dArguments.modalPager != null\r\n\t\t}\r\n\r\n\t\tif (sFeatures != null){\r\n\t\t\tif (typeof sFeatures == 'string'){\r\n\t\t\t\tvar arr = sFeatures.split(\";\");\r\n\t\t\t\tsFeatures = {};\r\n\t\t\t\tvar t,n;\r\n\t\t\t"
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/GG_Implementation/Window/jquery.window.js",
+    "status": 200,
+    "body": "/**\r\n * jQuery Window Plugin\r\n * http://fstoke.me/jquery/window/\r\n * Copyright(c) 2011 David Hung\r\n */\r\n\t\r\n// Get window instance via jQuery call\r\n// create window on html body\r\n$.window = function(options) {\r\n\treturn $.Window.getInstance(null, options);\r\n};\r\n\r\n// create window on caller element\r\n$.fn.window = function(options) {\r\n\treturn $.Window.getInstance($(this), options);\r\n}\r\n\r\n// Creating Window Dialog Module\r\n$.Window = (function()  {\r\n\t// static private methods\r\n\t// static constants\r\n\tvar VERSION = \"5.03\";           // the version of current plugin\r\n\tvar ICON_WH = 16;               // window icon button width/height, in pixels. check \"window_icon_button\" style in css\r\n\tvar ICON_MARGIN = 4;            // window icon button margin, in pixels. check \"window_icon_button\" style in css\r"
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/GG_Implementation/Window/jquery.window.css",
+    "status": 200,
+    "body": "\r\n.window_panel {\r\n\tposition: absolute;\r\n\tleft: 0;\r\n\ttop: 0;\r\n\tmargin: 0;\r\n\tpadding: 0;\r\n\tz-index: 2000;\r\n\tbackground: #eee;\r\n\tcolor: #222;\r\n\tfont-family: Arial;\r\n\tfont-size: 16px;\r\n\ttext-decoration: none;\r\n\tclear: both;\r\n\ttext-align: left;\r\n\tvertical-align: top;\r\n\tborder: 1px solid #aaa;\r\n\toverflow: hidden;\r\n    -moz-box-shadow: 0px 0px 11px #000000;\r\n    -webkit-box-shadow: 0px 0px 11px #000000;\r\n    box-shadow: 0px 0px 11px #000000;\r\n}\r\n\r\n.window_panel .window_header {\r\n\tmargin: 0;\r\n\tpadding: 0;\r\n\tborder: 0;\r\n\tborder-bottom: 1px solid #aaa;\r\n\toverflow: hidden;\r\n\twhite-space: nowrap;\r\n}\r\n\r\n.window_panel .window_header_normal {\r\n\t/*background: url('img/header_bg.gif') repeat-x;*/  /* change to use jquery-ui theme instead */\r\n\theight: 20px;\r\n\tline-height: 20px;\r\n\tpadding: 2px 5px;\r\n\ttext-a"
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/GUIGenerator_V2/Extensions/jquery.maskedinput.js",
+    "status": 200,
+    "body": "/*\r\n\tMasked Input plugin for jQuery\r\n\tCopyright (c) 2007-2011 Josh Bush (digitalbush.com)\r\n\tLicensed under the MIT license (http://digitalbush.com/projects/masked-input-plugin/#license) \r\n\tVersion: 1.3\r\n*/\r\n(function($) {\r\n\tvar pasteEventName = ($.browser.msie ? 'paste' : 'input') + \".mask\";\r\n\tvar iPhone = (window.orientation != undefined);\r\n\r\n\t$.mask = {\r\n\t\t//Predefined character definitions\r\n\t\tdefinitions: {\r\n\t\t\t'9': \"[0-9]\",\r\n\t\t\t'a': \"[A-Za-z]\",\r\n\t\t\t'*': \"[A-Za-z0-9]\"\r\n\t\t},\r\n\t\tdataName:\"rawMaskFn\"\r\n\t};\r\n\r\n\t$.fn.extend({\r\n\t\t//Helper Function for Caret positioning\r\n\t\tcaret: function(begin, end) {\r\n\t\t\tif (this.length == 0) return;\r\n\t\t\tif (typeof begin == 'number') {\r\n\t\t\t\tend = (typeof end == 'number') ? end : begin;\r\n\t\t\t\treturn this.each(function() {\r\n\t\t\t\t\tif (this.setSelectionRange) {\r\n\t\t"
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/GUIGenerator_V2/assets/xslt-polyfill.min.js",
+    "status": 200,
+    "body": "// Copyright (c) 2025, Mason Freed\n// All rights reserved.\n//\n// This source code is licensed under the BSD-style license found in the\n// LICENSE file in the root directory of this source tree.\n//window.xsltUsePolyfillOnlyIfNeeded = true;\nconsole.log(\"xslt-polyfill fixed v01.00\");\nvar createXSLTTransformModule=(()=>{var A=globalThis.document?.currentScript?.src;return async function(v={}){var r=v,E=!!globalThis.window,F=!!globalThis.WorkerGlobalScope,t=globalThis.process?.versions?.node&&\"renderer\"!=globalThis.process?.type,b=\"./this.program\",f=(A,v)=>{throw v};\"undefined\"!=typeof __filename?A=__filename:F&&(A=self.location.href);var n,e;if(t){var j=require(\"fs\");__dirname+\"/\",e=A=>(A=q(A)?new URL(A):A,j.readFileSync(A)),n=async(A,v=!0)=>(A=q(A)?new URL(A):A,j.readFileSync(A,v?void 0:\"utf8"
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/Custom/Portal/assets/bootstrap-modal.css",
+    "status": 200,
+    "body": ".modal-backdrop {\r\n  position: fixed;\r\n  top: 0;\r\n  right: 0;\r\n  bottom: 0;\r\n  left: 0;\r\n  z-index: 1040;\r\n  background-color: #000000;\r\n}\r\n\r\n.modal-backdrop.fade {\r\n  opacity: 0;\r\n}\r\n\r\n.modal-backdrop,\r\n.modal-backdrop.fade.in {\r\n  opacity: 0.8;\r\n  filter: alpha(opacity=80);\r\n}\r\n\r\n.modal {\r\n  position: fixed;\r\n  top: 10%;\r\n  left: 50%;\r\n  z-index: 1050;\r\n  width: 560px;\r\n  margin-left: -280px;\r\n  background-color: #ffffff;\r\n  border: 1px solid #999;\r\n  border: 1px solid rgba(0, 0, 0, 0.3);\r\n  *border: 1px solid #999;\r\n  -webkit-border-radius: 6px;\r\n     -moz-border-radius: 6px;\r\n          border-radius: 6px;\r\n  outline: none;\r\n  -webkit-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);\r\n     -moz-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);\r\n          box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);\r\n  -we"
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/Custom/Portal/assets/bootstrap-modal.js",
+    "status": 200,
+    "body": "/* ===========================================================\r\n * bootstrap-modal.js v2.1\r\n * ===========================================================\r\n * Copyright 2012 Jordan Schroter\r\n *\r\n * Licensed under the Apache License, Version 2.0 (the \"License\");\r\n * you may not use this file except in compliance with the License.\r\n * You may obtain a copy of the License at\r\n *\r\n * http://www.apache.org/licenses/LICENSE-2.0\r\n *\r\n * Unless required by applicable law or agreed to in writing, software\r\n * distributed under the License is distributed on an \"AS IS\" BASIS,\r\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\r\n * See the License for the specific language governing permissions and\r\n * limitations under the License.\r\n * ========================================"
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/Custom/Portal/assets/bootstrap-modalmanager.js",
+    "status": 200,
+    "body": "/* ===========================================================\r\n * bootstrap-modalmanager.js v2.1\r\n * ===========================================================\r\n * Copyright 2012 Jordan Schroter.\r\n *\r\n * Licensed under the Apache License, Version 2.0 (the \"License\");\r\n * you may not use this file except in compliance with the License.\r\n * You may obtain a copy of the License at\r\n *\r\n * http://www.apache.org/licenses/LICENSE-2.0\r\n *\r\n * Unless required by applicable law or agreed to in writing, software\r\n * distributed under the License is distributed on an \"AS IS\" BASIS,\r\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\r\n * See the License for the specific language governing permissions and\r\n * limitations under the License.\r\n * ================================"
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/Custom/Portal/agent_dash_charts.js",
+    "status": 200,
+    "body": "\r\nvar SetChart = {\r\n\thandleChartAction : function(did,rowId){\r\n\t\tvar obj = agent_dash.protlets[did];\r\n\t\tif (obj) obj.onRowAction(null, rowId);\r\n\t},\r\n\tgenerate: function (odi, xrows) {\r\n\t\tthis.xdi = odi.xdi;\r\n\t\tthis.uid = this.xdi.getAttribute(\"Id\");\r\n\t\tthis.xcols = odi.xcols;\r\n\t\tthis.xrows = xrows;\r\n\t\tif (!this.xrows)return;\r\n\t\tthis.chartCols = this.xdi.selectNodes(\"Columns/*[@Chart = '1']\");\r\n\t\tif (this.chartCols.length == 0)return;\r\n\t\tthis.chartColsCaptions = this.xdi.selectNodes(\"Columns/*[@ChartCaption = \\\"1\\\"]\");\r\n\t\tthis.chartColsInfos = this.xdi.selectNodes(\"Columns/*[@ChartInfo = '1']\");\r\n\r\n\t\tthis.chartRows = this.xrows.selectNodes(\"*[not(@UI_Hidden)]\");\t\t\r\n\t\tthis.XChartTemplate = this.locateChartTemplate(this.xdi.getAttribute(\"ChartTemplate\"));\r\n\t\tvar newVT = this.getChartTemplateA"
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/Custom/Portal/agent_dash_olap.js",
+    "status": 200,
+    "body": "\r\n//----------------------------------------------------------------------->\r\n// H_InlineMatrix\r\n// ---------------------------------------------------------------------->\r\n\r\nfunction H_InlineMatrix(did) {\r\n\tthis.did = did;\r\n\tthis.type = \"H_InlineMatrix\";\r\n\tthis.xsl = agent_dash.transformers[\"H_InlineMatrix\"];\r\n\tif (this.xsl == null) {\r\n\t\tthis.xsl = agent_dash.transformers[\"H_InlineMatrix\"] = GenerateDomURL(\"../../Custom/Portal/H_InlineMatrix.xsl\");\r\n\t}\r\n}\r\nH_InlineMatrix.prototype.extend = function () {\r\n\tthis.xdi = locateDashboardItem(this.did);\r\n\tthis.dataKey = this.xdi.getAttribute(\"DataSourceId\");\r\n\tvar ret = locateDataSourceData(this.dataKey);\r\n\tthis.XCellSet = ret.selectSingleNode(\"*[yAxis//Member/Cell]\");\r\n\tthis.XDashDataSource = locateDashDataSource(this.dataKey);\r\n\tthis.CubeName "
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/Custom/Portal/assets/bootstrap-datepicker.js",
+    "status": 200,
+    "body": "/* =========================================================\r\n * bootstrap-datepicker.js\r\n * http://www.eyecon.ro/bootstrap-datepicker\r\n * =========================================================\r\n * Copyright 2012 Stefan Petre\r\n * Improvements by Andrew Rowls\r\n *\r\n * Licensed under the Apache License, Version 2.0 (the \"License\");\r\n * you may not use this file except in compliance with the License.\r\n * You may obtain a copy of the License at\r\n *\r\n * http://www.apache.org/licenses/LICENSE-2.0\r\n *\r\n * Unless required by applicable law or agreed to in writing, software\r\n * distributed under the License is distributed on an \"AS IS\" BASIS,\r\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\r\n * See the License for the specific language governing permissions and\r\n * lim"
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/Custom/Portal/assets/splide.min.js",
+    "status": 200,
+    "body": "function r(n,t){for(var i=0;i<t.length;i++){var r=t[i];r.enumerable=r.enumerable||!1,r.configurable=!0,\"value\"in r&&(r.writable=!0),Object.defineProperty(n,r.key,r)}}function Jt(n,t,i){t&&r(n.prototype,t),i&&r(n,i),Object.defineProperty(n,\"prototype\",{writable:!1})}\n/*!\n * Splide.js\n * Version  : 4.1.2\n * License  : MIT\n * Copyright: 2022 Naotoshi Fujita\n */\nvar n,t;n=this,t=function(){\"use strict\";var v=\"(prefers-reduced-motion: reduce)\",G=4,rn=5,r={CREATED:1,MOUNTED:2,IDLE:3,MOVING:G,SCROLLING:rn,DRAGGING:6,DESTROYED:7};function D(n){n.length=0}function o(n,t,i){return Array.prototype.slice.call(n,t,i)}function R(n){return n.bind.apply(n,[null].concat(o(arguments,1)))}function on(){}var p=setTimeout;function h(n){return requestAnimationFrame(n)}function u(n,t){return typeof t===n}functio"
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/Custom/Portal/assets/splide.min.css",
+    "status": 200,
+    "body": ".splide__container{box-sizing:border-box;position:relative}.splide__list{backface-visibility:hidden;display:-ms-flexbox;display:flex;height:100%;margin:0!important;padding:0!important}.splide.is-initialized:not(.is-active) .splide__list{display:block}.splide__pagination{-ms-flex-align:center;align-items:center;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-ms-flex-pack:center;justify-content:center;margin:0;pointer-events:none}.splide__pagination li{display:inline-block;line-height:1;list-style-type:none;margin:0;pointer-events:auto}.splide:not(.is-overflow) .splide__pagination{display:none}.splide__progress__bar{width:0}.splide{position:relative;visibility:hidden}.splide.is-initialized,.splide.is-rendered{visibility:visible}.splide__slide{backface-visibility:hidden;bo"
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/Custom/Portal/assets/splide-core.min.css",
+    "status": 200,
+    "body": "@keyframes splide-loading{0%{transform:rotate(0)}to{transform:rotate(1turn)}}.splide__track--draggable{-webkit-touch-callout:none;-webkit-user-select:none;-ms-user-select:none;user-select:none}.splide__track--fade>.splide__list>.splide__slide{margin:0!important;opacity:0;z-index:0}.splide__track--fade>.splide__list>.splide__slide.is-active{opacity:1;z-index:1}.splide--rtl{direction:rtl}.splide__track--ttb>.splide__list{display:block}.splide__container{box-sizing:border-box;position:relative}.splide__list{backface-visibility:hidden;display:-ms-flexbox;display:flex;height:100%;margin:0!important;padding:0!important}.splide.is-initialized:not(.is-active) .splide__list{display:block}.splide__pagination{-ms-flex-align:center;align-items:center;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap"
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/Custom/Portal/assets/bootstrap-datepicker.css",
+    "status": 200,
+    "body": "/*!\r\n * Datepicker for Bootstrap\r\n *\r\n * Copyright 2012 Stefan Petre\r\n * Improvements by Andrew Rowls\r\n * Licensed under the Apache License v2.0\r\n * http://www.apache.org/licenses/LICENSE-2.0\r\n *\r\n */\r\n.datepicker {\r\n  padding: 4px;\r\n  -webkit-border-radius: 4px;\r\n  -moz-border-radius: 4px;\r\n  border-radius: 4px;\r\n  direction: ltr;\r\n  /*.dow {\r\n\t\tborder-top: 1px solid #ddd !important;\r\n\t}*/\r\n\r\n}\r\n.datepicker-inline {\r\n  width: 220px;\r\n}\r\n.datepicker.datepicker-rtl {\r\n  direction: rtl;\r\n}\r\n.datepicker.datepicker-rtl table tr td span {\r\n  float: right;\r\n}\r\n.datepicker-dropdown {\r\n  top: 0;\r\n  left: 0;\r\n}\r\n/*\r\n.datepicker-dropdown:before {\r\n  content: '';\r\n  display: inline-block;\r\n  border-left: 7px solid transparent;\r\n  border-right: 7px solid transparent;\r\n  border-bottom: 7px solid #ccc;\r"
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/Custom/Portal/agent_dash_v2.js",
+    "status": 200,
+    "body": "\r\n\r\n//----------------------------------------------------------------------->\r\n// H_InlineFilters_V2\r\n// ---------------------------------------------------------------------->\r\n\r\nfunction H_InlineFilters_V2(did) {\r\n\tthis.did = did;\r\n\tthis.type = \"H_InlineFilters_V2\";\r\n\tthis.xsl = agent_dash.transformers[\"H_InlineFilters_V2\"];\r\n\tif (this.xsl == null) {\r\n\t\tthis.xsl = agent_dash.transformers[\"H_InlineFilters_V2\"] = GenerateDomURL(\"../../Custom/Portal/H_InlineFilters_V2.xsl\");\r\n\t}\r\n}\r\nH_InlineFilters_V2.prototype.RefreshData = function () {\r\n\tthis.redraw();\r\n\t_UIOnafterTransformDashboards();\r\n}\r\nH_InlineFilters_V2.prototype.redraw = function () {\r\n\tthis.extend();\r\n\tvar hTarget = document.getElementById(\"frame_\" + this.did);\r\n\tvar pointer = this.xsl.selectSingleNode(\"//xsl:param[@name='DID']\""
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/Custom/Portal/agent_dash.css",
+    "status": 200,
+    "body": "@charset \"UTF-8\";\n@font-face {\n  font-family: \"mfw_protocolharelmedium\";\n  src: url(\"fonts/MFW_ProtocolHarel-Medium.eot\");\n  src: url(\"fonts/MFW_ProtocolHarel-Medium.eot?#iefix\") format(\"embedded-opentype\"), url(\"fonts/MFW_ProtocolHarel-Medium.woff\") format(\"woff\"), url(\"fonts/MFW_ProtocolHarel-Medium.ttf\") format(\"truetype\"), url(\"fonts/MFW_ProtocolHarel-Medium.svg#mfw_protocolharelmedium\") format(\"svg\");\n}\n@font-face {\n  font-family: \"mfw_protocolharelmedium\";\n  src: url(\"fonts/MFW_ProtocolHarel-Bold.eot\");\n  src: url(\"fonts/MFW_ProtocolHarel-Bold.eot?#iefix\") format(\"embedded-opentype\"), url(\"fonts/MFW_ProtocolHarel-Bold.woff\") format(\"woff\"), url(\"fonts/MFW_ProtocolHarel-Bold.ttf\") format(\"truetype\"), url(\"fonts/MFW_ProtocolHarel-Bold.svg#mfw_protocolharelbold\") format(\"svg\");\n  font-w"
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/OAOAnalysis/Dashboard/_sp_dashboard.htm?IsNewPortal=1&RID=2910B0E4-C84F-49F8-86C6-9FDFDCA3F2F2",
+    "status": 200,
+    "body": "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\r\n<html>\r\n<head>\r\n<meta name=\"viewport\" content=\"user-scalable=0, initial-scale=1\">\r\n<meta http-equiv=\"X-UA-Compatible\" content=\"IE=8,IE=9,IE=10\"/>\r\n\t\r\n<title>Intellisys</title>\r\n\r\n<script type=\"text/javascript\">\r\n    var date = new Date();\r\n    var t = date.getFullYear().toString() + date.getMonth().toString() + date.getDate().toString();\r\n    //css\r\n    document.write('<link href=\"../../GUIGenerator_V2/Extensions/jquery.ui.theme.css?t=' + t + '\" rel=\"stylesheet\" type=\"text/css\" />');\r\n    document.write('<link href=\"../../GG_Implementation/Messaging/msgBoxLight.css?t=' + t + '\" rel=\"stylesheet\" type=\"text/css\" />');\r\n    document.write('<link href=\"../../GUIGenerator_V"
+  },
+  {
+    "url": "https://www.harel-group.co.il/_vti_bin/webapi/Footer/GetHorizontalFooterMenuLinks",
+    "status": 200,
+    "body": "[{\"ShouldDisplay\":true,\"Link\":{\"IconUrl\":null,\"NavigateUrl\":\"/about/harel-group/\",\"Target\":null,\"Text\":\"אודות הראל\",\"ToolTip\":\"אודות הראל\"},\"Id\":9},{\"ShouldDisplay\":true,\"Link\":{\"IconUrl\":null,\"NavigateUrl\":\"/contact\",\"Target\":null,\"Text\":\"שירות לקוחות ופניות הציבור\",\"ToolTip\":\"שירות לקוחות ופניות הציבור\"},\"Id\":10},{\"ShouldDisplay\":true,\"Link\":{\"IconUrl\":null,\"NavigateUrl\":\"/about/csr/\",\"Target\":null,\"Text\":\"אחריות תאגידית\",\"ToolTip\":\"אחריות תאגידית\"},\"Id\":11},{\"ShouldDisplay\":true,\"Link\":{\"IconUrl\":null,\"NavigateUrl\":\"https://agents-int.harel-group.co.il/Pages/default.aspx\",\"Target\":null,\"Text\":\"כניסה לסוכנים\",\"ToolTip\":\"כניסה לסוכנים\"},\"Id\":12},{\"ShouldDisplay\":true,\"Link\":{\"IconUrl\":\"/_layouts/15/IMAGES/ichtm.gif\",\"NavigateUrl\":\"https://biz.harel-group.co.il/Pages/home.aspx\",\"Target\":nu"
+  },
+  {
+    "url": "https://www.harel-group.co.il/_vti_bin/webapi/GeneralAccessor?id=SubAreas&cacheKey=SubAreas",
+    "status": 200,
+    "body": "[{\"ID\":77,\"Title\":\"ביטוח רכב\",\"Harel_MainArea\":\"9;#ביטוח\",\"Harel_Link\":{\"IconUrl\":\"\",\"UseDefaultIcon\":false,\"NavigateUrl\":\"/insurance/car\",\"Target\":\"\",\"Text\":\"ביטוח רכב\",\"ToolTip\":\"ביטוח רכב\"}},{\"ID\":78,\"Title\":\"קרנות פנסיה\",\"Harel_MainArea\":\"10;#חיסכון ופנסיה\",\"Harel_Link\":{\"IconUrl\":\"\",\"UseDefaultIcon\":false,\"NavigateUrl\":\"/long-term-savings/pension\",\"Target\":\"\",\"Text\":\"קרנות פנסיה\",\"ToolTip\":\"קרנות פנסיה\"}},{\"ID\":85,\"Title\":\"ניהול תיקים\",\"Harel_MainArea\":\"11;#הראל פיננסים\",\"Harel_Link\":{\"IconUrl\":\"\",\"UseDefaultIcon\":false,\"NavigateUrl\":\"/finance/portfolio-management/Pages/default.aspx\",\"Target\":\"\",\"Text\":\"ניהול תיקים\",\"ToolTip\":\"ניהול תיקים\"}},{\"ID\":69,\"Title\":\"ביטוח דירה ורכוש\",\"Harel_MainArea\":\"9;#ביטוח\",\"Harel_Link\":{\"IconUrl\":\"\",\"UseDefaultIcon\":false,\"NavigateUrl\":\"/insurance/apart"
+  },
+  {
+    "url": "https://www.harel-group.co.il/_vti_bin/webapi/Scanovate/GetContentIdentification/",
+    "status": 200,
+    "body": "{\"&nbsp;MaxTriedCreateOTP\":\"ניתן לנסות שנית במועד מאוחר יותר, או לפנות למוקד השירות בטלפון 03-7547060\",\"ActivationRegistrationOtp\":\"חלונית אקטיבציה והמשך רישום\",\"ADFail\":\"ניתן לנסות שנית במועד מאוחר יותר, או לפנות למוקד השירות בטלפון 03-7547060\",\"ADFailTitle\":\"כרגע לא ניתן להתחבר לאתר הראל\",\"AuthenticationChoose\":\"חלונית בחירת הזדהות\",\"AuthenticationFailedSubTitle\":\"ניתן לנסות שנית במועד מאוחר יותר, או לפנות למוקד התמיכה בטלפון 03-7547060\",\"AuthenticationFailedTitle\":\"לא ניתן להשלים את התהליך באמצעות הפרטים שהתקבלו\",\"CameFromAuthenticationMethode\":\"הגעת מחלונית בחירת אופן זיהוי אחרי otp\",\"CameFromAuthonticateChoose\":\"הגעת מחלונית בחירת אופן הזדהות\",\"CameFromPremissionScanovate\":\"הגעת מחלונית אישור אימות מול סקנובייט\",\"ChangePassword\":\"שינוי סיסמה\",\"ChangePasswordAlert\":\"תוקף סיסמתך פג ועלי"
+  },
+  {
+    "url": "https://gbx.harel-group.co.il/glassbox/reporting/cls_report?_cls_s=376534f8-e10d-4260-b78a-aae22ec96339%3A0&_cls_v=5fc801fb-d07d-47e7-9971-6160be8fd329&pv=2&f_cls_s=true",
+    "status": 200,
+    "body": "{\"pv\":2,\"clss\":\"376534f8-e10d-4260-b78a-aae22ec96339:0\",\"clsv\":\"5fc801fb-d07d-47e7-9971-6160be8fd329\",\"clse\":null,\"conf\":{\"appId\":15,\"configuration\":{\"attributeRules\":[{\"name\":\"ClaimsStatusType1\",\"pageUrl\":\"https://apps.harel-group.co.il/GeneralClaimStatus/jsp/claimsDisplay.jsp*\",\"pageHash\":\"\",\"selector\":\"BODY>DIV:eq(0)>DIV>DIV>DIV:eq(1)>DIV:eq(1)>UL:eq(1)>LI:eq(1)>SPAN:eq(1)\",\"accessor\":\"innerText\",\"accessorMethod\":\"property\",\"maxLength\":150,\"sessionTerminator\":false},{\"name\":\"ApartmentGeneralError_1\",\"pageUrl\":\"https://digital.harel-group.co.il/apps-apartment-360/error-page\",\"pageHash\":\"\",\"selector\":\"#root>DIV>DIV>DIV:eq(1)>DIV>DIV:eq(0)\",\"accessor\":\"innerText\",\"accessorMethod\":\"property\",\"maxLength\":30,\"sessionTerminator\":false},{\"name\":\"NoSavedOffersDiv\",\"pageUrl\":\"*business-in-click*\""
+  },
+  {
+    "url": "https://gbx.harel-group.co.il/glassbox/reporting/cls_report?_cls_s=376534f8-e10d-4260-b78a-aae22ec96339%3A0&_cls_v=5fc801fb-d07d-47e7-9971-6160be8fd329&pv=2&f_cls_s=true",
+    "status": 200,
+    "body": "{\"pv\":2,\"clss\":\"376534f8-e10d-4260-b78a-aae22ec96339:0\",\"clsv\":\"5fc801fb-d07d-47e7-9971-6160be8fd329\",\"clse\":null,\"conf\":{\"appId\":15,\"configuration\":{\"attributeRules\":[{\"name\":\"ClaimsStatusType1\",\"pageUrl\":\"https://apps.harel-group.co.il/GeneralClaimStatus/jsp/claimsDisplay.jsp*\",\"pageHash\":\"\",\"selector\":\"BODY>DIV:eq(0)>DIV>DIV>DIV:eq(1)>DIV:eq(1)>UL:eq(1)>LI:eq(1)>SPAN:eq(1)\",\"accessor\":\"innerText\",\"accessorMethod\":\"property\",\"maxLength\":150,\"sessionTerminator\":false},{\"name\":\"ApartmentGeneralError_1\",\"pageUrl\":\"https://digital.harel-group.co.il/apps-apartment-360/error-page\",\"pageHash\":\"\",\"selector\":\"#root>DIV>DIV>DIV:eq(1)>DIV>DIV:eq(0)\",\"accessor\":\"innerText\",\"accessorMethod\":\"property\",\"maxLength\":30,\"sessionTerminator\":false},{\"name\":\"NoSavedOffersDiv\",\"pageUrl\":\"*business-in-click*\""
+  },
+  {
+    "url": "https://gbx.harel-group.co.il/glassbox/reporting/cls_report?clsjsv=7.3.264421&_cls_s=376534f8-e10d-4260-b78a-aae22ec96339:0&_cls_v=5fc801fb-d07d-47e7-9971-6160be8fd329&pid=778f83c3-4c9a-4988-8d83-3e452e519631&sn=1&cfg=e3cf981c&pv=2&aid=",
+    "status": 200,
+    "body": "{\"pv\":2,\"clss\":\"376534f8-e10d-4260-b78a-aae22ec96339:0\",\"clsv\":\"5fc801fb-d07d-47e7-9971-6160be8fd329\",\"clse\":null,\"conf\":null,\"usage\":{\"sessionQuotaBreach\":false, \"apiCallQuotaBreach\":false, \"dataLimit\": 4194304}}"
+  },
+  {
+    "url": "https://www.harel-group.co.il/_vti_bin/webapi/Footer/GetListItems",
+    "status": 200,
+    "body": "[{\"Id\":5,\"ShouldDisplay\":true,\"ColumnTitle\":\"הראל לשירותך\",\"LinksInFooterColumnsDefault\":[{\"Id\":1,\"ShouldDisplay\":true,\"Link\":{\"IconUrl\":null,\"NavigateUrl\":\"/contact/Pages/customer-service.aspx\",\"Target\":null,\"Text\":\"שירות לקוחות ופניות הציבור\",\"ToolTip\":\"שירות לקוחות ופניות הציבור\"},\"Column\":{\"LookupId\":1,\"LookupValue\":\"הראל לשירותך\"},\"Icon\":null},{\"Id\":43,\"ShouldDisplay\":true,\"Link\":{\"IconUrl\":null,\"NavigateUrl\":\"/about/Pages/available.aspx\",\"Target\":null,\"Text\":\"הצהרת נגישות\",\"ToolTip\":\"הצהרת נגישות\"},\"Column\":{\"LookupId\":1,\"LookupValue\":\"הראל לשירותך\"},\"Icon\":{\"AlternateText\":\"הצהרת נגישות\",\"Hyperlink\":null,\"ImageUrl\":\"/PublishingImages/Lists/LinksInColumnLowerTitle/AllItems/neg.png\",\"OpenHyperlinkInNewWindow\":false}},{\"Id\":3,\"ShouldDisplay\":true,\"Link\":{\"IconUrl\":null,\"NavigateUrl\":\"/"
+  },
+  {
+    "url": "https://gbx.harel-group.co.il/glassbox/reporting/cls_report?clsjsv=7.3.264421&_cls_s=376534f8-e10d-4260-b78a-aae22ec96339:0&_cls_v=5fc801fb-d07d-47e7-9971-6160be8fd329&pid=c9c73b94-6639-49d9-a5cd-4eb80aff918e&sn=1&cfg=e3cf981c&pv=2&aid=",
+    "status": 200,
+    "body": "{\"pv\":2,\"clss\":\"376534f8-e10d-4260-b78a-aae22ec96339:0\",\"clsv\":\"5fc801fb-d07d-47e7-9971-6160be8fd329\",\"clse\":null,\"conf\":null,\"usage\":{\"sessionQuotaBreach\":false, \"apiCallQuotaBreach\":false, \"dataLimit\": 4194304}}"
+  },
+  {
+    "url": "https://gbx.harel-group.co.il/glassbox/reporting/cls_report?clsjsv=7.3.264421&_cls_s=376534f8-e10d-4260-b78a-aae22ec96339:0&_cls_v=5fc801fb-d07d-47e7-9971-6160be8fd329&pid=778f83c3-4c9a-4988-8d83-3e452e519631&sn=2&cfg=e3cf981c&pv=2&aid=",
+    "status": 200,
+    "body": "{\"pv\":2,\"clss\":\"376534f8-e10d-4260-b78a-aae22ec96339:0\",\"clsv\":\"5fc801fb-d07d-47e7-9971-6160be8fd329\",\"clse\":null,\"conf\":null,\"usage\":{\"sessionQuotaBreach\":false, \"apiCallQuotaBreach\":false, \"dataLimit\": 4194304}}"
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/ApplicationPages/HTTP_Proxy_Script.aspx?Action=GetDashboardMetaData&UID=2910B0E4-C84F-49F8-86C6-9FDFDCA3F2F2&FilterParams=policySubjectId|159168707&Sid=1795514449294&QSID=1795514449198",
+    "status": 200,
+    "body": "<App Title=\"מידע אישי - תכנית גמל להשקעה\" IA=\"0\" RID=\"2910B0E4-C84F-49F8-86C6-9FDFDCA3F2F2\" RMD=\"public\" DM=\"normal\" UIDir=\"rtl\" UIT=\"blue_rtl\" UT=\"2\"><Legend><Layouts><Layout Id=\"Rows\" Name=\"Rows\" Glyf=\"../../Assets/UI/Images/row.gif\" /><Layout Id=\"Cols\" Name=\"Cols\" Glyf=\"../../Assets/UI/Images/column.gif\" /><Layout Id=\"Single\" Name=\"Single\" Glyf=\"../../Assets/UI/Images/Window.gif\" /></Layouts><Modules><Folder Name=\"Data Set\"><Module Name=\"Data Set Viewer\" Id=\"Set\" Mode=\"frame\" Glyf=\"../../Assets/UI/Images/text_view.png\" P=\"1\" /><Module Name=\"Groupby Grid\" Id=\"GroupbySet\" Mode=\"frame\" Glyf=\"../../Assets/UI/Images/text_tree.png\" P=\"1\" /><Module Name=\"Spark Chart\" Id=\"SparkChart\" Mode=\"frame\" Glyf=\"../../Assets/UI/Images/line-chart.png\" /><Module Name=\"XY Plot\" Id=\"SetXYPlot\" Mode=\"frame\" G"
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/Custom/Portal/agent_dash_utils.xml",
+    "status": 200,
+    "body": "<Config>\r\n  <Captions MaxFDisaply=\"מציג % תוצאות ראשונות\" GErrorHead=\"ארעה תקלה\" GErrorBody=\"אנא נסה במועד מאוחר יותר או פנה למוקד שרות לקוחות הראל *2735\"/>\r\n\t<Operands>\r\n\t\t<Member Type=\"number\" Value=\"=\" Name=\"שווה\" ShortName=\"=\"/>\r\n\t\t<Member Type=\"number\" Value=\"&gt;\" Name=\"גדול (&gt;)\" ShortName=\"&gt;\"/>\r\n\t\t<Member Type=\"number\" Value=\"&gt;=\" Name=\"גדול שווה (&gt;=)\" ShortName=\"&gt;=\"/>\r\n\t\t<Member Type=\"number\" Value=\"&lt;\" Name=\"קטן (&lt;)\" ShortName=\"&lt;\"/>\r\n\t\t<Member Type=\"number\" Value=\"&lt;=\" Name=\"קטן שווה (&lt;=)\" ShortName=\"&lt;=\"/>\r\n\t</Operands>\r\n</Config>\r\n"
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/Custom/Portal/agent_dash.xsl",
+    "status": 200,
+    "body": "<xsl:stylesheet version=\"1.0\"  xmlns:xsl=\"http://www.w3.org/1999/XSL/Transform\"  xmlns:msxsl=\"urn:schemas-microsoft-com:xslt\" xmlns:OAO=\"http://www.OAO.co.il\" xmlns:cr=\"http://www.intellisys.co.il\">\r\n<xsl:output method=\"html\" version=\"1.0\" encoding=\"utf-8\" omit-xml-declaration=\"yes\" indent=\"no\" media-type=\"text/html\"/>\r\n<xsl:decimal-format NaN=\"--\"/>\r\n<xsl:param name=\"UIDateFormat\" select=\"/*/@UIDateFormat\"/>\r\n<xsl:param name=\"UIDateOperator\" select=\"/*/@UIDateOperator\"/>\r\n\r\n<xsl:param name=\"IsAdmin\" select=\"/*/@IsAdmin = '1'\"/>\r\n<xsl:param name=\"HasAppRoot\" select=\"/*/@HasAppRoot = '1'\"/>\r\n<xsl:param name=\"isModal\"/>\r\n<xsl:param name=\"isInContainer\"/>\r\n<xsl:param name=\"TransformMode\" select=\"/*/@TransformMode\"/>\r\n<xsl:param name=\"DataPreloaded\" select=\"/*/@DataPreloaded = '1'\"/>\r\n<xsl:par"
+  },
+  {
+    "url": "https://gbx.harel-group.co.il/glassbox/reporting/cls_report?clsjsv=7.3.264421&_cls_s=376534f8-e10d-4260-b78a-aae22ec96339:0&_cls_v=5fc801fb-d07d-47e7-9971-6160be8fd329&pid=c9c73b94-6639-49d9-a5cd-4eb80aff918e&sn=2&cfg=e3cf981c&pv=2&aid=",
+    "status": 200,
+    "body": "{\"pv\":2,\"clss\":\"376534f8-e10d-4260-b78a-aae22ec96339:0\",\"clsv\":\"5fc801fb-d07d-47e7-9971-6160be8fd329\",\"clse\":null,\"conf\":null,\"usage\":{\"sessionQuotaBreach\":false, \"apiCallQuotaBreach\":false, \"dataLimit\": 4194304}}"
+  },
+  {
+    "url": "https://www.harel-group.co.il/_vti_bin/webapi/CustomersAuthentication/PostAuthenticate/GetCurrentDetails",
+    "status": 200,
+    "body": "{\"Status\":0,\"Details\":{\"current\":{\"FirstName\":\"אפרת\",\"LastName\":\"לנדמן\",\"NumberOfMessages\":106,\"PersonalMenu\":[{\"Title\":\"עדכון פרטים\",\"UserMenuKey\":\"updateDetails\",\"UserMenuIcon\":null,\"UserMenuLink\":{\"IconUrl\":null,\"NavigateUrl\":\"/personal-info/my-harel/Pages/personal-info/personal-details-update.aspx\",\"Target\":null,\"Text\":\"personal-details-update.aspx\",\"ToolTip\":\"עדכון פרטים אישיים\"},\"DisplayForEmployerType\":0,\"SvgIconId\":\"icon-edit\",\"PersonalLinkType\":\"קישורים עליוניים\"},{\"Title\":\"תיבת דואר\",\"UserMenuKey\":\"mailbox\",\"UserMenuIcon\":null,\"UserMenuLink\":{\"IconUrl\":null,\"NavigateUrl\":\"/personal-info/my-harel/Pages/personal-info/my-inbox.aspx\",\"Target\":null,\"Text\":\"my-inbox.aspx\",\"ToolTip\":\"תיבת דואר אישית\"},\"DisplayForEmployerType\":0,\"SvgIconId\":\"icon-edit_Copy\",\"PersonalLinkType\":\"קישורים על"
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/ApplicationPages/HTTP_Proxy_Script.aspx?Action=ExecSQL&Sid=1795514450714&QSID=1795514449198",
+    "status": 200,
+    "body": "<Table><Columns><Column Id=\"SUG_KEREN\" Name=\"SUG_KEREN\" DataType=\"decimal\" /><Column Id=\"Nahonut_Date\" Name=\"Nahonut_Date\" DataType=\"nvarchar\" /></Columns><Rows><Row SUG_KEREN=\"2\" Nahonut_Date=\"המידע נכון לתאריך: 22.11.2026\" /><Row SUG_KEREN=\"6\" Nahonut_Date=\"המידע נכון לתאריך: 22.11.2026\" /><Row SUG_KEREN=\"7\" Nahonut_Date=\"המידע נכון לתאריך: 22.11.2026\" /><Row SUG_KEREN=\"13\" Nahonut_Date=\"המידע נכון לתאריך: 24.11.2026\" /><Row SUG_KEREN=\"14\" Nahonut_Date=\"המידע נכון לתאריך: 22.11.2026\" /><Row SUG_KEREN=\"15\" Nahonut_Date=\"המידע נכון לתאריך: 22.11.2026\" /><Row SUG_KEREN=\"16\" Nahonut_Date=\"המידע נכון לתאריך: 22.11.2026\" /><Row SUG_KEREN=\"21\" Nahonut_Date=\"המידע נכון לתאריך: 22.11.2026\" /><Row SUG_KEREN=\"24\" Nahonut_Date=\"המידע נכון לתאריך: 22.11.2026\" /><Row SUG_KEREN=\"332\" Nahonut_Date=\"המיד"
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/ApplicationPages/HTTP_Proxy_Script.aspx?Action=ExecSQL&Sid=1795514450620&QSID=1795514449198",
+    "status": 200,
+    "body": "<Table><Columns><Column Id=\"Mispar_Zehut\" Name=\"Mispar_Zehut\" DataType=\"int\" /><Column Id=\"Mispar_heshbon\" Name=\"Mispar_heshbon\" DataType=\"bigint\" /><Column Id=\"Kod_Kupa_Otzar\" Name=\"Kod_Kupa_Otzar\" DataType=\"int\" /><Column Id=\"SHEM_KEREN\" Name=\"SHEM_KEREN\" DataType=\"varchar\" /><Column Id=\"SUG_KEREN\" Name=\"SUG_KEREN\" DataType=\"int\" /><Column Id=\"SHEM_SOHEN\" Name=\"SHEM_SOHEN\" DataType=\"varchar\" /><Column Id=\"AHUZ_HANAHA_DMEI_NIHUL_HAFK\" Name=\"AHUZ_HANAHA_DMEI_NIHUL_HAFK\" DataType=\"float\" /><Column Id=\"AHUZ_HANAHA_DMEI_NIHUL_ITRA\" Name=\"AHUZ_HANAHA_DMEI_NIHUL_ITRA\" DataType=\"float\" /><Column Id=\"AHUZ_DMEI_NIHUL_HAFKADOT\" Name=\"AHUZ_DMEI_NIHUL_HAFKADOT\" DataType=\"float\" /><Column Id=\"AHUZ_DMEI_NIHUL_ITRA\" Name=\"AHUZ_DMEI_NIHUL_ITRA\" DataType=\"float\" /><Column Id=\"Taarich_pticha\" Name=\"Taarich"
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/ApplicationPages/HTTP_Proxy_Script.aspx?Action=ExecSQL&Sid=1795514450671&QSID=1795514449198",
+    "status": 200,
+    "body": "<Table><Columns><Column Id=\"TEURMSLHSQ\" Name=\"TEURMSLHSQ\" DataType=\"varchar\" /><Column Id=\"qodahid\" Name=\"qodahid\" DataType=\"varchar\" /><Column Id=\"TOT_HAFRASHOT_MASLUL\" Name=\"TOT_HAFRASHOT_MASLUL\" DataType=\"int\" /></Columns><Rows /></Table>"
+  },
+  {
+    "url": "https://www.harel-group.co.il/_vti_bin/webapi/GeneralAccessor?id=MegaWorlds&cacheKey=MegaWorlds",
+    "status": 200,
+    "body": "[{\"ID\":13,\"Title\":\"פעולות נפוצות\",\"Harel_LinkContent\":{\"IconUrl\":\"/_layouts/15/IMAGES/icgen.gif\",\"UseDefaultIcon\":false,\"NavigateUrl\":\"/common-actions/\",\"Target\":\"\",\"Text\":\"לכל הפעולות הנפוצות\",\"ToolTip\":\"\"},\"SVGIcon\":null,\"Harel_NewSite\":true},{\"ID\":9,\"Title\":\"ביטוח\",\"Harel_LinkContent\":{\"IconUrl\":\"/_layouts/15/IMAGES/icgen.gif\",\"UseDefaultIcon\":false,\"NavigateUrl\":\"/insurance/\",\"Target\":\"\",\"Text\":\"לכל מוצרי הביטוח שלנו\",\"ToolTip\":\"\"},\"SVGIcon\":null,\"Harel_NewSite\":true},{\"ID\":10,\"Title\":\"חיסכון ופנסיה\",\"Harel_LinkContent\":{\"IconUrl\":\"/_layouts/15/IMAGES/icgen.gif\",\"UseDefaultIcon\":false,\"NavigateUrl\":\"/long-term-savings/\",\"Target\":\"\",\"Text\":\"לכל מוצרי החיסכון שלנו\",\"ToolTip\":\"\"},\"SVGIcon\":null,\"Harel_NewSite\":true},{\"ID\":11,\"Title\":\"הראל פיננסים\",\"Harel_LinkContent\":{\"IconUrl\":\"\",\"UseDef"
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/ApplicationPages/HTTP_Proxy_Script.aspx?Action=ExecSQL&Sid=1795514450685&QSID=1795514449198",
+    "status": 200,
+    "body": "<Table><Columns><Column Id=\"Comment\" Name=\"Comment\" DataType=\"varchar\" /></Columns><Rows><Row Comment=\"* הכספים בקופה חייבים במס רווח הון בשיעור של 25% על הרווח הריאלי (מעל המדד)\" /><Row Comment=\"** ישנה אפשרות ללקוח מעל גיל 60 למשוך את הכספים כקצבה פטורה ממס.\" /><Row Comment=\"*** הכספים בקופת גמל להשקעה נזילים (ניתנים למשיכה) בכל עת וחייבים במס רווח הון בשיעור 25% מהרווח הריאלי. במשיכה בדרך של קצבה חודשית פטורה ממס, לאחר גיל 60, ניתן להנות מפטור ממס רווח הון.\" /><Row Comment=\"****התשואה האישית המוצגת בחשבונך עשויה להתעדכן מעת לעת ומורכבת ממספר פרמטרים הכוללים, בין השאר, את דמי הניהול שנגבו ואת דמי  הסיכון (ככל שנגבו).\" /><Row Comment=\"*****שיעור העלות השנתית הצפויה של מסלולי ההשקעה מורכב  מהרכיבים הבאים: דמי ניהול מצבירה, דמי ניהול מהפקדה והוצאות ישירות.\" /><Row Comment=\"הצגת שיעור העלות "
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/ApplicationPages/HTTP_Proxy_Script.aspx?Action=ExecSQL&Sid=1795514450642&QSID=1795514449198",
+    "status": 200,
+    "body": "<Table><Columns><Column Id=\"Mispar_Zehut\" Name=\"Mispar_Zehut\" DataType=\"int\" /><Column Id=\"KOD_KUPA_OTZAR\" Name=\"KOD_KUPA_OTZAR\" DataType=\"int\" /><Column Id=\"SHEM_KUPA\" Name=\"SHEM_KUPA\" DataType=\"varchar\" /><Column Id=\"KOD_MASLUL_OTZAR\" Name=\"KOD_MASLUL_OTZAR\" DataType=\"int\" /><Column Id=\"SHEM_MASLUL\" Name=\"SHEM_MASLUL\" DataType=\"varchar\" /><Column Id=\"ITRA\" Name=\"ITRA\" DataType=\"float\" /><Column Id=\"AHUZ_ITRA\" Name=\"AHUZ_ITRA\" DataType=\"float\" /><Column Id=\"Sug_keren\" Name=\"Sug_keren\" DataType=\"int\" /><Column Id=\"Mispar_kadentzia\" Name=\"Mispar_kadentzia\" DataType=\"int\" /><Column Id=\"Mispar_heshbon\" Name=\"Mispar_heshbon\" DataType=\"bigint\" /><Column Id=\"Itra_tagmulim\" Name=\"Itra_tagmulim\" DataType=\"float\" /><Column Id=\"Itra_pizuim\" Name=\"Itra_pizuim\" DataType=\"float\" /><Column Id=\"tchum\" Na"
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/ApplicationPages/HTTP_Proxy_Script.aspx?Action=ExecSQL&Sid=1795514450656&QSID=1795514449198",
+    "status": 200,
+    "body": "<Table><Columns><Column Id=\"Mispar_Zehut\" Name=\"Mispar_Zehut\" DataType=\"bigint\" /><Column Id=\"Mispar_heshbon\" Name=\"Mispar_heshbon\" DataType=\"bigint\" /><Column Id=\"KOD_MEAGED\" Name=\"KOD_MEAGED\" DataType=\"int\" /><Column Id=\"TAARICH_ERECH\" Name=\"TAARICH_ERECH\" DataType=\"date\" /><Column Id=\"TAARICH_TOKEF\" Name=\"TAARICH_TOKEF\" DataType=\"date\" /><Column Id=\"SHEM_MAAVID_MESHALEM\" Name=\"SHEM_MAAVID_MESHALEM\" DataType=\"varchar\" /><Column Id=\"TOTAL_HAFKADOT_MAAVID\" Name=\"TOTAL_HAFKADOT_MAAVID\" DataType=\"float\" /><Column Id=\"TOTAL_HAFKADOT_OVED\" Name=\"TOTAL_HAFKADOT_OVED\" DataType=\"float\" /><Column Id=\"TOTAL_HAFKADOT_PITZUIM\" Name=\"TOTAL_HAFKADOT_PITZUIM\" DataType=\"float\" /><Column Id=\"TOTAL_HAFKADOT\" Name=\"TOTAL_HAFKADOT\" DataType=\"float\" /><Column Id=\"kod_sug_Kupa_Otzar\" Name=\"kod_sug_Kupa_Otzar\" "
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/ApplicationPages/HTTP_Proxy_Script.aspx?Action=ExecSQL&Sid=1795514450699&QSID=1795514449198",
+    "status": 200,
+    "body": "<Table><Columns><Column Id=\"Mispar_Zehut\" Name=\"Mispar_Zehut\" DataType=\"int\" /><Column Id=\"Mispar_heshbon\" Name=\"Mispar_heshbon\" DataType=\"bigint\" /><Column Id=\"ITRA_LETHILAT_SHANA_OVED\" Name=\"ITRA_LETHILAT_SHANA_OVED\" DataType=\"float\" /><Column Id=\"ITRA_LETHILAT_SHANA_MAAVID\" Name=\"ITRA_LETHILAT_SHANA_MAAVID\" DataType=\"float\" /><Column Id=\"ITRA_LETHILAT_SHANA_PITZUIM\" Name=\"ITRA_LETHILAT_SHANA_PITZUIM\" DataType=\"float\" /><Column Id=\"ITRA_LETHILAT_SHANA\" Name=\"ITRA_LETHILAT_SHANA\" DataType=\"float\" /><Column Id=\"HAFKADOT_SHANA_OVED\" Name=\"HAFKADOT_SHANA_OVED\" DataType=\"float\" /><Column Id=\"HAFKADOT_SHANA_MAAVID\" Name=\"HAFKADOT_SHANA_MAAVID\" DataType=\"float\" /><Column Id=\"HAFKADOT_SHANA_PITZUIM\" Name=\"HAFKADOT_SHANA_PITZUIM\" DataType=\"float\" /><Column Id=\"SAX_HAFKADOT_SHANA\" Name=\"SAX_HAFKAD"
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/Custom/Portal/H_InlineSet.xsl",
+    "status": 200,
+    "body": "<xsl:stylesheet version=\"1.0\"  xmlns:xsl=\"http://www.w3.org/1999/XSL/Transform\"  xmlns:msxsl=\"urn:schemas-microsoft-com:xslt\" xmlns:OAO=\"http://www.OAO.co.il\" xmlns:cr=\"http://www.intellisys.co.il\">\r\n<xsl:output method=\"html\" version=\"1.0\" encoding=\"utf-8\" omit-xml-declaration=\"yes\" indent=\"no\" media-type=\"text/html\"/>\r\n<xsl:decimal-format NaN=\"\"/>\r\n<xsl:param name=\"UIDateFormat\">1</xsl:param>\r\n<xsl:param name=\"UIDateOperator\">/</xsl:param>\r\n<xsl:param name=\"TransformMode\"/>\r\n<xsl:param name=\"CurrPage\"/>\r\n\r\n<xsl:param name=\"Dir\">ltr</xsl:param>\r\n<xsl:param name=\"DID\"/>\r\n<xsl:variable name=\"Data\" select=\"*/Data/*\"/>\r\n<xsl:variable name=\"Report\" select=\"$Data/DashboardItems/*[@Id = $DID]\"/>\r\n<xsl:variable name=\"LGNode\" select=\"*/Fixed/Language\"/>\r\n<xsl:variable name=\"GridParams\" select=\"$Rep"
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/Custom/Portal/H_InlineCards.xsl",
+    "status": 200,
+    "body": "<xsl:stylesheet version=\"1.0\" xmlns:xsl=\"http://www.w3.org/1999/XSL/Transform\" xmlns:msxsl=\"urn:schemas-microsoft-com:xslt\" xmlns:OAO=\"http://www.OAO.co.il\">\r\n<xsl:output method=\"html\" version=\"1.0\" encoding=\"utf-8\" omit-xml-declaration=\"yes\" indent=\"no\" media-type=\"text/html\"/>\r\n<xsl:decimal-format NaN=\"--\" zero-digit=\"0\"  decimal-separator=\".\" grouping-separator=\",\" name=\"dec\"/>\r\n<xsl:param name=\"UIDateFormat\">1</xsl:param>\r\n<xsl:param name=\"UIDateOperator\">/</xsl:param>\r\n<xsl:param name=\"TransformMode\"/>\r\n<xsl:param name=\"DataKey\"/>\r\n<xsl:param name=\"DID\"/>\r\n<xsl:param name=\"IsRTL\"/>\r\n\r\n<xsl:variable name=\"LGNode\" select=\"*/Fixed/Language\"/>\r\n<xsl:variable name=\"Report\" select=\"*/Data/*/DashboardItems/*[@Id = $DID]\"/>\r\n<xsl:variable name=\"Params\" select=\"$Report/Params\"/>\r\n<xsl:variable"
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/Custom/Portal/H_InlineCards.xsl",
+    "status": 200,
+    "body": "<xsl:stylesheet version=\"1.0\" xmlns:xsl=\"http://www.w3.org/1999/XSL/Transform\" xmlns:msxsl=\"urn:schemas-microsoft-com:xslt\" xmlns:OAO=\"http://www.OAO.co.il\">\r\n<xsl:output method=\"html\" version=\"1.0\" encoding=\"utf-8\" omit-xml-declaration=\"yes\" indent=\"no\" media-type=\"text/html\"/>\r\n<xsl:decimal-format NaN=\"--\" zero-digit=\"0\"  decimal-separator=\".\" grouping-separator=\",\" name=\"dec\"/>\r\n<xsl:param name=\"UIDateFormat\">1</xsl:param>\r\n<xsl:param name=\"UIDateOperator\">/</xsl:param>\r\n<xsl:param name=\"TransformMode\"/>\r\n<xsl:param name=\"DataKey\"/>\r\n<xsl:param name=\"DID\"/>\r\n<xsl:param name=\"IsRTL\"/>\r\n\r\n<xsl:variable name=\"LGNode\" select=\"*/Fixed/Language\"/>\r\n<xsl:variable name=\"Report\" select=\"*/Data/*/DashboardItems/*[@Id = $DID]\"/>\r\n<xsl:variable name=\"Params\" select=\"$Report/Params\"/>\r\n<xsl:variable"
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/Custom/Portal/H_InlineCards.xsl",
+    "status": 200,
+    "body": "<xsl:stylesheet version=\"1.0\" xmlns:xsl=\"http://www.w3.org/1999/XSL/Transform\" xmlns:msxsl=\"urn:schemas-microsoft-com:xslt\" xmlns:OAO=\"http://www.OAO.co.il\">\r\n<xsl:output method=\"html\" version=\"1.0\" encoding=\"utf-8\" omit-xml-declaration=\"yes\" indent=\"no\" media-type=\"text/html\"/>\r\n<xsl:decimal-format NaN=\"--\" zero-digit=\"0\"  decimal-separator=\".\" grouping-separator=\",\" name=\"dec\"/>\r\n<xsl:param name=\"UIDateFormat\">1</xsl:param>\r\n<xsl:param name=\"UIDateOperator\">/</xsl:param>\r\n<xsl:param name=\"TransformMode\"/>\r\n<xsl:param name=\"DataKey\"/>\r\n<xsl:param name=\"DID\"/>\r\n<xsl:param name=\"IsRTL\"/>\r\n\r\n<xsl:variable name=\"LGNode\" select=\"*/Fixed/Language\"/>\r\n<xsl:variable name=\"Report\" select=\"*/Data/*/DashboardItems/*[@Id = $DID]\"/>\r\n<xsl:variable name=\"Params\" select=\"$Report/Params\"/>\r\n<xsl:variable"
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/Custom/Portal/H_InlineCards.xsl",
+    "status": 200,
+    "body": "<xsl:stylesheet version=\"1.0\" xmlns:xsl=\"http://www.w3.org/1999/XSL/Transform\" xmlns:msxsl=\"urn:schemas-microsoft-com:xslt\" xmlns:OAO=\"http://www.OAO.co.il\">\r\n<xsl:output method=\"html\" version=\"1.0\" encoding=\"utf-8\" omit-xml-declaration=\"yes\" indent=\"no\" media-type=\"text/html\"/>\r\n<xsl:decimal-format NaN=\"--\" zero-digit=\"0\"  decimal-separator=\".\" grouping-separator=\",\" name=\"dec\"/>\r\n<xsl:param name=\"UIDateFormat\">1</xsl:param>\r\n<xsl:param name=\"UIDateOperator\">/</xsl:param>\r\n<xsl:param name=\"TransformMode\"/>\r\n<xsl:param name=\"DataKey\"/>\r\n<xsl:param name=\"DID\"/>\r\n<xsl:param name=\"IsRTL\"/>\r\n\r\n<xsl:variable name=\"LGNode\" select=\"*/Fixed/Language\"/>\r\n<xsl:variable name=\"Report\" select=\"*/Data/*/DashboardItems/*[@Id = $DID]\"/>\r\n<xsl:variable name=\"Params\" select=\"$Report/Params\"/>\r\n<xsl:variable"
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/Custom/Portal/H_InlineHeader.xsl",
+    "status": 200,
+    "body": "<xsl:stylesheet version=\"1.0\"  xmlns:xsl=\"http://www.w3.org/1999/XSL/Transform\"  xmlns:msxsl=\"urn:schemas-microsoft-com:xslt\" xmlns:OAO=\"http://www.OAO.co.il\" xmlns:cr=\"http://www.intellisys.co.il\">\r\n<xsl:output method=\"html\" version=\"1.0\" encoding=\"utf-8\" omit-xml-declaration=\"yes\" indent=\"no\" media-type=\"text/html\"/>\r\n<xsl:decimal-format NaN=\"--\"/>\r\n<xsl:param name=\"UIDateFormat\">1</xsl:param>\r\n<xsl:param name=\"UIDateOperator\">/</xsl:param>\r\n<xsl:param name=\"TransformMode\"/>\r\n<xsl:param name=\"Dir\">ltr</xsl:param>\r\n<xsl:param name=\"DID\"/>\r\n<xsl:variable name=\"Data\" select=\"*/Data/*\"/>\r\n<xsl:variable name=\"Report\" select=\"$Data/DashboardItems/*[@Id = $DID]\"/>\r\n<xsl:variable name=\"LGNode\" select=\"*/Fixed/Language\"/>\r\n<xsl:variable name=\"Params\" select=\"$Report/Params\"/>\r\n\r\n<xsl:template mat"
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/Custom/Portal/H_InlineCards.xsl",
+    "status": 200,
+    "body": "<xsl:stylesheet version=\"1.0\" xmlns:xsl=\"http://www.w3.org/1999/XSL/Transform\" xmlns:msxsl=\"urn:schemas-microsoft-com:xslt\" xmlns:OAO=\"http://www.OAO.co.il\">\r\n<xsl:output method=\"html\" version=\"1.0\" encoding=\"utf-8\" omit-xml-declaration=\"yes\" indent=\"no\" media-type=\"text/html\"/>\r\n<xsl:decimal-format NaN=\"--\" zero-digit=\"0\"  decimal-separator=\".\" grouping-separator=\",\" name=\"dec\"/>\r\n<xsl:param name=\"UIDateFormat\">1</xsl:param>\r\n<xsl:param name=\"UIDateOperator\">/</xsl:param>\r\n<xsl:param name=\"TransformMode\"/>\r\n<xsl:param name=\"DataKey\"/>\r\n<xsl:param name=\"DID\"/>\r\n<xsl:param name=\"IsRTL\"/>\r\n\r\n<xsl:variable name=\"LGNode\" select=\"*/Fixed/Language\"/>\r\n<xsl:variable name=\"Report\" select=\"*/Data/*/DashboardItems/*[@Id = $DID]\"/>\r\n<xsl:variable name=\"Params\" select=\"$Report/Params\"/>\r\n<xsl:variable"
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/Custom/Portal/H_InlineCards.xsl",
+    "status": 200,
+    "body": "<xsl:stylesheet version=\"1.0\" xmlns:xsl=\"http://www.w3.org/1999/XSL/Transform\" xmlns:msxsl=\"urn:schemas-microsoft-com:xslt\" xmlns:OAO=\"http://www.OAO.co.il\">\r\n<xsl:output method=\"html\" version=\"1.0\" encoding=\"utf-8\" omit-xml-declaration=\"yes\" indent=\"no\" media-type=\"text/html\"/>\r\n<xsl:decimal-format NaN=\"--\" zero-digit=\"0\"  decimal-separator=\".\" grouping-separator=\",\" name=\"dec\"/>\r\n<xsl:param name=\"UIDateFormat\">1</xsl:param>\r\n<xsl:param name=\"UIDateOperator\">/</xsl:param>\r\n<xsl:param name=\"TransformMode\"/>\r\n<xsl:param name=\"DataKey\"/>\r\n<xsl:param name=\"DID\"/>\r\n<xsl:param name=\"IsRTL\"/>\r\n\r\n<xsl:variable name=\"LGNode\" select=\"*/Fixed/Language\"/>\r\n<xsl:variable name=\"Report\" select=\"*/Data/*/DashboardItems/*[@Id = $DID]\"/>\r\n<xsl:variable name=\"Params\" select=\"$Report/Params\"/>\r\n<xsl:variable"
+  },
+  {
+    "url": "https://www.harel-group.co.il/_layouts/15/HarelWebSite/HarelReports/GUIGenerator_V2/assets/chartsNew/fusioncharts.charts.js",
+    "status": 200,
+    "body": "/*\r\n FusionCharts JavaScript Library\r\n Copyright FusionCharts Technologies LLP\r\n License Information at <http://www.fusioncharts.com/license>\r\n FusionCharts JavaScript Library\r\n Copyright FusionCharts Technologies LLP\r\n License Information at <http://www.fusioncharts.com/license>\r\n\r\n @version 3.9.0\r\n*/\r\nFusionCharts.register(\"module\",[\"private\",\"modules.renderer.js-charts\",function(){function Da(a){var m={left:a.offsetLeft,top:a.offsetTop};for(a=a.offsetParent;a;)m.left+=a.offsetLeft,m.top+=a.offsetTop,a!==Ka.body&&a!==Ka.documentElement&&(m.left-=a.scrollLeft,m.top-=a.scrollTop),a=a.offsetParent;return m}function sa(a,m){for(var d=[],e=0,p=a.length;e<p;e++)d[e]=m.call(a[e],a[e],e,a);return d}function da(a,m){var d=m?360:ia;a=(a||0)%d;return 0>a?d+a:a}function Na(a,m){return a<=x?a:m<=x?m:"
+  },
+  {
+    "url": "https://gbx.harel-group.co.il/glassbox/reporting/cls_report?clsjsv=7.3.264421&_cls_s=376534f8-e10d-4260-b78a-aae22ec96339:0&_cls_v=5fc801fb-d07d-47e7-9971-6160be8fd329&pid=c9c73b94-6639-49d9-a5cd-4eb80aff918e&sn=3&cfg=e3cf981c&pv=2&aid=",
+    "status": 200,
+    "body": "{\"pv\":2,\"clss\":\"376534f8-e10d-4260-b78a-aae22ec96339:0\",\"clsv\":\"5fc801fb-d07d-47e7-9971-6160be8fd329\",\"clse\":null,\"conf\":null,\"usage\":{\"sessionQuotaBreach\":false, \"apiCallQuotaBreach\":false, \"dataLimit\": 4194304}}"
+  },
+  {
+    "url": "https://gbx.harel-group.co.il/glassbox/reporting/cls_report?clsjsv=7.3.264421&_cls_s=376534f8-e10d-4260-b78a-aae22ec96339:0&_cls_v=5fc801fb-d07d-47e7-9971-6160be8fd329&pid=778f83c3-4c9a-4988-8d83-3e452e519631&sn=3&cfg=e3cf981c&pv=2&aid=",
+    "status": 200,
+    "body": "{\"pv\":2,\"clss\":\"376534f8-e10d-4260-b78a-aae22ec96339:0\",\"clsv\":\"5fc801fb-d07d-47e7-9971-6160be8fd329\",\"clse\":null,\"conf\":null,\"usage\":{\"sessionQuotaBreach\":false, \"apiCallQuotaBreach\":false, \"dataLimit\": 4194304}}"
+  },
+  {
+    "url": "https://gbx.harel-group.co.il/glassbox/reporting/cls_report?clsjsv=7.3.264421&_cls_s=376534f8-e10d-4260-b78a-aae22ec96339:0&_cls_v=5fc801fb-d07d-47e7-9971-6160be8fd329&pid=778f83c3-4c9a-4988-8d83-3e452e519631&sn=4&cfg=e3cf981c&pv=2&aid=",
+    "status": 200,
+    "body": "{\"pv\":2,\"clss\":\"376534f8-e10d-4260-b78a-aae22ec96339:0\",\"clsv\":\"5fc801fb-d07d-47e7-9971-6160be8fd329\",\"clse\":null,\"conf\":null,\"usage\":{\"sessionQuotaBreach\":false, \"apiCallQuotaBreach\":false, \"dataLimit\": 4194304}}"
+  },
+  {
+    "url": "https://gbx.harel-group.co.il/glassbox/reporting/cls_report?clsjsv=7.3.264421&_cls_s=376534f8-e10d-4260-b78a-aae22ec96339:0&_cls_v=5fc801fb-d07d-47e7-9971-6160be8fd329&pid=778f83c3-4c9a-4988-8d83-3e452e519631&sn=5&cfg=e3cf981c&pv=2&aid=",
+    "status": 200,
+    "body": "{\"pv\":2,\"clss\":\"376534f8-e10d-4260-b78a-aae22ec96339:0\",\"clsv\":\"5fc801fb-d07d-47e7-9971-6160be8fd329\",\"clse\":null,\"conf\":null,\"usage\":{\"sessionQuotaBreach\":false, \"apiCallQuotaBreach\":false, \"dataLimit\": 4194304}}"
+  }
+]

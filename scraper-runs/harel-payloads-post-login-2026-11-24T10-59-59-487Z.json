@@ -1,0 +1,180 @@
+[
+  {
+    "url": "https://digital.harel-group.co.il/portal-config-backend/api/v1/micro-frontends/get-config/cus",
+    "keys": [
+      "success",
+      "data"
+    ]
+  },
+  {
+    "url": "https://www.harel-group.co.il/personal-info/my-harel/_api/SP.Web.GetContextWebThemeData?lcid=1037",
+    "keys": [
+      "d"
+    ]
+  },
+  {
+    "url": "https://www.harel-group.co.il/_vti_bin/webapi/Promotions/PostMarketingPromotionImpression",
+    "keys": [
+      "boolean"
+    ]
+  },
+  {
+    "url": "https://www.harel-group.co.il/_vti_bin/webapi/Footer/GetListItems",
+    "keys": [
+      "array:4"
+    ]
+  },
+  {
+    "url": "https://www.harel-group.co.il/_vti_bin/webapi/GeneralAccessor?id=MegaWorlds&cacheKey=MegaWorlds",
+    "keys": [
+      "array:5"
+    ]
+  },
+  {
+    "url": "https://www.harel-group.co.il/_vti_bin/webapi/GeneralAccessor?id=SubAreas&cacheKey=SubAreas",
+    "keys": [
+      "array:47"
+    ]
+  },
+  {
+    "url": "https://www.harel-group.co.il/_vti_bin/webapi/CustomersAuthentication/PostAuthenticate/GetCurrentDetails",
+    "keys": [
+      "Status",
+      "Details"
+    ]
+  },
+  {
+    "url": "https://www.harel-group.co.il/_vti_bin/webapi/Footer/GetHorizontalFooterMenuLinks",
+    "keys": [
+      "array:7"
+    ]
+  },
+  {
+    "url": "https://www.harel-group.co.il/_vti_bin/webapi/Application/GetApplication/",
+    "keys": [
+      "Type",
+      "SubType",
+      "Title",
+      "Success",
+      "ErrorMsg",
+      "returnObject",
+      "ContainerId",
+      "ItemsToDisplay",
+      "GA_Events"
+    ]
+  },
+  {
+    "url": "https://www.harel-group.co.il/_vti_bin/webapi/Scanovate/GetContentIdentification/",
+    "keys": [
+      "&nbsp;MaxTriedCreateOTP",
+      "ActivationRegistrationOtp",
+      "ADFail",
+      "ADFailTitle",
+      "AuthenticationChoose",
+      "AuthenticationFailedSubTitle",
+      "AuthenticationFailedTitle",
+      "CameFromAuthenticationMethode",
+      "CameFromAuthonticateChoose",
+      "CameFromPremissionScanovate",
+      "ChangePassword",
+      "ChangePasswordAlert",
+      "ChangePasswordError",
+      "ChangePasswordLengthAlert",
+      "ClientExtraDetailsService",
+      "ClientExtraDetailsServiceTitle",
+      "ContactUs",
+      "CreateOTP",
+      "CreditCatdFailed",
+      "DefaultErrorMsg",
+      "DefaultErrorMsgTitle",
+      "ErrorDetails",
+      "ErrorMsgDetailsNotValid",
+      "ErrorMsgEmailInvalid",
+      "ErrorMsgInvalidCreditCard",
+      "ErrorMsgInvalidIssueDate",
+      "ErrorMsgOTPInvalid",
+      "FailedScanovate",
+      "FalidContactUs",
+      "FalidOTP",
+      "GeneralContactUs",
+      "GeneralError",
+      "InvalidCreditCardTech",
+      "InvalidCreditCardTechTitle",
+      "IsuuedDateFailed",
+      "LoginFailed",
+      "LoginFailedTitle",
+      "LoginFailedUserLocked",
+      "MaxTriedValidateOTP",
+      "MaxTriedValidateOTPTitle"
+    ]
+  },
+  {
+    "url": "https://digital.harel-group.co.il/apps.client-view/client-view/page-links",
+    "keys": [
+      "link.newClaim",
+      "link.claimsByArea",
+      "link.claimArchive",
+      "link.coronaDelayPayments",
+      "link.mountainIndication",
+      "link.teethClaims",
+      "link.detailedApplication",
+      "link.pensionClaim",
+      "link.murshe.default",
+      "link.murshe.xtopic_63",
+      "link.claimNumber",
+      "link.murshe.xtopic_64",
+      "link.openBank",
+      "link.personalInfo",
+      "link.abroadPolicy",
+      "link.kidsClaimsPage",
+      "link.meyupe",
+      "link.cancelledPolices",
+      "link.paymentMethod",
+      "link.appeal",
+      "link.siud",
+      "link.loanDetails",
+      "link.dentalClaims",
+      "link.murshe.xtopic_11",
+      "link.receiptsView",
+      "link.applicationArchive"
+    ]
+  },
+  {
+    "url": "https://digital.harel-group.co.il/apps.client-view/client-view/properties?ctime=1795517944449&propertyName=rowsLimit&ticket=6915f76365b5386829f7cac5ea8e977c291d943d",
+    "keys": [
+      "number"
+    ]
+  },
+  {
+    "url": "https://digital.harel-group.co.il/apps.client-view/client-view/client-requests?ctime=1795517944448&ticket=6915f76365b5386829f7cac5ea8e977c291d943d",
+    "keys": [
+      "array:0"
+    ]
+  },
+  {
+    "url": "https://digital.harel-group.co.il/apps.client-view/client-view/customer-products?ctime=1795517944448&ticket=6915f76365b5386829f7cac5ea8e977c291d943d",
+    "keys": [
+      "topicsList",
+      "generalDetails",
+      "responseStatus",
+      "actions",
+      "mursheList",
+      "lastEntryDate",
+      "policiesList"
+    ]
+  },
+  {
+    "url": "https://digital.harel-group.co.il/apps.client-view/client-view/campain-details?ctime=1795517946139&ticket=6915f76365b5386829f7cac5ea8e977c291d943d&userId=204552335",
+    "keys": [
+      "offers",
+      "errorMsg",
+      "errorCode"
+    ]
+  },
+  {
+    "url": "https://digital.harel-group.co.il/apps.client-view/client-view/online-data?ctime=1795517946138&ticket=6915f76365b5386829f7cac5ea8e977c291d943d",
+    "keys": [
+      "63"
+    ]
+  }
+]

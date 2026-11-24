@@ -2,12 +2,13 @@ import { existsSync } from 'node:fs';
 import { mkdir, readFile, unlink, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import puppeteer from 'puppeteer-core';
+import { contributionFromDeposits, normalizeActivityStatus } from '../activityStatus.js';
+import { getSessionPath } from '../sessionPaths.js';
 
 const OTP_TIMEOUT_MS = 300_000;
 const DEFAULT_LOGIN_URL = 'https://www.harel-group.co.il/Pages/login-Page/Login.aspx';
 const RUNS_ROOT = process.env.RUNS_ROOT || '/tmp/scraper-runs';
-const HAREL_AUTH_STATE_PATH =
-  process.env.HAREL_AUTH_STATE_PATH || path.join(process.cwd(), 'data', 'harel-auth-state.json');
+const PROVIDER_LABEL = 'הראל';
 const HAREL_ORIGINS = [
   'https://www.harel-group.co.il',
   'https://digital.harel-group.co.il',
@@ -19,6 +20,22 @@ const CODES = {
   scrapeFailed: '20261122.401203',
   noPendingOtp: '20261122.401204',
   invalidLoginUrl: '20261122.401205',
+};
+
+/** Isolated Meni / Efrat Harel profiles (credentials + session path). */
+export const HAREL_PROFILES = {
+  meni: {
+    profileKey: 'meni',
+    sessionKey: 'harel-meni',
+    idEnv: 'HAREL_ID_NUMBER',
+    phoneEnv: 'HAREL_PHONE_NUMBER',
+  },
+  efrat: {
+    profileKey: 'efrat',
+    sessionKey: 'harel-efrat',
+    idEnv: 'EFRAT_HAREL_ID_NUMBER',
+    phoneEnv: 'EFRAT_HAREL_PHONE_NUMBER',
+  },
 };
 
 /**
@@ -45,19 +62,36 @@ export const SELECTORS = {
     'button[data-hrl-bo*="otp" i], button[type="submit"]:not(.Mui-disabled), button.btn-primary, button[class*="confirm" i]',
 };
 
-let running = false;
-let pendingOtp = null;
-let browserHandle = null;
+function createEmptyState() {
+  return {
+    status: 'IDLE',
+    error: null,
+    errorCode: null,
+    message: null,
+    phoneHint: null,
+    portfolio: null,
+    startedAt: null,
+    finishedAt: null,
+  };
+}
 
-const state = {
-  status: 'IDLE',
-  error: null,
-  errorCode: null,
-  message: null,
-  phoneHint: null,
-  portfolio: null,
-  startedAt: null,
-  finishedAt: null,
+function createRuntime(profileDef) {
+  return {
+    profileKey: profileDef.profileKey,
+    idEnv: profileDef.idEnv,
+    phoneEnv: profileDef.phoneEnv,
+    authStatePath: getSessionPath(profileDef.sessionKey),
+    logTag: `harel[${profileDef.profileKey}]`,
+    running: false,
+    pendingOtp: null,
+    browserHandle: null,
+    state: createEmptyState(),
+  };
+}
+
+const runtimes = {
+  meni: createRuntime(HAREL_PROFILES.meni),
+  efrat: createRuntime(HAREL_PROFILES.efrat),
 };
 
 function httpError(status, error, errorCode, messageText) {
@@ -68,48 +102,73 @@ function httpError(status, error, errorCode, messageText) {
   return err;
 }
 
-export function hasHarelCredentials() {
-  return Boolean(String(process.env.HAREL_ID_NUMBER || '').trim());
+function hasProfileCredentials(rt) {
+  return Boolean(String(process.env[rt.idEnv] || '').trim());
 }
 
-export function getHarelState() {
-  const portfolio = state.portfolio
-    ? portfolioFromPolicies(state.portfolio.policies || [])
-    : null;
+function readProfileCredentials(rt) {
   return {
-    status: state.status,
-    error: state.error,
-    errorCode: state.errorCode,
-    message: state.message,
-    phoneHint: state.phoneHint,
-    credentialsConfigured: hasHarelCredentials(),
-    sessionSaved: existsSync(HAREL_AUTH_STATE_PATH),
-    portfolio,
-    startedAt: state.startedAt,
-    finishedAt: state.finishedAt,
+    profileKey: rt.profileKey,
+    idNumber: String(process.env[rt.idEnv] || '').trim(),
+    phoneNumber: String(process.env[rt.phoneEnv] || '').trim(),
   };
 }
 
-async function readHarelAuthState() {
+function getProfileState(rt) {
+  const portfolio = rt.state.portfolio
+    ? portfolioFromPolicies(rt.state.portfolio.policies || [])
+    : null;
+  return {
+    status: rt.state.status,
+    error: rt.state.error,
+    errorCode: rt.state.errorCode,
+    message: rt.state.message,
+    phoneHint: rt.state.phoneHint,
+    credentialsConfigured: hasProfileCredentials(rt),
+    sessionSaved: existsSync(rt.authStatePath),
+    portfolio,
+    profileKey: rt.profileKey,
+    startedAt: rt.state.startedAt,
+    finishedAt: rt.state.finishedAt,
+  };
+}
+
+export function hasHarelCredentials() {
+  return hasProfileCredentials(runtimes.meni);
+}
+
+export function getHarelState() {
+  return getProfileState(runtimes.meni);
+}
+
+export function hasEfratHarelCredentials() {
+  return hasProfileCredentials(runtimes.efrat);
+}
+
+export function getEfratHarelState() {
+  return getProfileState(runtimes.efrat);
+}
+
+async function readHarelAuthState(rt) {
   try {
-    const text = await readFile(HAREL_AUTH_STATE_PATH, 'utf8');
+    const text = await readFile(rt.authStatePath, 'utf8');
     const parsed = JSON.parse(text);
     if (!parsed || !Array.isArray(parsed.cookies) || parsed.cookies.length === 0) return null;
     return parsed;
   } catch (error) {
     if (error?.code === 'ENOENT') return null;
-    console.info(`harel auth-state read failed ${String(error.message || '').slice(0, 80)}`);
+    console.info(`${rt.logTag} auth-state read failed ${String(error.message || '').slice(0, 80)}`);
     return null;
   }
 }
 
-async function clearHarelAuthState() {
+async function clearHarelAuthState(rt) {
   try {
-    await unlink(HAREL_AUTH_STATE_PATH);
-    console.info('harel auth-state cleared');
+    await unlink(rt.authStatePath);
+    console.info(`${rt.logTag} auth-state cleared`);
   } catch (error) {
     if (error?.code !== 'ENOENT') {
-      console.info(`harel auth-state clear failed ${String(error.message || '').slice(0, 80)}`);
+      console.info(`${rt.logTag} auth-state clear failed ${String(error.message || '').slice(0, 80)}`);
     }
   }
 }
@@ -138,7 +197,7 @@ async function collectOriginStorage(page, origin) {
   }
 }
 
-async function writeHarelAuthState(page) {
+async function writeHarelAuthState(rt, page) {
   const client = await page.createCDPSession();
   const { cookies } = await client.send('Network.getAllCookies');
   const harelCookies = (cookies || []).filter((cookie) =>
@@ -149,15 +208,16 @@ async function writeHarelAuthState(page) {
     const storage = await collectOriginStorage(page, origin);
     origins.push({ origin, ...storage });
   }
-  await mkdir(path.dirname(HAREL_AUTH_STATE_PATH), { recursive: true });
+  await mkdir(path.dirname(rt.authStatePath), { recursive: true });
   const payload = {
     savedAt: new Date().toISOString(),
+    profileKey: rt.profileKey,
     cookies: harelCookies,
     origins,
   };
-  await writeFile(HAREL_AUTH_STATE_PATH, JSON.stringify(payload, null, 2), { mode: 0o600 });
+  await writeFile(rt.authStatePath, JSON.stringify(payload, null, 2), { mode: 0o600 });
   console.info(
-    `harel auth-state saved cookies=${harelCookies.length} origins=${origins.length} path=${HAREL_AUTH_STATE_PATH}`,
+    `${rt.logTag} auth-state saved cookies=${harelCookies.length} origins=${origins.length} path=${rt.authStatePath}`,
   );
 }
 
@@ -193,49 +253,49 @@ async function applyHarelAuthState(page, authState) {
   return true;
 }
 
-function resetRun() {
-  state.status = 'SCRAPING';
-  state.error = null;
-  state.errorCode = null;
-  state.message = null;
-  state.phoneHint = null;
-  state.portfolio = null;
-  state.startedAt = new Date().toISOString();
-  state.finishedAt = null;
+function resetRun(rt) {
+  rt.state.status = 'SCRAPING';
+  rt.state.error = null;
+  rt.state.errorCode = null;
+  rt.state.message = null;
+  rt.state.phoneHint = null;
+  rt.state.portfolio = null;
+  rt.state.startedAt = new Date().toISOString();
+  rt.state.finishedAt = null;
 }
 
-function finish(status, extra = {}) {
-  state.status = status;
-  state.finishedAt = new Date().toISOString();
-  Object.assign(state, extra);
+function finish(rt, status, extra = {}) {
+  rt.state.status = status;
+  rt.state.finishedAt = new Date().toISOString();
+  Object.assign(rt.state, extra);
 }
 
-function dropPendingOtp() {
-  if (!pendingOtp) return;
-  const { reject } = pendingOtp;
-  pendingOtp = null;
+function dropPendingOtp(rt) {
+  if (!rt.pendingOtp) return;
+  const { reject } = rt.pendingOtp;
+  rt.pendingOtp = null;
   reject(new Error('OTP wait ended'));
 }
 
-function waitForOtp() {
-  state.status = 'AWAITING_OTP';
+function waitForOtp(rt) {
+  rt.state.status = 'AWAITING_OTP';
   const promise = new Promise((resolve, reject) => {
     const timer = setTimeout(() => {
-      if (!pendingOtp) return;
-      pendingOtp = null;
+      if (!rt.pendingOtp) return;
+      rt.pendingOtp = null;
       reject(new Error('Timed out waiting for the SMS code'));
     }, OTP_TIMEOUT_MS);
 
-    pendingOtp = {
+    rt.pendingOtp = {
       resolve: (code) => {
         clearTimeout(timer);
-        pendingOtp = null;
-        state.status = 'SCRAPING';
+        rt.pendingOtp = null;
+        rt.state.status = 'SCRAPING';
         resolve(code);
       },
       reject: (error) => {
         clearTimeout(timer);
-        pendingOtp = null;
+        rt.pendingOtp = null;
         reject(error);
       },
     };
@@ -244,11 +304,19 @@ function waitForOtp() {
   return promise;
 }
 
-export function submitHarelOtp(otpCode) {
-  if (!pendingOtp || state.status !== 'AWAITING_OTP') {
+function submitProfileOtp(rt, otpCode) {
+  if (!rt.pendingOtp || rt.state.status !== 'AWAITING_OTP') {
     throw httpError(409, 'Harel is not waiting for an SMS code.', CODES.noPendingOtp);
   }
-  pendingOtp.resolve(otpCode);
+  rt.pendingOtp.resolve(otpCode);
+}
+
+export function submitHarelOtp(otpCode) {
+  return submitProfileOtp(runtimes.meni, otpCode);
+}
+
+export function submitEfratHarelOtp(otpCode) {
+  return submitProfileOtp(runtimes.efrat, otpCode);
 }
 
 function loginUrl() {
@@ -650,10 +718,18 @@ function policiesFromPayloads(payloads) {
 }
 
 function portfolioFromPolicies(policies) {
-  const list = (policies || []).filter((policy) => policy && policy.balance !== null && policy.balance !== undefined);
+  const list = (policies || [])
+    .filter((policy) => policy && policy.balance !== null && policy.balance !== undefined)
+    .map((policy) => ({
+      ...policy,
+      provider: policy.provider || PROVIDER_LABEL,
+      isActive: policy.isActive ?? null,
+      activityLabel: policy.activityLabel || null,
+    }));
   let total = 0;
   for (const policy of list) total += Number(policy.balance) || 0;
   return {
+    provider: PROVIDER_LABEL,
     totalPensionBalance: list.length ? total : null,
     policies: list,
   };
@@ -824,10 +900,31 @@ async function waitForSavingsPayloads(payloads, pending, timeoutMs = 25000) {
   return hasSavingsPayloads(payloads);
 }
 
-const FALLBACK_SAVINGS_URLS = [
-  'https://www.harel-group.co.il/personal-info/study-funds/Pages/lobby-study-funds.aspx',
-  'https://www.harel-group.co.il/personal-info/pension/Pages/reports/pension-fund.aspx?FilterParams=policySubjectId|2',
-];
+const STUDY_FUND_LOBBY_URL =
+  'https://www.harel-group.co.il/personal-info/study-funds/Pages/lobby-study-funds.aspx';
+const GEMEL_LOBBY_URL =
+  'https://www.harel-group.co.il/personal-info/gemel-funding/Pages/lobby-gemel-funding.aspx';
+const PENSION_FALLBACK_URL =
+  'https://www.harel-group.co.il/personal-info/pension/Pages/reports/pension-fund.aspx?FilterParams=policySubjectId|2';
+const FALLBACK_SAVINGS_URLS = [STUDY_FUND_LOBBY_URL, PENSION_FALLBACK_URL, GEMEL_LOBBY_URL];
+
+function gemelDetailUrls(account) {
+  return [
+    `https://www.harel-group.co.il/personal-info/gemel-funding/Pages/reports/gemel-funding-policy-details.aspx?FilterParams=policySubjectId|${account}`,
+    `https://www.harel-group.co.il/personal-info/gemel-funding/Pages/reports/gemel-funding-policy-details.aspx?FilterParams=policySubjectId|${account}~HCUN|-999`,
+  ];
+}
+
+function isGemelPolicy(policy, href = '') {
+  const blob = `${policy?.productType || ''} ${policy?.policyName || ''} ${href || policy?.detailUrl || ''}`;
+  return /גמל|gemel-funding|gemel funding/i.test(blob);
+}
+
+function isStudyFundPolicy(policy, href = '') {
+  if (isGemelPolicy(policy, href)) return false;
+  const blob = `${policy?.productType || ''} ${policy?.policyName || ''} ${href || policy?.detailUrl || ''}`;
+  return /השתלמות|study-fund/i.test(blob) || Boolean(policy?.lobby);
+}
 
 async function ensureClientViewData(page, payloads, pending) {
   await dismissBlockingModals(page);
@@ -1169,6 +1266,8 @@ function parseDetailsFromText(raw) {
     const labeled = pickPercent(
       [
         'תשואה שנתית',
+        'תשואה מתחילת השנה',
+        'תשואה מתחילת שנה',
         'תשואה מצטברת ל-12',
         'תשואה ל-12 חודשים',
         'תשואה ב-12 חודשים',
@@ -1183,11 +1282,40 @@ function parseDetailsFromText(raw) {
     return labeled;
   };
 
+  const statusMatch =
+    text.match(/סטטוס\s*:?\s*([^\n\t|]+?)(?=\s*(?:מספר|מין|תאריך|ותק|מעמד|בעל|סוכן|$))/i) ||
+    text.match(/סטטוס\s*:?\s*(פעיל(?:\s+רגיל)?|לא\s*פעיל|מבוטל[ת]?|סגור)/i);
+  const activity = normalizeActivityStatus(statusMatch?.[1] || null);
+
+  // Recent deposits live in the "תנועות אחרונות" table (not birth/start dates).
+  const txChunk =
+    text.match(/סכום ההפקדה\s+(.+?)\s+(?:לדוח המלא|מוטבים|ריכוז תנועות)/i)?.[1] || '';
+  const depositDates = [...txChunk.matchAll(/(\d{2})\/(\d{2})\/(\d{4})/g)].map((match) => {
+    const day = Number(match[1]);
+    const month = Number(match[2]);
+    const year = Number(match[3]);
+    return {
+      sort: year * 10_000 + month * 100 + day,
+      iso: `${year}-${String(month).padStart(2, '0')}-${String(day).padStart(2, '0')}`,
+    };
+  });
+  depositDates.sort((a, b) => a.sort - b.sort);
+  const lastDepositAt = depositDates.length ? depositDates[depositDates.length - 1].iso : null;
+  const ytdRaw = text.match(/כספים שהופקדו לחשבון השנה\s*₪?\s*([\d,]+(?:\.\d+)?)/i)?.[1];
+  const ytdDepositAmount = ytdRaw ? Number(String(ytdRaw).replace(/,/g, '')) : null;
+  const contribution = contributionFromDeposits({ lastDepositAt, ytdDepositAmount });
+
   return {
     investmentTrack: pickTrack(),
     depositFeePercent: feeMap.deposit,
     accumulationFeePercent: feeMap.accumulation,
     annualYieldPercent: pickYield(),
+    isActive: activity.isActive,
+    activityLabel: activity.activityLabel,
+    lastDepositAt: contribution.lastDepositAt,
+    ytdDepositAmount: contribution.ytdDepositAmount,
+    receivingDeposits: contribution.receivingDeposits,
+    contributionLabel: contribution.contributionLabel,
     hasSavingsWords: /(מסלול|דמי ניהול|שיעור דמי|תשואה|פנסיה|השתלמות|גמל)/.test(text),
     snippet: text.slice(0, 700),
   };
@@ -1275,6 +1403,16 @@ function mergeDetails(policy, details) {
     accumulationFeePercent:
       policy.accumulationFeePercent ?? details.accumulationFeePercent ?? null,
     annualYieldPercent: policy.annualYieldPercent ?? details.annualYieldPercent ?? null,
+    isActive: details.isActive != null ? details.isActive : policy.isActive ?? null,
+    activityLabel: details.activityLabel || policy.activityLabel || null,
+    lastDepositAt: details.lastDepositAt || policy.lastDepositAt || null,
+    ytdDepositAmount:
+      details.ytdDepositAmount != null ? details.ytdDepositAmount : policy.ytdDepositAmount ?? null,
+    receivingDeposits:
+      details.receivingDeposits != null
+        ? details.receivingDeposits
+        : policy.receivingDeposits ?? null,
+    contributionLabel: details.contributionLabel || policy.contributionLabel || null,
   };
 }
 
@@ -1469,15 +1607,11 @@ function studyFundAccountsFromText(text) {
   return [...byAccount.values()].sort((a, b) => b.balance - a.balance);
 }
 
-async function fetchStudyFundAccountDetails(page, account, payloads, pending) {
-  const hrefs = [
-    `https://www.harel-group.co.il/personal-info/study-funds/Pages/reports/study-funds-policy-details.aspx?FilterParams=policySubjectId|${account}~HCUN|-999`,
-    `https://www.harel-group.co.il/personal-info/study-funds/Pages/reports/study-funds-policy-details.aspx?FilterParams=policySubjectId|${account}`,
-  ];
+async function fetchAccountDetailsFromUrls(page, account, hrefs, payloads, pending, logLabel) {
   for (const href of hrefs) {
     try {
       const before = payloads.length;
-      console.info(`harel study-fund try url ${href}`);
+      console.info(`harel ${logLabel} try url ${href}`);
       const response = await page.goto(href, { waitUntil: 'networkidle2', timeout: 60000 });
       const status = response?.status?.() || 0;
       const landed = page.url();
@@ -1487,13 +1621,27 @@ async function fetchStudyFundAccountDetails(page, account, payloads, pending) {
       await waitForDashboardFrame(page, 12000);
       const text = await waitForDetailsText(page, 18000);
       if (/לא ניתן להציג דף זה/.test(text)) continue;
-      if (!/דמי ניהול|מסלול השקעה|מסלולי השקעה|שיעור דמי|תשואה|הלכה|כללי|מניות|כספי|עלות שנתית/.test(text)) {
+      if (!/דמי ניהול|מסלול השקעה|מסלולי השקעה|שיעור דמי|תשואה|הלכה|כללי|מניות|כספי|עלות שנתית|S\s*&\s*P/i.test(text)) {
         continue;
       }
       const parsed = parseDetailsFromText(text);
+      // Gemel להשקעה pages expose "שיעור עלות שנתית צפויה" next to the track when
+      // explicit management-fee chips are missing — use it as accumulation fee.
+      if (parsed.accumulationFeePercent == null) {
+        const annualCost = text.match(
+          /שיעור\s+עלות\s+שנתית\s+צפויה[\s\S]{0,80}?(\d+(?:[.,]\d+)?)\s*%|(\d+(?:[.,]\d+)?)\s*%\s*(?=תנועות|דמי|מוטבים|$)/i,
+        );
+        const costHit = annualCost?.[1] || annualCost?.[2];
+        if (costHit != null) {
+          const num = Number(String(costHit).replace(',', '.'));
+          if (Number.isFinite(num) && num >= 0 && num <= 3) {
+            parsed.accumulationFeePercent = String(costHit).replace(',', '.');
+          }
+        }
+      }
       parsed.employerName = employerFromText(text);
       console.info(
-        `harel study-fund policy-details account=${account} employer=${parsed.employerName || '—'} track=${parsed.investmentTrack || '—'} deposit=${parsed.depositFeePercent ?? '—'} accum=${parsed.accumulationFeePercent ?? '—'} yield=${parsed.annualYieldPercent ?? '—'}`,
+        `harel ${logLabel} policy-details account=${account} employer=${parsed.employerName || '—'} track=${parsed.investmentTrack || '—'} deposit=${parsed.depositFeePercent ?? '—'} accum=${parsed.accumulationFeePercent ?? '—'} yield=${parsed.annualYieldPercent ?? '—'}`,
       );
       return parsed;
     } catch {
@@ -1503,26 +1651,83 @@ async function fetchStudyFundAccountDetails(page, account, payloads, pending) {
   return null;
 }
 
+async function fetchStudyFundAccountDetails(page, account, payloads, pending) {
+  return fetchAccountDetailsFromUrls(
+    page,
+    account,
+    [
+      `https://www.harel-group.co.il/personal-info/study-funds/Pages/reports/study-funds-policy-details.aspx?FilterParams=policySubjectId|${account}~HCUN|-999`,
+      `https://www.harel-group.co.il/personal-info/study-funds/Pages/reports/study-funds-policy-details.aspx?FilterParams=policySubjectId|${account}`,
+    ],
+    payloads,
+    pending,
+    'study-fund',
+  );
+}
+
+async function fetchGemelAccountDetails(page, account, payloads, pending) {
+  return fetchAccountDetailsFromUrls(page, account, gemelDetailUrls(account), payloads, pending, 'gemel');
+}
+
+function gemelAccountsFromText(text) {
+  const fromNumberLabel = studyFundAccountsFromText(text);
+  if (fromNumberLabel.length) return fromNumberLabel;
+
+  // Lobby cards sometimes only show "בחשבון: 159168707" before the balance block.
+  const accounts = [];
+  const blob = String(text || '');
+  const re = /בחשבון\s*:?\s*(\d{5,})/g;
+  for (const match of blob.matchAll(re)) {
+    const account = match[1];
+    let chunk = blob.slice(match.index + match[0].length, match.index + match[0].length + 500);
+    const nextAccount = chunk.search(/בחשבון\s*:?\s*\d{5,}|מספר חשבון\s*:?\s*\d{5,}/);
+    if (nextAccount >= 0) chunk = chunk.slice(0, nextAccount);
+    const balanceMatch =
+      chunk.match(/צבירה\s*₪?\s*([\d,]+(?:\.\d+)?)/) ||
+      chunk.match(/₪\s*([\d,]+(?:\.\d+)?)/) ||
+      chunk.match(/([\d,]+(?:\.\d+)?)\s*₪/);
+    const balance = balanceMatch ? Number(String(balanceMatch[1]).replace(/,/g, '')) : 0;
+    accounts.push({
+      account,
+      balance: Number.isFinite(balance) ? balance : 0,
+      employerName: null,
+    });
+  }
+  const byAccount = new Map();
+  for (const row of accounts) {
+    const prev = byAccount.get(row.account);
+    if (!prev || row.balance > prev.balance) byAccount.set(row.account, row);
+  }
+  return [...byAccount.values()].sort((a, b) => b.balance - a.balance);
+}
+
 /** Expand one lobby product into one enriched policy per account. */
-async function enrichStudyFundDetails(page, policy, payloads, pending) {
+async function enrichLobbyAccountDetails(page, policy, payloads, pending, { kind, fetchDetails, accountsFromText }) {
   const lobbyText = await collectPageText(page);
-  let accounts = studyFundAccountsFromText(lobbyText);
+  let accounts = accountsFromText(lobbyText);
   if (!accounts.length) {
     const clicked = await clickStudyFundLobbyAction(page, 'עדכון מסלול');
     if (clicked?.account) accounts = [{ account: clicked.account, balance: clicked.balance || 0 }];
   }
   console.info(
-    `harel study-fund accounts=${accounts.map((row) => `${row.account}:${row.balance}`).join(',') || 'none'}`,
+    `harel ${kind} accounts=${accounts.map((row) => `${row.account}:${row.balance}`).join(',') || 'none'}`,
   );
 
   if (!accounts.length) {
-    return [policy];
+    // Already a concrete account row — still try its detail page.
+    if (policy.policyNumber && /^\d{5,}$/.test(String(policy.policyNumber))) {
+      accounts = [{ account: String(policy.policyNumber), balance: policy.balance || 0 }];
+    } else {
+      return [policy];
+    }
   }
 
   const expanded = [];
   for (const row of accounts) {
     let next = {
       ...policy,
+      productType: policy.productType || (kind === 'gemel' ? 'גמל' : policy.productType),
+      provider: policy.provider || PROVIDER_LABEL,
       policyNumber: row.account,
       balance: row.balance || policy.balance,
       employerName: row.employerName || null,
@@ -1531,7 +1736,7 @@ async function enrichStudyFundDetails(page, policy, payloads, pending) {
       accumulationFeePercent: null,
       annualYieldPercent: null,
     };
-    const details = await fetchStudyFundAccountDetails(page, row.account, payloads, pending);
+    const details = await fetchDetails(page, row.account, payloads, pending);
     if (details) {
       next = mergeDetails(next, details);
       next.employerName = details.employerName || next.employerName || null;
@@ -1543,10 +1748,35 @@ async function enrichStudyFundDetails(page, policy, payloads, pending) {
             .trim(),
         );
       }
+      // Lobby/detail accounts with a live balance and no explicit closed status are open.
+      // This is account-open status — contributionLabel (מופקד / ללא הפקדות) is separate.
+      if (next.isActive == null && Number(next.balance) > 0.01) {
+        next.isActive = true;
+        next.activityLabel = 'פעיל';
+      }
+    } else if (Number(next.balance) > 0.01) {
+      next.isActive = true;
+      next.activityLabel = 'פעיל';
     }
     expanded.push(next);
   }
   return expanded;
+}
+
+async function enrichStudyFundDetails(page, policy, payloads, pending) {
+  return enrichLobbyAccountDetails(page, policy, payloads, pending, {
+    kind: 'study-fund',
+    fetchDetails: fetchStudyFundAccountDetails,
+    accountsFromText: studyFundAccountsFromText,
+  });
+}
+
+async function enrichGemelFundingDetails(page, policy, payloads, pending) {
+  return enrichLobbyAccountDetails(page, policy, payloads, pending, {
+    kind: 'gemel',
+    fetchDetails: fetchGemelAccountDetails,
+    accountsFromText: gemelAccountsFromText,
+  });
 }
 
 async function drillIntoLobbyProduct(page, policy) {
@@ -1592,12 +1822,13 @@ async function enrichPoliciesFromDetailPages(page, policies, payloads, pending) 
       await page.waitForNetworkIdle({ idleTime: 1200, timeout: 25000 }).catch(() => {});
       await waitForPayloadSettled(payloads, pending, beforeCount, 6000);
 
-      const isStudyFund =
-        /השתלמות|study-fund/i.test(`${policy.productType || ''} ${policy.policyName || ''} ${href}`) ||
-        Boolean(policy.lobby);
+      const isGemel = isGemelPolicy(policy, href);
+      const isStudyFund = isStudyFundPolicy(policy, href);
 
-      if (isStudyFund) {
-        const expanded = await enrichStudyFundDetails(page, next, payloads, pending);
+      if (isGemel || isStudyFund) {
+        const expanded = isGemel
+          ? await enrichGemelFundingDetails(page, next, payloads, pending)
+          : await enrichStudyFundDetails(page, next, payloads, pending);
         const fresh = payloads.slice(beforeCount);
         await dumpPayloadSummary(fresh, `detail-${policy.productType || 'policy'}`);
         for (const row of expanded) {
@@ -1682,10 +1913,13 @@ async function harvestPolicies(page, payloads, pending = new Set()) {
   policies = policies.map((policy) => {
     if (policy.detailUrl) return policy;
     if (policy.productType === 'השתלמות') {
-      return { ...policy, detailUrl: FALLBACK_SAVINGS_URLS[0], lobby: true };
+      return { ...policy, detailUrl: STUDY_FUND_LOBBY_URL, lobby: true };
+    }
+    if (policy.productType === 'גמל') {
+      return { ...policy, detailUrl: GEMEL_LOBBY_URL, lobby: true };
     }
     if (policy.productType === 'פנסיה') {
-      return { ...policy, detailUrl: FALLBACK_SAVINGS_URLS[1], lobby: false };
+      return { ...policy, detailUrl: PENSION_FALLBACK_URL, lobby: false };
     }
     return policy;
   });
@@ -2056,15 +2290,15 @@ async function extractPoliciesFromDom(page) {
   return rows.map((row) => policyFromRecord(row)).filter(Boolean);
 }
 
-async function tryResumeSession(page, payloads, pending) {
-  const authState = await readHarelAuthState();
+async function tryResumeSession(rt, page, payloads, pending) {
+  const authState = await readHarelAuthState(rt);
   if (!authState) {
-    console.info('harel no saved auth-state');
+    console.info(`${rt.logTag} no saved auth-state`);
     return false;
   }
 
-  console.info(`harel trying saved auth-state from ${authState.savedAt || 'unknown'}`);
-  state.message = 'משתמש בסשן שמור…';
+  console.info(`${rt.logTag} trying saved auth-state from ${authState.savedAt || 'unknown'}`);
+  rt.state.message = 'משתמש בסשן שמור…';
   await applyHarelAuthState(page, authState);
   await page.goto(CLIENT_VIEW_URL, { waitUntil: 'networkidle2', timeout: 90000 }).catch(() => {});
   await dismissBlockingModals(page);
@@ -2073,12 +2307,12 @@ async function tryResumeSession(page, payloads, pending) {
 
   const url = page.url();
   if (/login-Page|Login\.aspx/i.test(url)) {
-    console.info('harel saved session redirected to login');
-    await clearHarelAuthState();
+    console.info(`${rt.logTag} saved session redirected to login`);
+    await clearHarelAuthState(rt);
     return false;
   }
   if (await clientViewBroken(page)) {
-    console.info('harel saved session hit client-view error page');
+    console.info(`${rt.logTag} saved session hit client-view error page`);
     // Still might recover via ensureClientViewData / fallback pages later.
   }
 
@@ -2089,18 +2323,18 @@ async function tryResumeSession(page, payloads, pending) {
     (await waitForAuthenticatedSession(page, payloads));
 
   if (!ready && !authed) {
-    console.info('harel saved session not authenticated');
-    await clearHarelAuthState();
+    console.info(`${rt.logTag} saved session not authenticated`);
+    await clearHarelAuthState(rt);
     return false;
   }
 
-  console.info(`harel resumed session productsReady=${ready} url=${page.url()}`);
+  console.info(`${rt.logTag} resumed session productsReady=${ready} url=${page.url()}`);
   return true;
 }
 
-async function loginWithSms(page, payloads, pending, credentials) {
+async function loginWithSms(rt, page, payloads, pending, credentials) {
   const target = loginUrl();
-  console.info(`harel navigate ${target.href}`);
+  console.info(`${rt.logTag} navigate ${target.href}`);
   await page.goto(target.href, { waitUntil: 'networkidle2', timeout: 90000 });
 
   await clickByText(page, ['אני מסכים', 'אישור', 'accept', 'הבנתי', 'סגור']).catch(() => {});
@@ -2119,7 +2353,7 @@ async function loginWithSms(page, payloads, pending, credentials) {
     const phoneField = await firstVisible(page, SELECTORS.phoneNumber);
     if (phoneField && phoneField.handle !== idField.handle) {
       await fillInput(page, phoneField, credentials.phoneNumber);
-      state.phoneHint = phoneHintFrom(credentials.phoneNumber);
+      rt.state.phoneHint = phoneHintFrom(credentials.phoneNumber);
     }
   }
 
@@ -2193,13 +2427,13 @@ async function loginWithSms(page, payloads, pending, credentials) {
     );
   }
 
-  if (!state.phoneHint && credentials.phoneNumber) {
-    state.phoneHint = phoneHintFrom(credentials.phoneNumber);
+  if (!rt.state.phoneHint && credentials.phoneNumber) {
+    rt.state.phoneHint = phoneHintFrom(credentials.phoneNumber);
   }
 
-  const code = await waitForOtp();
+  const code = await waitForOtp(rt);
   await fillOtp(page, code);
-  console.info(`harel otp submitted url=${page.url()}`);
+  console.info(`${rt.logTag} otp submitted url=${page.url()}`);
   await page.waitForNetworkIdle({ idleTime: 1500, timeout: 30000 }).catch(() => {});
   await new Promise((resolve) => setTimeout(resolve, 2000));
 
@@ -2280,12 +2514,9 @@ async function harvestAfterAuth(page, payloads, pending) {
   return portfolio;
 }
 
-async function runScrape() {
-  resetRun();
-  const credentials = {
-    idNumber: String(process.env.HAREL_ID_NUMBER || '').trim(),
-    phoneNumber: String(process.env.HAREL_PHONE_NUMBER || '').trim(),
-  };
+async function runScrape(rt) {
+  resetRun(rt);
+  const credentials = readProfileCredentials(rt);
   const payloads = [];
   const pendingResponses = new Set();
   let browser = null;
@@ -2296,7 +2527,7 @@ async function runScrape() {
       executablePath: process.env.PUPPETEER_EXECUTABLE_PATH || '/usr/bin/chromium',
       args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage', '--disable-gpu'],
     });
-    browserHandle = browser;
+    rt.browserHandle = browser;
     const page = await browser.newPage();
     page.setDefaultNavigationTimeout(90000);
     page.setDefaultTimeout(120000);
@@ -2325,7 +2556,7 @@ async function runScrape() {
             if (payloads.length > 220) payloads.shift();
             if (/SCValidateOTP|StartProcess|GetCurrentDetails|pension|study-fund|fee|yield/i.test(url)) {
               console.info(
-                `harel api ${status} ${url.split('/').slice(-2).join('/')} statusField=${payloads.at(-1)?.data?.Status}`,
+                `${rt.logTag} api ${status} ${url.split('/').slice(-2).join('/')} statusField=${payloads.at(-1)?.data?.Status}`,
               );
             }
           } catch {
@@ -2339,7 +2570,7 @@ async function runScrape() {
       pendingResponses.add(task);
     });
 
-    let usedSession = await tryResumeSession(page, payloads, pendingResponses);
+    let usedSession = await tryResumeSession(rt, page, payloads, pendingResponses);
     let portfolio = null;
 
     if (usedSession) {
@@ -2347,67 +2578,75 @@ async function runScrape() {
         portfolio = await harvestAfterAuth(page, payloads, pendingResponses);
       } catch (error) {
         console.info(
-          `harel session harvest failed — falling back to SMS (${String(error.message || '').slice(0, 120)})`,
+          `${rt.logTag} session harvest failed — falling back to SMS (${String(error.message || '').slice(0, 120)})`,
         );
-        await clearHarelAuthState();
+        await clearHarelAuthState(rt);
         usedSession = false;
         portfolio = null;
       }
     }
 
     if (!usedSession) {
-      state.message = null;
-      await loginWithSms(page, payloads, pendingResponses, credentials);
+      rt.state.message = null;
+      await loginWithSms(rt, page, payloads, pendingResponses, credentials);
       portfolio = await harvestAfterAuth(page, payloads, pendingResponses);
     }
 
     try {
-      await writeHarelAuthState(page);
+      await writeHarelAuthState(rt, page);
     } catch (error) {
-      console.info(`harel auth-state save failed ${String(error.message || '').slice(0, 100)}`);
+      console.info(`${rt.logTag} auth-state save failed ${String(error.message || '').slice(0, 100)}`);
     }
 
-    finish('SUCCESS', {
+    finish(rt, 'SUCCESS', {
       portfolio,
       error: null,
       errorCode: null,
       message: usedSession ? 'עודכן עם סשן שמור (ללא SMS).' : null,
     });
     console.info(
-      `harel success session=${usedSession} policies=${portfolio.policies.length} total=${portfolio.totalPensionBalance} payloads=${payloads.length} url=${page.url()}`,
+      `${rt.logTag} success session=${usedSession} policies=${portfolio.policies.length} total=${portfolio.totalPensionBalance} payloads=${payloads.length} url=${page.url()}`,
     );
   } catch (error) {
-    finish('ERROR', {
+    finish(rt, 'ERROR', {
       error: error.message || 'The Harel scrape failed.',
       message: error.message || 'The Harel scrape failed.',
       errorCode: error.errorCode || CODES.scrapeFailed,
       portfolio: null,
     });
-    console.error(`harel failed ${state.errorCode} ${error.message}`);
+    console.error(`${rt.logTag} failed ${rt.state.errorCode} ${error.message}`);
   } finally {
-    dropPendingOtp();
-    running = false;
-    browserHandle = null;
+    dropPendingOtp(rt);
+    rt.running = false;
+    rt.browserHandle = null;
     if (browser) await browser.close().catch(() => {});
   }
 }
 
-export function startHarelScrape() {
-  if (running) {
+function startProfileScrape(rt) {
+  if (rt.running) {
     throw httpError(409, 'A Harel scrape is already running.', CODES.alreadyRunning);
   }
-  if (!hasHarelCredentials()) {
-    state.status = 'MISSING_CREDENTIALS';
-    state.error = 'MISSING_CREDENTIALS';
-    state.message = 'חסר מספר תעודת זהות להראל בקובץ .env (HAREL_ID_NUMBER)';
-    state.errorCode = CODES.missingCredentials;
-    state.finishedAt = new Date().toISOString();
-    console.info(`harel aborted ${CODES.missingCredentials}`);
-    throw httpError(400, 'MISSING_CREDENTIALS', CODES.missingCredentials, state.message);
+  if (!hasProfileCredentials(rt)) {
+    rt.state.status = 'MISSING_CREDENTIALS';
+    rt.state.error = 'MISSING_CREDENTIALS';
+    rt.state.message = `חסר מספר תעודת זהות להראל בקובץ .env (${rt.idEnv})`;
+    rt.state.errorCode = CODES.missingCredentials;
+    rt.state.finishedAt = new Date().toISOString();
+    console.info(`${rt.logTag} aborted ${CODES.missingCredentials}`);
+    throw httpError(400, 'MISSING_CREDENTIALS', CODES.missingCredentials, rt.state.message);
   }
 
   loginUrl();
-  running = true;
-  void runScrape();
-  return { status: 'STARTED' };
+  rt.running = true;
+  void runScrape(rt);
+  return { status: 'STARTED', profileKey: rt.profileKey };
+}
+
+export function startHarelScrape() {
+  return startProfileScrape(runtimes.meni);
+}
+
+export function startEfratHarelScrape() {
+  return startProfileScrape(runtimes.efrat);
 }

@@ -2,10 +2,10 @@ import { randomUUID } from 'node:crypto';
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { CompanyTypes, createScraper } from '@sergienko4/israeli-bank-scrapers';
+import { getSessionPath } from '../sessionPaths.js';
 
 const OTP_TIMEOUT_MS = 300_000;
-const AUTH_TOKEN_PATH =
-  process.env.CAL_AUTH_STATE_PATH || path.join(process.cwd(), 'data', 'cal-auth-token.txt');
+const AUTH_TOKEN_PATH = getSessionPath('visa-cal');
 const CAL_API = 'https://api-cc.cal-online.co.il';
 const CAL_LOGIN_SITE_ID = '8D37DF16-5812-4ACD-BAE7-CD1A5BFA2207';
 const CAL_WEB_SITE_ID = '09031987-273E-2311-906C-8AF85B17C8D9';

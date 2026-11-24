@@ -1,9 +1,9 @@
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
-import path from 'node:path';
 import { CompanyTypes, createScraper } from '@sergienko4/israeli-bank-scrapers';
+import { getSessionPath } from './sessionPaths.js';
 
 const OTP_TIMEOUT_MS = 300_000;
-const AUTH_STATE_PATH = process.env.AUTH_STATE_PATH || path.join(process.cwd(), 'data', 'auth-state.json');
+const AUTH_STATE_PATH = getSessionPath('bank');
 
 const CODES = {
   missingCredentials: '20261116.401024',

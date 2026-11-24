@@ -1,0 +1,340 @@
+[
+  {
+    "url": "https://digital.harel-group.co.il/portal-config-backend/api/v1/micro-frontends/get-config/cus",
+    "keys": [
+      "success",
+      "data"
+    ]
+  },
+  {
+    "url": "https://www.harel-group.co.il/personal-info/gemel-funding/_api/SP.Web.GetContextWebThemeData?lcid=1037",
+    "keys": [
+      "d"
+    ]
+  },
+  {
+    "url": "https://www.harel-group.co.il/_vti_bin/webapi/Footer/GetListItems",
+    "keys": [
+      "array:4"
+    ]
+  },
+  {
+    "url": "https://www.harel-group.co.il/_vti_bin/webapi/Scanovate/GetContentIdentification/",
+    "keys": [
+      "&nbsp;MaxTriedCreateOTP",
+      "ActivationRegistrationOtp",
+      "ADFail",
+      "ADFailTitle",
+      "AuthenticationChoose",
+      "AuthenticationFailedSubTitle",
+      "AuthenticationFailedTitle",
+      "CameFromAuthenticationMethode",
+      "CameFromAuthonticateChoose",
+      "CameFromPremissionScanovate",
+      "ChangePassword",
+      "ChangePasswordAlert",
+      "ChangePasswordError",
+      "ChangePasswordLengthAlert",
+      "ClientExtraDetailsService",
+      "ClientExtraDetailsServiceTitle",
+      "ContactUs",
+      "CreateOTP",
+      "CreditCatdFailed",
+      "DefaultErrorMsg",
+      "DefaultErrorMsgTitle",
+      "ErrorDetails",
+      "ErrorMsgDetailsNotValid",
+      "ErrorMsgEmailInvalid",
+      "ErrorMsgInvalidCreditCard",
+      "ErrorMsgInvalidIssueDate",
+      "ErrorMsgOTPInvalid",
+      "FailedScanovate",
+      "FalidContactUs",
+      "FalidOTP",
+      "GeneralContactUs",
+      "GeneralError",
+      "InvalidCreditCardTech",
+      "InvalidCreditCardTechTitle",
+      "IsuuedDateFailed",
+      "LoginFailed",
+      "LoginFailedTitle",
+      "LoginFailedUserLocked",
+      "MaxTriedValidateOTP",
+      "MaxTriedValidateOTPTitle"
+    ]
+  },
+  {
+    "url": "https://www.harel-group.co.il/_vti_bin/webapi/GeneralAccessor?id=MegaWorlds&cacheKey=MegaWorlds",
+    "keys": [
+      "array:5"
+    ]
+  },
+  {
+    "url": "https://www.harel-group.co.il/_vti_bin/webapi/Footer/GetHorizontalFooterMenuLinks",
+    "keys": [
+      "array:7"
+    ]
+  },
+  {
+    "url": "https://www.harel-group.co.il/_vti_bin/webapi/GeneralAccessor?id=SubAreas&cacheKey=SubAreas",
+    "keys": [
+      "array:47"
+    ]
+  },
+  {
+    "url": "https://www.harel-group.co.il/_vti_bin/webapi/CustomersAuthentication/PostAuthenticate/GetCurrentDetails",
+    "keys": [
+      "Status",
+      "Details"
+    ]
+  },
+  {
+    "url": "https://digital.harel-group.co.il/portal-config-backend/api/v1/micro-frontends/get-config/cus",
+    "keys": [
+      "success",
+      "data"
+    ]
+  },
+  {
+    "url": "https://www.harel-group.co.il/_vti_bin/webapi/Scanovate/GetContentIdentification/",
+    "keys": [
+      "&nbsp;MaxTriedCreateOTP",
+      "ActivationRegistrationOtp",
+      "ADFail",
+      "ADFailTitle",
+      "AuthenticationChoose",
+      "AuthenticationFailedSubTitle",
+      "AuthenticationFailedTitle",
+      "CameFromAuthenticationMethode",
+      "CameFromAuthonticateChoose",
+      "CameFromPremissionScanovate",
+      "ChangePassword",
+      "ChangePasswordAlert",
+      "ChangePasswordError",
+      "ChangePasswordLengthAlert",
+      "ClientExtraDetailsService",
+      "ClientExtraDetailsServiceTitle",
+      "ContactUs",
+      "CreateOTP",
+      "CreditCatdFailed",
+      "DefaultErrorMsg",
+      "DefaultErrorMsgTitle",
+      "ErrorDetails",
+      "ErrorMsgDetailsNotValid",
+      "ErrorMsgEmailInvalid",
+      "ErrorMsgInvalidCreditCard",
+      "ErrorMsgInvalidIssueDate",
+      "ErrorMsgOTPInvalid",
+      "FailedScanovate",
+      "FalidContactUs",
+      "FalidOTP",
+      "GeneralContactUs",
+      "GeneralError",
+      "InvalidCreditCardTech",
+      "InvalidCreditCardTechTitle",
+      "IsuuedDateFailed",
+      "LoginFailed",
+      "LoginFailedTitle",
+      "LoginFailedUserLocked",
+      "MaxTriedValidateOTP",
+      "MaxTriedValidateOTPTitle"
+    ]
+  },
+  {
+    "url": "https://www.harel-group.co.il/_vti_bin/webapi/GeneralAccessor?id=SubAreas&cacheKey=SubAreas",
+    "keys": [
+      "array:47"
+    ]
+  },
+  {
+    "url": "https://www.harel-group.co.il/_vti_bin/webapi/Footer/GetHorizontalFooterMenuLinks",
+    "keys": [
+      "array:7"
+    ]
+  },
+  {
+    "url": "https://www.harel-group.co.il/_vti_bin/webapi/CustomersAuthentication/PostAuthenticate/GetCurrentDetails",
+    "keys": [
+      "Status",
+      "Details"
+    ]
+  },
+  {
+    "url": "https://www.harel-group.co.il/_vti_bin/webapi/Footer/GetListItems",
+    "keys": [
+      "array:4"
+    ]
+  },
+  {
+    "url": "https://www.harel-group.co.il/_vti_bin/webapi/GeneralAccessor?id=MegaWorlds&cacheKey=MegaWorlds",
+    "keys": [
+      "array:5"
+    ]
+  },
+  {
+    "url": "https://digital.harel-group.co.il/portal-config-backend/api/v1/micro-frontends/get-config/cus",
+    "keys": [
+      "success",
+      "data"
+    ]
+  },
+  {
+    "url": "https://www.harel-group.co.il/_vti_bin/webapi/Scanovate/GetContentIdentification/",
+    "keys": [
+      "&nbsp;MaxTriedCreateOTP",
+      "ActivationRegistrationOtp",
+      "ADFail",
+      "ADFailTitle",
+      "AuthenticationChoose",
+      "AuthenticationFailedSubTitle",
+      "AuthenticationFailedTitle",
+      "CameFromAuthenticationMethode",
+      "CameFromAuthonticateChoose",
+      "CameFromPremissionScanovate",
+      "ChangePassword",
+      "ChangePasswordAlert",
+      "ChangePasswordError",
+      "ChangePasswordLengthAlert",
+      "ClientExtraDetailsService",
+      "ClientExtraDetailsServiceTitle",
+      "ContactUs",
+      "CreateOTP",
+      "CreditCatdFailed",
+      "DefaultErrorMsg",
+      "DefaultErrorMsgTitle",
+      "ErrorDetails",
+      "ErrorMsgDetailsNotValid",
+      "ErrorMsgEmailInvalid",
+      "ErrorMsgInvalidCreditCard",
+      "ErrorMsgInvalidIssueDate",
+      "ErrorMsgOTPInvalid",
+      "FailedScanovate",
+      "FalidContactUs",
+      "FalidOTP",
+      "GeneralContactUs",
+      "GeneralError",
+      "InvalidCreditCardTech",
+      "InvalidCreditCardTechTitle",
+      "IsuuedDateFailed",
+      "LoginFailed",
+      "LoginFailedTitle",
+      "LoginFailedUserLocked",
+      "MaxTriedValidateOTP",
+      "MaxTriedValidateOTPTitle"
+    ]
+  },
+  {
+    "url": "https://www.harel-group.co.il/_vti_bin/webapi/Footer/GetHorizontalFooterMenuLinks",
+    "keys": [
+      "array:7"
+    ]
+  },
+  {
+    "url": "https://www.harel-group.co.il/_vti_bin/webapi/GeneralAccessor?id=SubAreas&cacheKey=SubAreas",
+    "keys": [
+      "array:47"
+    ]
+  },
+  {
+    "url": "https://www.harel-group.co.il/_vti_bin/webapi/GeneralAccessor?id=MegaWorlds&cacheKey=MegaWorlds",
+    "keys": [
+      "array:5"
+    ]
+  },
+  {
+    "url": "https://www.harel-group.co.il/_vti_bin/webapi/CustomersAuthentication/PostAuthenticate/GetCurrentDetails",
+    "keys": [
+      "Status",
+      "Details"
+    ]
+  },
+  {
+    "url": "https://www.harel-group.co.il/_vti_bin/webapi/Footer/GetListItems",
+    "keys": [
+      "array:4"
+    ]
+  },
+  {
+    "url": "https://digital.harel-group.co.il/portal-config-backend/api/v1/micro-frontends/get-config/cus",
+    "keys": [
+      "success",
+      "data"
+    ]
+  },
+  {
+    "url": "https://www.harel-group.co.il/_vti_bin/webapi/Footer/GetHorizontalFooterMenuLinks",
+    "keys": [
+      "array:7"
+    ]
+  },
+  {
+    "url": "https://www.harel-group.co.il/_vti_bin/webapi/GeneralAccessor?id=SubAreas&cacheKey=SubAreas",
+    "keys": [
+      "array:47"
+    ]
+  },
+  {
+    "url": "https://www.harel-group.co.il/_vti_bin/webapi/GeneralAccessor?id=MegaWorlds&cacheKey=MegaWorlds",
+    "keys": [
+      "array:5"
+    ]
+  },
+  {
+    "url": "https://www.harel-group.co.il/_vti_bin/webapi/Scanovate/GetContentIdentification/",
+    "keys": [
+      "&nbsp;MaxTriedCreateOTP",
+      "ActivationRegistrationOtp",
+      "ADFail",
+      "ADFailTitle",
+      "AuthenticationChoose",
+      "AuthenticationFailedSubTitle",
+      "AuthenticationFailedTitle",
+      "CameFromAuthenticationMethode",
+      "CameFromAuthonticateChoose",
+      "CameFromPremissionScanovate",
+      "ChangePassword",
+      "ChangePasswordAlert",
+      "ChangePasswordError",
+      "ChangePasswordLengthAlert",
+      "ClientExtraDetailsService",
+      "ClientExtraDetailsServiceTitle",
+      "ContactUs",
+      "CreateOTP",
+      "CreditCatdFailed",
+      "DefaultErrorMsg",
+      "DefaultErrorMsgTitle",
+      "ErrorDetails",
+      "ErrorMsgDetailsNotValid",
+      "ErrorMsgEmailInvalid",
+      "ErrorMsgInvalidCreditCard",
+      "ErrorMsgInvalidIssueDate",
+      "ErrorMsgOTPInvalid",
+      "FailedScanovate",
+      "FalidContactUs",
+      "FalidOTP",
+      "GeneralContactUs",
+      "GeneralError",
+      "InvalidCreditCardTech",
+      "InvalidCreditCardTechTitle",
+      "IsuuedDateFailed",
+      "LoginFailed",
+      "LoginFailedTitle",
+      "LoginFailedUserLocked",
+      "MaxTriedValidateOTP",
+      "MaxTriedValidateOTPTitle"
+    ]
+  },
+  {
+    "url": "https://www.harel-group.co.il/_vti_bin/webapi/CustomersAuthentication/PostAuthenticate/GetCurrentDetails",
+    "keys": [
+      "Status",
+      "Details"
+    ]
+  },
+  {
+    "url": "https://www.harel-group.co.il/_vti_bin/webapi/Footer/GetListItems",
+    "keys": [
+      "array:4"
+    ]
+  }
+]

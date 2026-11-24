@@ -15,7 +15,9 @@ COPY package.json ./
 RUN npm install --omit=dev
 
 COPY src ./src
-RUN mkdir -p /app/data
+RUN mkdir -p /app/sessions /app/data
+
+ENV SESSION_DIR=/app/sessions
 
 EXPOSE 3001
 

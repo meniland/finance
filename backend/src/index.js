@@ -4,17 +4,35 @@ import express from 'express';
 import { getInvestmentsState, startInvestmentsScrape, submitInvestmentsOtp } from './scrapers/extradePro.js';
 import { getIbkrState, startIbkrSync } from './scrapers/ibkr.js';
 import { getMeitavState, startMeitavScrape, submitMeitavOtp } from './scrapers/meitavTrade.js';
-import { getHarelState, startHarelScrape, submitHarelOtp } from './scrapers/harel.js';
+import {
+  getEfratHarelState,
+  getHarelState,
+  startEfratHarelScrape,
+  startHarelScrape,
+  submitEfratHarelOtp,
+  submitHarelOtp,
+} from './scrapers/harel.js';
 import {
   getMeitavPensionState,
   startMeitavPensionScrape,
   submitMeitavPensionOtp,
 } from './scrapers/meitavPension.js';
+import {
+  getPhoenixState,
+  startPhoenixScrape,
+  submitPhoenixOtp,
+} from './scrapers/phoenix.js';
 import { getCalState, startCalScrape, submitCalOtp } from './scrapers/visaCal.js';
 import { getState, startScrape, submitOtp } from './scraper.js';
+import { ensureSessionRoot, migrateLegacySessions, SESSION_DIR } from './sessionPaths.js';
 
 const app = express();
 const port = Number(process.env.PORT) || 3001;
+
+ensureSessionRoot();
+migrateLegacySessions().catch((error) => {
+  console.info(`session migrate skipped ${String(error.message || '').slice(0, 100)}`);
+});
 const origins = (process.env.CORS_ORIGIN || 'http://localhost:5173,http://127.0.0.1:5173')
   .split(',')
   .map((origin) => origin.trim())
@@ -215,6 +233,38 @@ app.post('/api/pension/harel/otp', (req, res) => {
   }
 });
 
+app.get('/api/pension/efrat/harel/status', (_req, res) => {
+  res.json(getEfratHarelState());
+});
+
+app.post('/api/pension/efrat/harel/scrape', (_req, res) => {
+  try {
+    const result = startEfratHarelScrape();
+    res.status(202).json(result);
+  } catch (error) {
+    sendError(res, error, 'Could not start the Efrat Harel pension scrape.');
+  }
+});
+
+app.post('/api/pension/efrat/harel/otp', (req, res) => {
+  const otpCode = String(req.body?.otpCode ?? '').trim();
+  if (!/^\d{4,10}$/.test(otpCode)) {
+    res.status(400).json({
+      error: 'Enter the 4 to 10 digit SMS code.',
+      message: 'Enter the 4 to 10 digit SMS code.',
+      errorCode: '20261124.401150',
+    });
+    return;
+  }
+
+  try {
+    submitEfratHarelOtp(otpCode);
+    res.json({ status: 'ACCEPTED' });
+  } catch (error) {
+    sendError(res, error, 'Could not submit the Efrat Harel SMS code.');
+  }
+});
+
 app.get('/api/pension/meitav/status', (_req, res) => {
   res.json(getMeitavPensionState());
 });
@@ -247,6 +297,38 @@ app.post('/api/pension/meitav/otp', (req, res) => {
   }
 });
 
+app.get('/api/pension/phoenix/status', (_req, res) => {
+  res.json(getPhoenixState());
+});
+
+app.post('/api/pension/phoenix/scrape', (_req, res) => {
+  try {
+    const result = startPhoenixScrape();
+    res.status(202).json(result);
+  } catch (error) {
+    sendError(res, error, 'Could not start the Phoenix pension scrape.');
+  }
+});
+
+app.post('/api/pension/phoenix/otp', (req, res) => {
+  const otpCode = String(req.body?.otpCode ?? '').trim();
+  if (!/^\d{4,10}$/.test(otpCode)) {
+    res.status(400).json({
+      error: 'Enter the 4 to 10 digit SMS code.',
+      message: 'Enter the 4 to 10 digit SMS code.',
+      errorCode: '20261124.400945',
+    });
+    return;
+  }
+
+  try {
+    submitPhoenixOtp(otpCode);
+    res.json({ status: 'ACCEPTED' });
+  } catch (error) {
+    sendError(res, error, 'Could not submit the Phoenix SMS code.');
+  }
+});
+
 app.use((error, _req, res, _next) => {
   if (error.type === 'entity.parse.failed') {
     res.status(400).json({
@@ -266,4 +348,5 @@ app.use((error, _req, res, _next) => {
 
 app.listen(port, '0.0.0.0', () => {
   console.info(`backend listening on ${port}`);
+  console.info(`session dir ${SESSION_DIR}`);
 });

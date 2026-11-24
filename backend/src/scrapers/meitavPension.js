@@ -2,13 +2,13 @@ import { existsSync } from 'node:fs';
 import { mkdir, readFile, unlink, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import puppeteer from 'puppeteer-core';
+import { normalizeActivityStatus } from '../activityStatus.js';
+import { getSessionPath } from '../sessionPaths.js';
 
 const OTP_TIMEOUT_MS = 300_000;
 const DEFAULT_LOGIN_URL = 'https://customers.meitav.co.il/v2/login/loginAmit';
 const RUNS_ROOT = process.env.RUNS_ROOT || '/tmp/scraper-runs';
-const MEITAV_PENSION_AUTH_STATE_PATH =
-  process.env.MEITAV_PENSION_AUTH_STATE_PATH ||
-  path.join(process.cwd(), 'data', 'meitav-pension-auth-state.json');
+const MEITAV_PENSION_AUTH_STATE_PATH = getSessionPath('meitav-pension');
 // Only the customers portal holds the gemel/pension session. Visiting www/openhub
  // during save/apply hits login redirects and wipes ASP.NET auth cookies.
 const MEITAV_CUSTOMERS_ORIGIN = 'https://customers.meitav.co.il';
@@ -221,6 +221,14 @@ function policyFromMeitavAccount(record, { productType, policyName, policyNumber
     record.KeyAccount ||
     null;
 
+  // Meitav does not expose an explicit פעיל/לא פעיל flag on gemel/pension rows.
+  // Live accounts returned with a positive balance are treated as open/active;
+  // AccountStatusName (שכיר/עצמאי) is employment status, not activity.
+  const activity =
+    balance > 0.01
+      ? normalizeActivityStatus(true)
+      : { isActive: null, activityLabel: null };
+
   return {
     policyName:
       String(
@@ -238,6 +246,8 @@ function policyFromMeitavAccount(record, { productType, policyName, policyNumber
     depositFeePercent: depositFeeFromRecord(record),
     accumulationFeePercent: accumulationFeeFromRecord(record),
     annualYieldPercent: yieldFromRecord(record),
+    isActive: activity.isActive,
+    activityLabel: activity.activityLabel,
   };
 }
 
@@ -601,7 +611,8 @@ async function firstVisible(page, selectorList) {
 }
 
 async function clickByText(page, labels, { exact = false } = {}) {
-  const clicked = await page.evaluate(
+  const clicked = await safeEvaluate(
+    page,
     (wanted, exactOnly) => {
       const nodes = [...document.querySelectorAll('a, button, [role="button"]')];
       for (const node of nodes) {
@@ -621,7 +632,7 @@ async function clickByText(page, labels, { exact = false } = {}) {
     },
     labels,
     exact,
-  );
+  ).catch(() => null);
   if (clicked) console.info(`meitav-pension clicked ${clicked}`);
   return Boolean(clicked);
 }
@@ -670,22 +681,63 @@ function splitIsraeliMobile(phone) {
   return { prefix: null, number: normalized };
 }
 
+function isDestroyedContextError(error) {
+  const message = String(error?.message || error || '');
+  return /Execution context was destroyed|Cannot find context|Target closed|Session closed|frame was detached/i.test(
+    message,
+  );
+}
+
+async function waitForPageSettled(page, { timeoutMs = 15000 } = {}) {
+  await Promise.race([
+    page.waitForNavigation({ waitUntil: 'domcontentloaded', timeout: timeoutMs }).catch(() => null),
+    new Promise((resolve) => setTimeout(resolve, 400)),
+  ]);
+  await page.waitForNetworkIdle({ idleTime: 800, timeout: Math.min(timeoutMs, 20000) }).catch(() => {});
+}
+
+async function safeEvaluate(page, fn, ...args) {
+  let lastError = null;
+  for (let attempt = 0; attempt < 4; attempt += 1) {
+    try {
+      return await page.evaluate(fn, ...args);
+    } catch (error) {
+      lastError = error;
+      if (!isDestroyedContextError(error) || attempt === 3) break;
+      console.info(
+        `meitav-pension evaluate retry ${attempt + 1} after navigation (${String(error.message || '').slice(0, 80)})`,
+      );
+      await waitForPageSettled(page);
+    }
+  }
+  throw lastError || new Error('safeEvaluate failed');
+}
+
 async function dismissBlockingModals(page) {
   for (let attempt = 0; attempt < 4; attempt += 1) {
-    const clicked = await page.evaluate(() => {
-      const buttons = [...document.querySelectorAll('button, [role="button"], a')];
-      const target = buttons.find((button) => {
-        const label = `${button.innerText || ''} ${button.getAttribute('aria-label') || ''}`
-          .replace(/\s+/g, ' ')
-          .trim();
-        // Do not click the login submit "אישור" while dismissing overlays.
-        if (button.id === 'submit' || button.classList?.contains('login-id-btn')) return false;
-        return /הבנתי|ראיתי|סגור|אני מסכים|Accept|Agree|Close/i.test(label);
+    let clicked = null;
+    try {
+      clicked = await safeEvaluate(page, () => {
+        const buttons = [...document.querySelectorAll('button, [role="button"], a')];
+        const target = buttons.find((button) => {
+          const label = `${button.innerText || ''} ${button.getAttribute('aria-label') || ''}`
+            .replace(/\s+/g, ' ')
+            .trim();
+          // Do not click the login submit "אישור" while dismissing overlays.
+          if (button.id === 'submit' || button.classList?.contains('login-id-btn')) return false;
+          return /הבנתי|ראיתי|סגור|אני מסכים|Accept|Agree|Close/i.test(label);
+        });
+        if (!target) return null;
+        target.click();
+        return (target.innerText || '').trim().slice(0, 60);
       });
-      if (!target) return null;
-      target.click();
-      return (target.innerText || '').trim().slice(0, 60);
-    });
+    } catch (error) {
+      if (isDestroyedContextError(error)) {
+        await waitForPageSettled(page);
+        continue;
+      }
+      throw error;
+    }
     if (!clicked) break;
     console.info(`meitav-pension dismissed ${clicked}`);
     await new Promise((resolve) => setTimeout(resolve, 700));
@@ -917,7 +969,7 @@ async function looksLoggedIn(page) {
   if (/login|signin|auth/i.test(url) && !/home|dashboard|portal|my-account|personal/i.test(url)) {
     return false;
   }
-  const text = await page.evaluate(() => document.body?.innerText || '').catch(() => '');
+  const text = await safeEvaluate(page, () => document.body?.innerText || '').catch(() => '');
   if (/התנתק|יציאה|שלום|המוצרים שלי|החסכונות שלי|יתרה|צבירה|תיק החיסכון/i.test(text)) {
     return true;
   }
@@ -955,7 +1007,8 @@ async function waitForRecaptcha(page, timeoutMs = 45000) {
 
 /** Run LoginWithPhone / ConfirmPassword from the page so cookies + reCAPTCHA work. */
 async function meitavApiCall(page, { path, method = 'GET', action, body = null, params = null }) {
-  return page.evaluate(
+  return safeEvaluate(
+    page,
     async ({ apiBase, pathName, httpMethod, actionName, siteKey, payload, query }) => {
       const site =
         (typeof globalParam !== 'undefined' && globalParam.reCaptchaClient) || siteKey;
@@ -1029,7 +1082,10 @@ async function meitavApiCall(page, { path, method = 'GET', action, body = null, 
 
 async function loginWithSms(page, credentials) {
   state.phoneHint = phoneHintFrom(credentials.phoneNumber);
+  // After a failed session resume the page may still be mid-redirect — settle first.
+  await waitForPageSettled(page).catch(() => {});
   await openCustomerLogin(page);
+  await waitForPageSettled(page).catch(() => {});
 
   const mobile = splitIsraeliMobile(credentials.phoneNumber);
   if (!mobile.prefix || String(mobile.number || '').length !== 7) {
@@ -1070,20 +1126,20 @@ async function loginWithSms(page, credentials) {
   }
 
   // Stay in the same SPA session — only soft-route to the OTP screen (no full reload).
-  const routed = await page
-    .evaluate(async () => {
-      try {
-        const root = document.querySelector('[ng-app], [data-ng-app], .login-window, body');
-        const inj = window.angular?.element(root)?.injector?.() || window.angular?.element(document.body)?.injector?.();
-        if (!inj) return { ok: false, error: 'no injector' };
-        const $state = inj.get('$state');
-        await $state.go('login.LoginCode');
-        return { ok: true, href: location.href };
-      } catch (error) {
-        return { ok: false, error: String(error?.message || error) };
-      }
-    })
-    .catch((error) => ({ ok: false, error: String(error.message || error) }));
+  const routed = await safeEvaluate(page, async () => {
+    try {
+      const root = document.querySelector('[ng-app], [data-ng-app], .login-window, body');
+      const inj =
+        window.angular?.element(root)?.injector?.() ||
+        window.angular?.element(document.body)?.injector?.();
+      if (!inj) return { ok: false, error: 'no injector' };
+      const $state = inj.get('$state');
+      await $state.go('login.LoginCode');
+      return { ok: true, href: location.href };
+    } catch (error) {
+      return { ok: false, error: String(error?.message || error) };
+    }
+  }).catch((error) => ({ ok: false, error: String(error.message || error) }));
   console.info(
     `meitav-pension route LoginCode ok=${routed?.ok} href=${routed?.href || page.url()} err=${routed?.error || '—'}`,
   );
@@ -1097,34 +1153,32 @@ async function loginWithSms(page, credentials) {
 
   // Prefer the site's own Angular service (same $http + captcha + cookies as the UI).
   console.info('meitav-pension ConfirmPassword via Angular loginSrvc');
-  let confirmRes = await page
-    .evaluate(async (code) => {
-      try {
-        const root = document.querySelector('[ng-app], [data-ng-app], .login-window, body');
-        const inj =
-          window.angular?.element(root)?.injector?.() ||
-          window.angular?.element(document.body)?.injector?.();
-        if (!inj) return { ok: false, error: 'angular injector missing' };
-        const loginSrvc = inj.get('loginSrvc');
-        const response = await new Promise((resolve, reject) => {
-          loginSrvc.confirmPassword(code).then(resolve, (err) => {
-            // Angular $http rejects on 401 but still has err.data / err.status.
-            resolve(err);
-          });
+  let confirmRes = await safeEvaluate(page, async (code) => {
+    try {
+      const root = document.querySelector('[ng-app], [data-ng-app], .login-window, body');
+      const inj =
+        window.angular?.element(root)?.injector?.() ||
+        window.angular?.element(document.body)?.injector?.();
+      if (!inj) return { ok: false, error: 'angular injector missing' };
+      const loginSrvc = inj.get('loginSrvc');
+      const response = await new Promise((resolve) => {
+        loginSrvc.confirmPassword(code).then(resolve, (err) => {
+          // Angular $http rejects on 401 but still has err.data / err.status.
+          resolve(err);
         });
-        const status = response?.status;
-        const data = response?.data;
-        return {
-          ok: status >= 200 && status < 300,
-          status,
-          data,
-          via: 'angular',
-        };
-      } catch (error) {
-        return { ok: false, error: String(error?.message || error), via: 'angular' };
-      }
-    }, digits)
-    .catch((error) => ({ ok: false, error: String(error.message || error), via: 'angular' }));
+      });
+      const status = response?.status;
+      const data = response?.data;
+      return {
+        ok: status >= 200 && status < 300,
+        status,
+        data,
+        via: 'angular',
+      };
+    } catch (error) {
+      return { ok: false, error: String(error?.message || error), via: 'angular' };
+    }
+  }, digits).catch((error) => ({ ok: false, error: String(error.message || error), via: 'angular' }));
 
   // Fallback: direct API from the same document (no navigation).
   if (!confirmRes?.ok || confirmRes?.data?.isFailed || confirmRes?.status === 401) {
@@ -1226,8 +1280,8 @@ async function tryResumeSession(page) {
 }
 
 async function fetchLobbyJson(page, pathName) {
-  return page
-    .evaluate(async (urlPath) => {
+  try {
+    return await safeEvaluate(page, async (urlPath) => {
       try {
         const response = await fetch(`/v2/${urlPath}`, {
           credentials: 'include',
@@ -1238,7 +1292,10 @@ async function fetchLobbyJson(page, pathName) {
           return { ok: false, status: response.status, data: null, raw: text?.slice?.(0, 200) };
         }
         // HTML shell means the route was wrong / session bounced to login page.
-        if (/^\s*</.test(text || '') || /text\/html/i.test(response.headers.get('content-type') || '')) {
+        if (
+          /^\s*</.test(text || '') ||
+          /text\/html/i.test(response.headers.get('content-type') || '')
+        ) {
           return { ok: false, status: response.status, data: null, raw: 'html' };
         }
         try {
@@ -1250,8 +1307,10 @@ async function fetchLobbyJson(page, pathName) {
       } catch (error) {
         return { ok: false, error: String(error?.message || error) };
       }
-    }, pathName)
-    .catch(() => null);
+    }, pathName);
+  } catch {
+    return null;
+  }
 }
 
 async function harvestPortfolio(page, payloads) {
@@ -1373,6 +1432,11 @@ async function runScrape() {
 
     if (!usedSession) {
       state.message = null;
+      // Fresh login page — avoids racing evaluates against a stale allaccounts redirect.
+      await page
+        .goto(DEFAULT_LOGIN_URL, { waitUntil: 'domcontentloaded', timeout: 90000 })
+        .catch(() => {});
+      await waitForPageSettled(page).catch(() => {});
       await loginWithSms(page, credentials);
       portfolio = await harvestPortfolio(page, payloads);
     }

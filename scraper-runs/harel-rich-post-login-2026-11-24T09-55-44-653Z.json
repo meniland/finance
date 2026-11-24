@@ -1,0 +1,147 @@
+[
+  {
+    "url": "https://digital.harel-group.co.il/apps.client-view/client-view/customer-products?ctime=1795514127613&ticket=b93f8e0a20b5bc37ba5df12b2853dd94af91cd88",
+    "status": 200,
+    "data": {
+      "topicsList": {
+        "1": [
+          {
+            "topicId": 60,
+            "topicName": "גמל",
+            "xTopicName": "גמל להשקעה",
+            "sectionId": 1,
+            "sectionName": "חסכון והשקעה",
+            "sectionOrder": 2,
+            "url": "/personal-info/gemel-funding/Pages/lobby-gemel-funding.aspx",
+            "lobby": true,
+            "policiesCount": 3,
+            "policySubjectId": null,
+            "xtopicId": 63
+          }
+        ],
+        "3": [
+          {
+            "topicId": 35,
+            "topicName": "קולקטיב בריאות",
+            "xTopicName": "בריאות",
+            "sectionId": 3,
+            "sectionName": "כיסויים ביטוחיים",
+            "sectionOrder": 7,
+            "url": "/personal-info/health/Pages/lobby-health.aspx",
+            "lobby": false,
+            "policiesCount": 1,
+            "policySubjectId": "503892142",
+            "xtopicId": 99
+          },
+          {
+            "topicId": 35,
+            "topicName": "קולקטיב בריאות",
+            "xTopicName": "מחלות ונכויות",
+            "sectionId": 3,
+            "sectionName": "כיסויים ביטוחיים",
+            "sectionOrder": 4,
+            "url": "/personal-info/health/Pages/lobby-health.aspx?policySubjectId=6",
+            "lobby": false,
+            "policiesCount": 1,
+            "policySubjectId": "503892142",
+            "xtopicId": 80
+          }
+        ],
+        "5": [
+          {
+            "topicId": 99,
+            "topicName": "כללי",
+            "xTopicName": "פוליסות שהסתיימו",
+            "sectionId": 5,
+            "sectionName": "לא להצגה",
+            "sectionOrder": 1,
+            "url": "/personal-info/my-harel/Pages/personal-info/cancelled-policies.aspx",
+            "lobby": false,
+            "policiesCount": 1,
+            "policySubjectId": "0",
+            "xtopicId": 300
+          }
+        ]
+      },
+      "generalDetails": {
+        "userId": "204552335",
+        "fullName": "אפרת לנדמן",
+        "sex": "נקבה",
+        "email": "efch99@gmail.com",
+        "mobilephone": "053-3392972",
+        "homephone": "-",
+        "cityName": "בני ברק",
+        "streetName": "יהושע",
+        "streetNumber": "30",
+        "zipCode": "5143112",
+        "familyStatus": "נשואה",
+        "lastPortalEntry": "29/09/2026",
+        "birthDate": "19/06/1993"
+      },
+      "responseStatus": {
+        "returnMsg": "תקין",
+        "returnCode": "0"
+      },
+      "actions": [
+        {
+          "topicId": 10,
+          "topicName": "חיים",
+          "xTopicId": 300,
+          "xTopicName": "פוליסות שהסתיימו",
+          "url": "cancelledPolices",
+          "title": "פוליסות שאינן בתוקף"
+        },
+        {
+          "topicId": 0,
+          "topicName": null,
+          "xTopicId": 0,
+          "xTopicName": null,
+          "url": "abroadPolicy",
+          "title": "רכישת ביטוח נסיעות לחו\"ל"
+        },
+        {
+          "topicId": 0,
+          "topicName": null,
+          "xTopicId": 0,
+          "xTopicName": null,
+          "url": "mountainIndication",
+          "title": "סירוב להעברת נתונים למשרד האוצר"
+        },
+        {
+          "topicId": 0,
+          "topicName": null,
+          "xTopicId": 0,
+          "xTopicName": null,
+          "url": "appeal",
+          "title": "טופס ערעור דיגיטלי"
+        },
+        {
+          "topicId": 0,
+          "topicName": null,
+          "xTopicId": 0,
+          "xTopicName": null,
+          "url": "openBank",
+          "title": "ניהול הסכמות - בנקאות פתוחה"
+        },
+        {
+          "topicId": 0,
+          "topicName": null,
+          "xTopicId": 0,
+          "xTopicName": null,
+          "url": "receiptsView",
+          "title": "הקבלות שלי"
+        }
+      ],
+      "mursheList": null,
+      "lastEntryDate": null,
+      "policiesList": {}
+    }
+  },
+  {
+    "url": "https://digital.harel-group.co.il/apps.client-view/client-view/online-data?ctime=1795514129646&ticket=b93f8e0a20b5bc37ba5df12b2853dd94af91cd88",
+    "status": 200,
+    "data": {
+      "63": "187,123"
+    }
+  }
+]

@@ -1,0 +1,408 @@
+[
+  {
+    "url": "https://www.harel-group.co.il/_vti_bin/webapi/CustomersAuthentication/PostAuthenticate/GetCurrentDetails",
+    "status": 200,
+    "data": {
+      "Status": 0,
+      "Details": {
+        "current": null,
+        "CurrentProcess": -1
+      }
+    }
+  },
+  {
+    "url": "https://www.harel-group.co.il/_vti_bin/webapi/CustomersAuthentication/PostAuthenticate/ContextConfig",
+    "status": 200,
+    "data": {
+      "Status": 0,
+      "Details": {
+        "CurrentProcess": 1
+      }
+    }
+  },
+  {
+    "url": "https://www.harel-group.co.il/_vti_bin/webapi/CustomersAuthentication/PostAuthenticate/ElasticLogger",
+    "status": 200,
+    "data": {
+      "Status": 0,
+      "Details": {
+        "CurrentProcess": 1
+      }
+    }
+  },
+  {
+    "url": "https://www.harel-group.co.il/_vti_bin/webapi/CustomersAuthentication/PostAuthenticate/ElasticLogger",
+    "status": 200,
+    "data": {
+      "Status": 0,
+      "Details": {
+        "CurrentProcess": 1
+      }
+    }
+  },
+  {
+    "url": "https://www.harel-group.co.il/_vti_bin/webapi/CustomersAuthentication/PostAuthenticate/PortalLogger",
+    "status": 200,
+    "data": {
+      "Status": 0,
+      "Details": {
+        "CurrentProcess": 1
+      }
+    }
+  },
+  {
+    "url": "https://www.harel-group.co.il/_vti_bin/webapi/CustomersAuthentication/PostAuthenticate/StartProcess",
+    "status": 200,
+    "data": {
+      "Status": 0,
+      "Details": {
+        "ProcessSuccess": "OTPWasSent",
+        "OTPChannel": 0,
+        "IsEmailValid": true,
+        "OTPCheckCount": 1,
+        "CurrentProcess": 1
+      }
+    }
+  },
+  {
+    "url": "https://www.harel-group.co.il/_vti_bin/webapi/CustomersAuthentication/PostAuthenticate/GetCurrentDetails",
+    "status": 200,
+    "data": {
+      "Status": 0,
+      "Details": {
+        "current": {
+          "FirstName": "אפרת",
+          "LastName": "לנדמן",
+          "NumberOfMessages": 106,
+          "PersonalMenu": [
+            {
+              "Title": "עדכון פרטים",
+              "UserMenuKey": "updateDetails",
+              "UserMenuIcon": null,
+              "UserMenuLink": {
+                "IconUrl": null,
+                "NavigateUrl": "/personal-info/my-harel/Pages/personal-info/personal-details-update.aspx",
+                "Target": null,
+                "Text": "personal-details-update.aspx",
+                "ToolTip": "עדכון פרטים אישיים"
+              },
+              "DisplayForEmployerType": 0,
+              "SvgIconId": "icon-edit",
+              "PersonalLinkType": "קישורים עליוניים"
+            },
+            {
+              "Title": "תיבת דואר",
+              "UserMenuKey": "mailbox",
+              "UserMenuIcon": null,
+              "UserMenuLink": {
+                "IconUrl": null,
+                "NavigateUrl": "/personal-info/my-harel/Pages/personal-info/my-inbox.aspx",
+                "Target": null,
+                "Text": "my-inbox.aspx",
+                "ToolTip": "תיבת דואר אישית"
+              },
+              "DisplayForEmployerType": 0,
+              "SvgIconId": "icon-edit_Copy",
+              "PersonalLinkType": "קישורים עליוניים"
+            }
+          ],
+          "PersonalLinks": [
+            {
+              "Title": "צפייה בדוחות שלי",
+              "UserMenuKey": "1",
+              "UserMenuIcon": null,
+              "UserMenuLink": {
+                "IconUrl": null,
+                "NavigateUrl": "/personal-info/my-harel/Pages/personal-info/my-inbox.aspx",
+                "Target": null,
+                "Text": "צפייה בדוחות שלי",
+                "ToolTip": "צפייה בדוחות שלי"
+              },
+              "DisplayForEmployerType": 0,
+              "SvgIconId": "icon-Filing_a_claim_status",
+              "PersonalLinkType": "קיצורי דרך"
+            },
+            {
+              "Title": "התביעות שלי",
+              "UserMenuKey": "5",
+              "UserMenuIcon": null,
+              "UserMenuLink": {
+                "IconUrl": null,
+                "NavigateUrl": "/personal-info/my-claims/Pages/my-claims.aspx",
+                "Target": null,
+                "Text": "התביעות שלי",
+                "ToolTip": "התביעות שלי"
+              },
+              "DisplayForEmployerType": 0,
+              "SvgIconId": "icon-Filing_a_claim_status",
+              "PersonalLinkType": "קיצורי דרך"
+            },
+            {
+              "Title": "הגשת תביעת בריאות",
+              "UserMenuKey": "3",
+              "UserMenuIcon": null,
+              "UserMenuLink": {
+                "IconUrl": null,
+                "NavigateUrl": "/personal-info/my-claims/Pages/health-claim-apply.aspx",
+                "Target": null,
+                "Text": "הגשת תביעת בריאות",
+                "ToolTip": "הגשת תביעת בריאות"
+              },
+              "DisplayForEmployerType": 0,
+              "SvgIconId": "icon-Finding_forms",
+              "PersonalLinkType": "קיצורי דרך"
+            },
+            {
+              "Title": "הגשת תביעת רכב",
+              "UserMenuKey": "4",
+              "UserMenuIcon": null,
+              "UserMenuLink": {
+                "IconUrl": null,
+                "NavigateUrl": "/Insurance/car/claim/Pages/car-claim-request.aspx",
+                "Target": null,
+                "Text": "הגשת תביעת רכב",
+                "ToolTip": "הגשת תביעת רכב"
+              },
+              "DisplayForEmployerType": 0,
+              "SvgIconId": "icon-Finding_forms",
+              "PersonalLinkType": "קיצורי דרך"
+            }
+          ],
+          "Topics": [
+            {
+              "Title": "קופות גמל להשקעה",
+              "TopicType": 1,
+              "TopicId": "63",
+              "SelfLinkDesc": "קופות גמל להשקעה",
+              "AreaAndProduct": {
+                "Name": "קופת גמל להשקעה",
+                "Id": "1705eb94-521d-4b9a-82e6-01c82db5bd6a",
+                "Terms": []
+              },
+              "ImageForMegaMenu": {
+                "SpriteImages": [
+                  {
+                    "ImgUrl": "/SiteCollectionImages/MegaDropDown_Icons.png",
+                    "PositionX": 0,
+                    "PositionY": 0,
+                    "IsMain": true,
+                    "Width": 39,
+                    "Height": 39,
+                    "ImgHtml": "<em style=\"background-position:0px 0px ; width:39px; height:39px; background-image: url('/SiteCollectionImages/MegaDropDown_Icons.png'); background-repeat:no-repeat \">&nbsp;</em>",
+                    "SubSpriteImageHtmlAsBackground": "background:url(/SiteCollectionImages/MegaDropDown_Icons.png) 100% 15px no-repeat width:39px; height:39px;background-color:#6c6e70 !important; background-position:0px 0px !important;",
+                    "SubSpriteImageHtmlAsBackgroundImage": "background-image:url(https://www.harel-group.co.il/SiteCollectionImages/MegaDropDown_Icons.png) 100% 15px no-repeat !important;background-color:#6c6e70 !important; background-position:0px 0px !important;",
+                    "ToStyle": {
+                      "width": "39",
+                      "height": "39",
+                      "background-position": "0px 0px !important",
+                      "background": "url(/SiteCollectionImages/MegaDropDown_Icons.png)"
+                    }
+                  }
+                ],
+                "SubSpriteImageID": "1",
+                "CustomPropertySelectedIndex": 0,
+                "ColumnValues": [
+                  "1"
+                ],
+                "Count": 1
+              },
+              "ImageForThirdLevel": {
+                "SpriteImages": [
+                  {
+                    "ImgUrl": "/SiteCollectionImages/Menu_icon.png",
+                    "PositionX": 0,
+                    "PositionY": 0,
+                    "IsMain": true,
+                    "Width": 18,
+                    "Height": 18,
+                    "ImgHtml": "<em class=\"nav_icon plane_icon\" style=\"background-position:0px 0px ;  background-image: url('/SiteCollectionImages/Menu_icon.png'); background-repeat:no-repeat\">&nbsp;</em>",
+                    "SubSpriteImageHtmlAsBackground": "background:url(/SiteCollectionImages/Menu_icon.png) 100% 15px no-repeat width:18px; height:18px;background-color:#6c6e70 !important; background-position:0px 0px !important;",
+                    "SubSpriteImageHtmlAsBackgroundImage": "background-image:url(https://www.harel-group.co.il/SiteCollectionImages/Menu_icon.png) 100% 15px no-repeat !important;background-color:#6c6e70 !important; background-position:0px 0px !important;",
+                    "ToStyle": {
+                      "width": "18",
+                      "height": "18",
+                      "background-position": "0px 0px !important",
+                      "background": "url(/SiteCollectionImages/Menu_icon.png)"
+                    }
+                  }
+                ],
+                "SubSpriteImageID": "1",
+                "CustomPropertySelectedIndex": 0,
+                "ColumnValues": [
+                  "1"
+                ],
+                "Count": 1
+              },
+              "DisplayOrder": 6,
+              "Link": {
+                "IconUrl": null,
+                "NavigateUrl": "/personal-info/gemel-funding/Pages/lobby-gemel-funding.aspx",
+                "Target": null,
+                "Text": null,
+                "ToolTip": null
+              },
+              "IsLobby": true,
+              "IsActive": false
+            },
+            {
+              "Title": "מחלות קשות ונכויות",
+              "TopicType": 1,
+              "TopicId": "80",
+              "SelfLinkDesc": null,
+              "AreaAndProduct": {
+                "Name": "ביטוח מחלות קשות",
+                "Id": "49078542-cd71-4ac8-a565-f58a728560ef",
+                "Terms": []
+              },
+              "ImageForMegaMenu": {
+                "SpriteImages": [
+                  {
+                    "ImgUrl": "/SiteCollectionImages/MegaDropDown_Icons.png",
+                    "PositionX": 0,
+                    "PositionY": -117,
+                    "IsMain": true,
+                    "Width": 39,
+                    "Height": 39,
+                    "ImgHtml": "<em style=\"background-position:0px -117px ; width:39px; height:39px; background-image: url('/SiteCollectionImages/MegaDropDown_Icons.png'); background-repeat:no-repeat \">&nbsp;</em>",
+                    "SubSpriteImageHtmlAsBackground": "background:url(/SiteCollectionImages/MegaDropDown_Icons.png) 100% 15px no-repeat width:39px; height:39px;background-color:#6c6e70 !important; background-position:0px -117px !important;",
+                    "SubSpriteImageHtmlAsBackgroundImage": "background-image:url(https://www.harel-group.co.il/SiteCollectionImages/MegaDropDown_Icons.png) 100% 15px no-repeat !important;background-color:#6c6e70 !important; background-position:0px -117px !important;",
+                    "ToStyle": {
+                      "width": "39",
+                      "height": "39",
+                      "background-position": "0px -117px !important",
+                      "background": "url(/SiteCollectionImages/MegaDropDown_Icons.png)"
+                    }
+                  }
+                ],
+                "SubSpriteImageID": "19",
+                "CustomPropertySelectedIndex": 0,
+                "ColumnValues": [
+                  "19"
+                ],
+                "Count": 1
+              },
+              "ImageForThirdLevel": {
+                "SpriteImages": [
+                  {
+                    "ImgUrl": "/SiteCollectionImages/Menu_icon.png",
+                    "PositionX": 0,
+                    "PositionY": -54,
+                    "IsMain": true,
+                    "Width": 18,
+                    "Height": 18,
+                    "ImgHtml": "<em class=\"nav_icon plane_icon\" style=\"background-position:0px -54px ;  background-image: url('/SiteCollectionImages/Menu_icon.png'); background-repeat:no-repeat\">&nbsp;</em>",
+                    "SubSpriteImageHtmlAsBackground": "background:url(/SiteCollectionImages/Menu_icon.png) 100% 15px no-repeat width:18px; height:18px;background-color:#6c6e70 !important; background-position:0px -54px !important;",
+                    "SubSpriteImageHtmlAsBackgroundImage": "background-image:url(https://www.harel-group.co.il/SiteCollectionImages/Menu_icon.png) 100% 15px no-repeat !important;background-color:#6c6e70 !important; background-position:0px -54px !important;",
+                    "ToStyle": {
+                      "width": "18",
+                      "height": "18",
+                      "background-position": "0px -54px !important",
+                      "background": "url(/SiteCollectionImages/Menu_icon.png)"
+                    }
+                  }
+                ],
+                "SubSpriteImageID": "19",
+                "CustomPropertySelectedIndex": 0,
+                "ColumnValues": [
+                  "19"
+                ],
+                "Count": 1
+              },
+              "DisplayOrder": 9,
+              "Link": {
+                "IconUrl": null,
+                "NavigateUrl": "/personal-info/health/Pages/lobby-health.aspx?policySubjectId=6",
+                "Target": null,
+                "Text": null,
+                "ToolTip": null
+              },
+              "IsLobby": false,
+              "IsActive": false
+            },
+            {
+              "Title": "ביטוח בריאות",
+              "TopicType": 1,
+              "TopicId": "99",
+              "SelfLinkDesc": null,
+              "AreaAndProduct": {
+                "Name": "ביטוח בריאות",
+                "Id": "a4c52143-5928-40d8-b04d-01661f0e2093",
+                "Terms": []
+              },
+              "ImageForMegaMenu": {
+                "SpriteImages": [
+                  {
+                    "ImgUrl": "/SiteCollectionImages/MegaDropDown_Icons.png",
+                    "PositionX": -117,
+                    "PositionY": -78,
+                    "IsMain": true,
+                    "Width": 39,
+                    "Height": 39,
+                    "ImgHtml": "<em style=\"background-position:-117px -78px ; width:39px; height:39px; background-image: url('/SiteCollectionImages/MegaDropDown_Icons.png'); background-repeat:no-repeat \">&nbsp;</em>",
+                    "SubSpriteImageHtmlAsBackground": "background:url(/SiteCollectionImages/MegaDropDown_Icons.png) 100% 15px no-repeat width:39px; height:39px;background-color:#6c6e70 !important; background-position:-117px -78px !important;",
+                    "SubSpriteImageHtmlAsBackgroundImage": "background-image:url(https://www.harel-group.co.il/SiteCollectionImages/MegaDropDown_Icons.png) 100% 15px no-repeat !important;background-color:#6c6e70 !important; background-position:-117px -78px !important;",
+                    "ToStyle": {
+                      "width": "39",
+                      "height": "39",
+                      "background-position": "-117px -78px !important",
+                      "background": "url(/SiteCollectionImages/MegaDropDown_Icons.png)"
+                    }
+                  }
+                ],
+                "SubSpriteImageID": "16",
+                "CustomPropertySelectedIndex": 0,
+                "ColumnValues": [
+                  "16"
+                ],
+                "Count": 1
+              },
+              "ImageForThirdLevel": {
+                "SpriteImages": [
+                  {
+                    "ImgUrl": "/SiteCollectionImages/Menu_icon.png",
+                    "PositionX": -54,
+                    "PositionY": -36,
+                    "IsMain": true,
+                    "Width": 18,
+                    "Height": 18,
+                    "ImgHtml": "<em class=\"nav_icon plane_icon\" style=\"background-position:-54px -36px ;  background-image: url('/SiteCollectionImages/Menu_icon.png'); background-repeat:no-repeat\">&nbsp;</em>",
+                    "SubSpriteImageHtmlAsBackground": "background:url(/SiteCollectionImages/Menu_icon.png) 100% 15px no-repeat width:18px; height:18px;background-color:#6c6e70 !important; background-position:-54px -36px !important;",
+                    "SubSpriteImageHtmlAsBackgroundImage": "background-image:url(https://www.harel-group.co.il/SiteCollectionImages/Menu_icon.png) 100% 15px no-repeat !important;background-color:#6c6e70 !important; background-position:-54px -36px !important;",
+                    "ToStyle": {
+                      "width": "18",
+                      "height": "18",
+                      "background-position": "-54px -36px !important",
+                      "background": "url(/SiteCollectionImages/Menu_icon.png)"
+                    }
+                  }
+                ],
+                "SubSpriteImageID": "16",
+                "CustomPropertySelectedIndex": 0,
+                "ColumnValues": [
+                  "16"
+                ],
+                "Count": 1
+              },
+              "DisplayOrder": 18,
+              "Link": {
+                "IconUrl": null,
+                "NavigateUrl": "/personal-info/health/Pages/lobby-health.aspx",
+                "Target": null,
+                "Text": null,
+                "ToolTip": null
+              },
+              "IsLobby": false,
+              "IsActive": false
+            }
+          ],
+          "PowerOfAttorneyUser": {
+            "firstName": null,
+            "LastName": null,
+            "IsPowerOfAttorney": false
+          }
+        },
+        "CurrentProcess": 1
+      }
+    }
+  }
+]

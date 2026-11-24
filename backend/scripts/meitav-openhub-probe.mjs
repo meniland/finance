@@ -1,7 +1,7 @@
 import puppeteer from 'puppeteer-core';
 import { readFile, writeFile, mkdir } from 'fs/promises';
 
-const AUTH = process.env.MEITAV_PENSION_AUTH_STATE_PATH || '/app/data/meitav-pension-auth-state.json';
+const AUTH = process.env.MEITAV_PENSION_AUTH_STATE_PATH || '/app/sessions/meitav-pension/auth-state.json';
 const OUT = '/tmp/scraper-runs/meitav-openhub-probe.json';
 
 const auth = JSON.parse(await readFile(AUTH, 'utf8'));
